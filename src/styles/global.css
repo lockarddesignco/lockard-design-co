@@ -1,0 +1,245 @@
+/* ============================================
+   LOCKARD DESIGN CO. — Light / Blue
+   Design System
+   ============================================ */
+
+/* --- Design Tokens --- */
+:root {
+  /* Colors */
+  --color-bg: #FFFFFF;
+  --color-bg-soft: #F4F7FB;
+  --color-bg-blue: #1877F2;
+  --color-bg-blue-dark: #1464CC;
+  --color-bg-blue-light: #E8F0FE;
+  --color-text: #1A1A2E;
+  --color-text-secondary: #6B7A90;
+  --color-text-light: #FFFFFF;
+  --color-text-on-blue: #FFFFFF;
+  --color-rule: #E2E8F0;
+  --color-rule-light: #F0F3F7;
+  --color-blue: #1877F2;
+  --color-blue-faded: rgba(24, 119, 242, 0.08);
+  --color-btn-bg: #1877F2;
+  --color-btn-text: #FFFFFF;
+
+  /* Typography */
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Spacing */
+  --section-gap: clamp(80px, 10vw, 140px);
+  --container-max: 1400px;
+  --container-pad: clamp(20px, 5vw, 48px);
+  --grid-gap: clamp(24px, 3vw, 48px);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 100px;
+}
+
+
+/* --- Reset & Base --- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: clamp(16px, 1.1vw, 18px);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+
+/* --- Typography --- */
+
+h1, .h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.75rem, 6vw, 5rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+}
+
+h2, .h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+h3, .h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+  line-height: 1.35;
+  color: var(--color-text);
+}
+
+p {
+  max-width: 65ch;
+}
+
+.subheadline {
+  font-family: var(--font-body);
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  max-width: 55ch;
+}
+
+
+/* --- Layout --- */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+section {
+  padding-block: var(--section-gap);
+}
+
+.section-rule {
+  border: none;
+  border-top: 1px solid var(--color-rule);
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+.section--blue {
+  background-color: var(--color-bg-blue);
+  color: var(--color-text-on-blue);
+}
+
+.section--blue h2,
+.section--blue h3 {
+  color: var(--color-text-on-blue);
+}
+
+.section--blue p,
+.section--blue .subheadline {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.section--soft {
+  background-color: var(--color-bg-soft);
+}
+
+
+/* --- Buttons --- */
+
+.btn {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0;
+  text-decoration: none;
+  padding: 14px 32px;
+  background-color: var(--color-btn-bg);
+  color: var(--color-btn-text);
+  border: 2px solid var(--color-btn-bg);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn:hover {
+  background-color: var(--color-bg-blue-dark);
+  border-color: var(--color-bg-blue-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(24, 119, 242, 0.3);
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: var(--color-blue);
+  border-color: var(--color-blue);
+}
+
+.btn--outline:hover {
+  background-color: var(--color-blue);
+  color: var(--color-text-light);
+}
+
+.btn--white {
+  background-color: #FFFFFF;
+  color: var(--color-blue);
+  border-color: #FFFFFF;
+}
+
+.btn--white:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+
+/* --- Cards --- */
+
+.card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-md);
+  padding: clamp(24px, 3vw, 40px);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 32px rgba(24, 119, 242, 0.08);
+  transform: translateY(-2px);
+}
+
+
+/* --- Images --- */
+
+.img-faded {
+  opacity: 0.9;
+  transition: opacity 0.4s ease;
+}
+
+.img-faded:hover {
+  opacity: 1;
+}
+
+
+/* --- Utility --- */
+
+.text-center { text-align: center; }
+.mx-auto { margin-inline: auto; }
+.text-blue { color: var(--color-blue); }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

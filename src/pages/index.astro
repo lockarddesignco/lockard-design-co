@@ -1,17 +1,1127 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Lockard Design Co. — Websites & Growth Systems for Service Businesses">
+
+  <!-- ========== TOP BAR ========== -->
+  <div class="topbar">
+    <div class="container-full topbar__inner">
+      <div class="topbar__left">
+        <a href="tel:+18567702456" class="topbar__item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (856) 770-2456
+        </a>
+        <span class="topbar__divider"></span>
+        <span class="topbar__item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Turnersville, NJ
+        </span>
+        <span class="topbar__divider"></span>
+        <span class="topbar__item topbar__tagline">Growing local companies Coast to Coast</span>
+      </div>
+      <div class="topbar__right">
+        <a href="mailto:will@lockarddesignco.com" class="topbar__item">will@lockarddesignco.com</a>
+        <span class="topbar__divider"></span>
+        <div class="topbar__socials">
+          <a href="https://facebook.com/lockarddesignco" class="topbar__social" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/willlockard" class="topbar__social" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://instagram.com/lockarddesignco" class="topbar__social" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </a>
+          <a href="https://wa.me/18567702456" class="topbar__social" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== MAIN NAV (STICKY) ========== -->
+  <header class="header" id="header">
+    <div class="container-full header__inner">
+      <a href="/" class="header__logo" aria-label="Lockard Design Co. Home">
+        <strong>LOCKARD</strong> DESIGN CO.
+      </a>
+      <nav class="header__nav" aria-label="Main navigation">
+        <ul class="header__menu">
+          <li class="header__menu-item has-mega">
+            <button class="header__menu-link" aria-expanded="false" aria-haspopup="true">
+              Services
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <!-- MEGA MENU -->
+            <div class="mega" aria-hidden="true">
+              <div class="container-full mega__inner">
+                <div class="mega__col">
+                  <h4 class="mega__heading">Web Design</h4>
+                  <ul class="mega__links">
+                    <li><a href="#" class="mega__link">Custom Website Design</a></li>
+                    <li><a href="#" class="mega__link">Website Redesign</a></li>
+                    <li><a href="#" class="mega__link">Landing Pages</a></li>
+                    <li><a href="#" class="mega__link">E-Commerce</a></li>
+                  </ul>
+                </div>
+                <div class="mega__col">
+                  <h4 class="mega__heading">SEO & Growth</h4>
+                  <ul class="mega__links">
+                    <li><a href="#" class="mega__link">Local SEO</a></li>
+                    <li><a href="#" class="mega__link">National SEO</a></li>
+                    <li><a href="#" class="mega__link">Google Business Profile</a></li>
+                    <li><a href="#" class="mega__link">Content Strategy</a></li>
+                  </ul>
+                </div>
+                <div class="mega__col">
+                  <h4 class="mega__heading">Ongoing Support</h4>
+                  <ul class="mega__links">
+                    <li><a href="#" class="mega__link">Website Management</a></li>
+                    <li><a href="#" class="mega__link">Monthly Reporting</a></li>
+                    <li><a href="#" class="mega__link">Performance Monitoring</a></li>
+                    <li><a href="#" class="mega__link">Security & Updates</a></li>
+                  </ul>
+                </div>
+                <div class="mega__col mega__cta-col">
+                  <div class="mega__cta-card">
+                    <h4 class="mega__heading">Not Sure Where to Start?</h4>
+                    <p>Get a free growth plan tailored to your business.</p>
+                    <a href="#contact" class="btn" style="margin-top:12px; font-size:0.8rem; padding:10px 20px;">Get Your Free Plan</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="header__menu-item has-mega">
+            <button class="header__menu-link" aria-expanded="false" aria-haspopup="true">
+              About Us
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="mega" aria-hidden="true">
+              <div class="container-full mega__inner" style="grid-template-columns: 1fr 1fr 1fr;">
+                <div class="mega__col">
+                  <h4 class="mega__heading">Who We Are</h4>
+                  <ul class="mega__links">
+                    <li><a href="#about" class="mega__link">Meet the Founder</a></li>
+                    <li><a href="#" class="mega__link">Our Story</a></li>
+                    <li><a href="#" class="mega__link">Why Lockard Design Co.</a></li>
+                  </ul>
+                </div>
+                <div class="mega__col">
+                  <h4 class="mega__heading">Our Process</h4>
+                  <ul class="mega__links">
+                    <li><a href="#plan" class="mega__link">How It Works</a></li>
+                    <li><a href="#success" class="mega__link">What You Get</a></li>
+                    <li><a href="#testimonials" class="mega__link">Client Results</a></li>
+                  </ul>
+                </div>
+                <div class="mega__col mega__cta-col">
+                  <div class="mega__cta-card">
+                    <h4 class="mega__heading">Work With Us</h4>
+                    <p>See if we're the right fit for your business.</p>
+                    <a href="#contact" class="btn" style="margin-top:12px; font-size:0.8rem; padding:10px 20px;">Let's Talk</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="header__menu-item"><a href="#testimonials" class="header__menu-link">Results</a></li>
+          <li class="header__menu-item"><a href="#" class="header__menu-link">Resources</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <a href="#contact" class="btn header__cta">Get Your Growth Plan</a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <div class="hero__badge">Web Design & SEO for Service Businesses</div>
+        <h1>Your Business is Great. <span class="text-blue">Your Website Isn't.</span></h1>
+        <p class="subheadline hero__sub">
+          For established service businesses, a generic website and unpredictable marketing isn't just embarrassing — it's a cap on your growth. We build the websites and growth systems that turn expert local companies into dominant regional players.
+        </p>
+        <div class="hero__actions">
+          <a href="#contact" class="btn">Get Your Free Growth Plan</a>
+          <a href="#plan" class="btn btn--outline">See How It Works</a>
+        </div>
+      </div>
+      <div class="hero__image">
+        <img
+          src="/images/hero-sunset.jpg"
+          alt="Will and partner at sunset — the team behind Lockard Design Co."
+          width="520"
+          height="520"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== PROBLEM ========== -->
+  <section class="problem section--soft" id="problem">
+    <div class="container text-center">
+      <h2>Does This Sound Familiar?</h2>
+      <div class="problem__grid">
+        <div class="problem__card card">
+          <div class="problem__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
+          </div>
+          <h3>Your Website is an Embarrassment.</h3>
+          <p>
+            You're a professional, but your website looks like it was built a decade ago. It doesn't reflect the quality of your work and you hesitate to even put it on your business card.
+          </p>
+        </div>
+        <div class="problem__card card">
+          <div class="problem__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <h3>Your Marketing is a Black Box.</h3>
+          <p>
+            You're paying an agency (or you were), but you have no idea what they're actually doing. You get confusing reports, but the phone isn't ringing any more than it was before.
+          </p>
+        </div>
+        <div class="problem__card card">
+          <div class="problem__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Your Growth Has Plateaued.</h3>
+          <p>
+            You're stuck at the same revenue level, working harder than ever. You know you need to grow to the next level, but you don't have a predictable way to get there.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== SOLUTION ========== -->
+  <section class="solution section--blue" id="solution">
+    <div class="container text-center">
+      <h2>It's Time to Own Your Lead Flow.</h2>
+      <p class="mx-auto" style="text-align:center;">
+        We don't just build websites; we build growth systems. We believe that a great service business deserves a predictable stream of high-quality leads that they own and control. No more renting attention from HomeAdvisor or wondering if your marketing is working. We build the asset, you own the results.
+      </p>
+      <a href="#contact" class="btn btn--white" style="margin-top: 40px;">Let's Talk About Your Growth</a>
+    </div>
+  </section>
+
+
+  <!-- ========== GUIDE ========== -->
+  <section class="guide" id="about">
+    <div class="container guide__inner">
+      <div class="guide__gallery">
+        <div class="gallery-fade gallery-fade--top"></div>
+        <div class="gallery-fade gallery-fade--bottom"></div>
+        <div class="gallery-columns">
+          <div class="gallery-col">
+            <div class="gallery-scroll gallery-scroll--up">
+              <div class="gallery-item"><img src="/images/gallery-1.jpg" alt="Custom website design project" loading="lazy" /></div>
+              <div class="gallery-item"><img src="/images/gallery-2.jpg" alt="SEO results dashboard" loading="lazy" /></div>
+              <div class="gallery-item"><img src="/images/gallery-3.jpg" alt="Client business growth" loading="lazy" /></div>
+              <div class="gallery-item"><img src="/images/gallery-4.jpg" alt="Professional web design" loading="lazy" /></div>
+              <div class="gallery-item"><img src="/images/gallery-1.jpg" alt="Custom website design project" loading="lazy" /></div>
+              <div class="gallery-item"><img src="/images/gallery-2.jpg" alt="SEO results dashboard" loading="lazy" /></div>
+              <div class="gallery-item"><img src="/images/gallery-3.jpg" alt="Client business growth" loading="lazy" /></div>
+              <div class="gallery-item"><img src="/images/gallery-4.jpg" alt="Professional web design" loading="lazy" /></div>
+            </div>
+          </div>
+          <div class="gallery-col">
+            <div class="gallery-scroll gallery-scroll--down">
+              <div class="gallery-item"><img src="/images/gallery-5.jpg" alt="Service business website" loading="lazy" /></div>
+              <div class="gallery-item"><img src="/images/gallery-6.jpg" alt="Digital marketing strategy" loading="lazy" /></div>
+              <div class="gallery-item"><img src="/images/gallery-7.jpg" alt="Local business online presence" loading="lazy" /></div>
+              <div class="gallery-item"><img src="/images/gallery-8.jpg" alt="Website performance optimization" loading="lazy" /></div>
+              <div class="gallery-item"><img src="/images/gallery-5.jpg" alt="Service business website" loading="lazy" /></div>
+              <div class="gallery-item"><img src="/images/gallery-6.jpg" alt="Digital marketing strategy" loading="lazy" /></div>
+              <div class="gallery-item"><img src="/images/gallery-7.jpg" alt="Local business online presence" loading="lazy" /></div>
+              <div class="gallery-item"><img src="/images/gallery-8.jpg" alt="Website performance optimization" loading="lazy" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="guide__content">
+        <div class="hero__badge">Meet the Founder</div>
+        <h2>We Build Growth Systems for Service Businesses Like Yours.</h2>
+        <p>
+          Lockard Design Co. is a US-based digital agency that works exclusively with established B2B and home service companies. We're not a big, faceless firm. You'll work directly with our founder, Will, to build a system that delivers real, measurable results.
+        </p>
+        <p>
+          We've helped companies double their revenue, expand their service area, and finally get the owner out of the day-to-day.
+        </p>
+        <a href="#contact" class="btn" style="margin-top: 24px;">Work With Will</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== PLAN ========== -->
+  <section class="plan section--soft" id="plan">
+    <div class="container text-center">
+      <h2>Your Path to Predictable Growth</h2>
+      <p class="subheadline mx-auto" style="text-align:center; margin-bottom: clamp(48px, 6vw, 80px);">Three steps. No confusion. Just results.</p>
+      <div class="plan__steps">
+        <div class="plan__step card">
+          <span class="plan__number">01</span>
+          <h3>Get Your Custom Growth Plan</h3>
+          <p>
+            We'll start with a free, no-obligation strategy session to understand your business and your goals. We'll deliver a clear plan showing you exactly how to get there.
+          </p>
+        </div>
+        <div class="plan__step card">
+          <span class="plan__number">02</span>
+          <h3>We Build Your Growth Engine</h3>
+          <p>
+            We'll build you a world-class website and install our proven SEO and lead management system. You'll have a professional online presence that converts visitors into leads.
+          </p>
+        </div>
+        <div class="plan__step card">
+          <span class="plan__number">03</span>
+          <h3>You Dominate Your Market</h3>
+          <p>
+            With your new growth engine running, you'll see a consistent flow of high-quality leads, allowing you to scale your business, increase your profits, and achieve your long-term goals.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== SUCCESS ========== -->
+  <section class="success" id="success">
+    <div class="container success__inner text-center">
+      <h2>Imagine a Year From Now...</h2>
+      <ul class="success__list">
+        <li>Your phone is ringing with high-quality leads, not tire-kickers.</li>
+        <li>You're bidding on bigger, more profitable jobs.</li>
+        <li>You're recognized as the go-to expert in your market.</li>
+        <li>You're working <em>on</em> the business, not <em>in</em> it.</li>
+        <li>You're finally in control of your growth.</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="testimonials section--soft" id="testimonials">
+    <div class="container text-center">
+      <h2>Don't Just Take Our Word For It.</h2>
+      <div class="testimonials__grid">
+
+        <blockquote class="testimonial card">
+          <div class="testimonial__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>
+            "Will and his team have been a contributing factor in our growth over the past 18 months. Can't thank him and his team enough! Let's go!!"
+          </p>
+          <cite>
+            <strong>Jared Brown</strong>
+          </cite>
+        </blockquote>
+
+        <blockquote class="testimonial card">
+          <div class="testimonial__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>
+            "Will is a master of his craft. His skillset is so broad and his approach so unbiased that we've solved problems we didn't know we had. Can't think of anyone else I'd rather work with."
+          </p>
+          <cite>
+            <strong>Silvio Dobrovat</strong>
+          </cite>
+        </blockquote>
+
+        <blockquote class="testimonial card">
+          <div class="testimonial__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>
+            "Will and his team made my vision come to life with my website. They took their time and paid close attention to every detail and made recommendations that I didn't consider prior. They really exceeded my expectations."
+          </p>
+          <cite>
+            <strong>Dawn O'Brien</strong>
+          </cite>
+        </blockquote>
+
+        <blockquote class="testimonial card">
+          <div class="testimonial__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>
+            "He's passionate about what he does and really takes the time to understand his customers. He listens, asks good questions, and makes sure you feel confident in your decisions. He's also very dependable."
+          </p>
+          <cite>
+            <strong>Andrea S.</strong>
+            <span>Google Local Guide</span>
+          </cite>
+        </blockquote>
+
+        <blockquote class="testimonial card">
+          <div class="testimonial__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>
+            "Will overdelivers and understands websites from a marketer's point of view. I see most businesses using websites as a business card vs one designed to collect and nurture leads. Highly recommend."
+          </p>
+          <cite>
+            <strong>Adam Maggio</strong>
+          </cite>
+        </blockquote>
+
+        <blockquote class="testimonial card">
+          <div class="testimonial__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>
+            "I work with Lockard Design on a consistent basis because they consistently deliver quality work. Anybody looking for a website or Local SEO should take a look at Will and his team."
+          </p>
+          <cite>
+            <strong>Richard Burner</strong>
+          </cite>
+        </blockquote>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== BADGE ========== -->
+  <section class="badge-section">
+    <div class="container text-center">
+      <img
+        src="/images/designrush-badge.png"
+        alt="Top New Jersey Web Design Agencies 2025 — DesignRush"
+        width="180"
+        height="180"
+        loading="lazy"
+      />
+    </div>
+  </section>
+
+
+  <!-- ========== FINAL CTA ========== -->
+  <section class="cta-final section--blue" id="contact">
+    <div class="container text-center">
+      <h2>Ready to Own Your Growth?</h2>
+      <p class="mx-auto" style="text-align:center;">
+        Schedule a free strategy session and we'll build you a custom growth plan. No obligation, no pitch — just a clear path to predictable growth.
+      </p>
+      <div class="cta-final__actions">
+        <a href="tel:+18567702456" class="btn btn--white">Call (856) 770-2456</a>
+        <a href="mailto:will@lockarddesignco.com" class="btn btn--white-outline">Email Us</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo">Lockard Design Co.</span>
+        <p class="footer__address">
+          5051 NJ-42, Turnersville, NJ 08012<br />
+          <a href="tel:+18567702456">(856) 770-2456</a>
+        </p>
+      </div>
+      <p class="footer__copy">
+        &copy; {new Date().getFullYear()} Lockard Design Co. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+</Layout>
+
+
+<style>
+  /* ========== FULL-WIDTH CONTAINER ========== */
+  .container-full {
+    width: 100%;
+    max-width: 1400px;
+    margin-inline: auto;
+    padding-inline: clamp(20px, 4vw, 48px);
+  }
+
+  /* ========== TOP BAR ========== */
+  .topbar {
+    background-color: var(--color-bg-blue);
+    color: var(--color-text-on-blue);
+    font-size: 0.78rem;
+    padding-block: 8px;
+  }
+
+  .topbar__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .topbar__left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .topbar__item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  a.topbar__item:hover {
+    color: #FFFFFF;
+  }
+
+  .topbar__divider {
+    width: 1px;
+    height: 14px;
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  .topbar__right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .topbar__socials {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .topbar__social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .topbar__social:hover {
+    color: #FFFFFF;
+  }
+
+  .topbar__tagline {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  @media (max-width: 640px) {
+    .topbar__right { display: none; }
+    .topbar__tagline { display: none; }
+  }
+
+  /* ========== MAIN HEADER ========== */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--color-rule);
+    padding-block: 0;
+  }
+
+  .header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    gap: 24px;
+  }
+
+  .header__logo {
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 1.4vw, 1.15rem);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-text);
+    white-space: nowrap;
+  }
+
+  .header__logo strong {
+    font-weight: 800;
+  }
+
+  /* ========== NAV MENU ========== */
+  .header__menu {
+    display: flex;
+    list-style: none;
+    gap: 0;
+    height: 64px;
+    align-items: stretch;
+  }
+
+  .header__menu-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .header__menu-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--color-text-secondary);
+    padding: 0 20px;
+    height: 100%;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: color 0.2s ease, background-color 0.2s ease;
+  }
+
+  .header__menu-link:hover {
+    color: var(--color-blue);
+    background-color: var(--color-blue-faded);
+  }
+
+  /* ========== MEGA MENU ========== */
+  .mega {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background: #FFFFFF;
+    border-top: 3px solid var(--color-blue);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+    padding: 32px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    z-index: 200;
+  }
+
+  .has-mega:hover .mega,
+  .has-mega:focus-within .mega {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .mega__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 32px;
+  }
+
+  .mega__heading {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--color-rule);
+  }
+
+  .mega__links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .mega__link {
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    padding: 4px 0;
+    transition: color 0.2s ease;
+  }
+
+  .mega__link:hover {
+    color: var(--color-blue);
+  }
+
+  .mega__cta-col {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .mega__cta-card {
+    background: var(--color-bg-soft);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .mega__cta-card p {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    margin-top: 8px;
+  }
+
+  /* ========== HEADER ACTIONS ========== */
+  .header__actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .header__cta {
+    font-size: 0.88rem;
+    padding: 12px 28px;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 900px) {
+    .header__nav { display: none; }
+  }
+
+
+  /* ========== HERO ========== */
+  .hero {
+    padding-block: clamp(60px, 10vw, 140px) clamp(60px, 10vw, 140px);
+  }
+
+  .hero__inner {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: center;
+  }
+
+  .hero__badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-blue);
+    background: var(--color-blue-faded);
+    padding: 6px 16px;
+    border-radius: var(--radius-full);
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    margin-bottom: clamp(20px, 3vw, 32px);
+  }
+
+  .hero__sub {
+    margin-bottom: clamp(28px, 4vw, 40px);
+  }
+
+  .hero__actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .hero__image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+  }
+
+  @media (max-width: 768px) {
+    .hero__inner {
+      grid-template-columns: 1fr;
+    }
+    .hero__image {
+      order: -1;
+      max-width: 320px;
+    }
+  }
+
+
+  /* ========== PROBLEM ========== */
+  .problem h2 {
+    margin-bottom: clamp(40px, 5vw, 64px);
+  }
+
+  .problem__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--grid-gap);
+    text-align: left;
+  }
+
+  .problem__icon {
+    color: var(--color-blue);
+    margin-bottom: 16px;
+  }
+
+  .problem__card h3 {
+    margin-bottom: 12px;
+  }
+
+
+  /* ========== SOLUTION ========== */
+  .solution {
+    padding-block: clamp(80px, 10vw, 140px);
+  }
+
+  .solution h2 {
+    margin-bottom: clamp(20px, 3vw, 32px);
+  }
+
+  .solution p {
+    font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+    line-height: 1.8;
+    max-width: 60ch;
+  }
+
+
+  /* ========== GUIDE ========== */
+  .guide__inner {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: center;
+  }
+
+  .guide__content h2 {
+    margin-bottom: clamp(16px, 2vw, 24px);
+  }
+
+  .guide__content p {
+    font-size: clamp(1rem, 1.2vw, 1.1rem);
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
+
+  /* Scrolling Gallery */
+  .guide__gallery {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+  }
+
+  .gallery-fade {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 80px;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .gallery-fade--top {
+    top: 0;
+    background: linear-gradient(to bottom, var(--color-bg), transparent);
+  }
+
+  .gallery-fade--bottom {
+    bottom: 0;
+    background: linear-gradient(to top, var(--color-bg), transparent);
+  }
+
+  .gallery-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    height: 100%;
+  }
+
+  .gallery-col {
+    overflow: hidden;
+  }
+
+  .gallery-scroll {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .gallery-scroll--up {
+    animation: galleryScrollUp 30s linear infinite;
+  }
+
+  .gallery-scroll--down {
+    animation: galleryScrollDown 30s linear infinite;
+  }
+
+  @keyframes galleryScrollUp {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+  }
+
+  @keyframes galleryScrollDown {
+    0% { transform: translateY(-50%); }
+    100% { transform: translateY(0); }
+  }
+
+  .gallery-item {
+    flex-shrink: 0;
+    aspect-ratio: 3 / 4;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    .guide__inner {
+      grid-template-columns: 1fr;
+    }
+    .guide__gallery {
+      height: 400px;
+      max-width: 100%;
+    }
+  }
+
+
+  /* ========== PLAN ========== */
+  .plan h2 {
+    margin-bottom: 8px;
+  }
+
+  .plan__steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--grid-gap);
+    text-align: left;
+  }
+
+  .plan__step {
+    text-align: left;
+  }
+
+  .plan__number {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 800;
+    line-height: 1;
+    color: var(--color-blue);
+    opacity: 0.3;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .plan__step h3 {
+    margin-bottom: 10px;
+  }
+
+
+  /* ========== SUCCESS ========== */
+  .success__inner {
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  .success h2 {
+    margin-bottom: clamp(32px, 4vw, 48px);
+  }
+
+  .success__list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+  }
+
+  .success__list li {
+    font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+    font-weight: 500;
+    line-height: 1.5;
+    padding: 16px 0 16px 32px;
+    border-bottom: 1px solid var(--color-rule);
+    position: relative;
+  }
+
+  .success__list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background: var(--color-blue);
+    border-radius: 50%;
+  }
+
+  .success__list li:first-child {
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .success__list em {
+    font-style: italic;
+    color: var(--color-blue);
+  }
+
+
+  /* ========== TESTIMONIALS ========== */
+  .testimonials h2 {
+    margin-bottom: clamp(48px, 6vw, 64px);
+  }
+
+  .testimonials__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    text-align: left;
+  }
+
+  .testimonial__stars {
+    color: #F5A623;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+
+  .testimonial p {
+    font-size: 0.95rem;
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 16px;
+    max-width: none;
+    color: var(--color-text-secondary);
+  }
+
+  .testimonial cite {
+    font-style: normal;
+    font-size: 0.9rem;
+    display: block;
+  }
+
+  .testimonial cite strong {
+    display: block;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .testimonial cite span {
+    color: var(--color-text-secondary);
+    font-size: 0.8rem;
+  }
+
+
+  /* ========== BADGE ========== */
+  .badge-section {
+    padding-block: clamp(40px, 5vw, 64px);
+  }
+
+  .badge-section img {
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+
+  .badge-section img:hover {
+    opacity: 1;
+  }
+
+
+  /* ========== FINAL CTA ========== */
+  .cta-final {
+    padding-block: clamp(80px, 10vw, 160px);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-final::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='40' x2='40' y2='0' stroke='%23B91C1C' stroke-width='1.5' opacity='0.35'/%3E%3C/svg%3E");
+    background-size: 20px 20px;
+    mask-image: linear-gradient(135deg, transparent 0%, transparent 30%, rgba(0,0,0,0.6) 100%);
+    -webkit-mask-image: linear-gradient(135deg, transparent 0%, transparent 30%, rgba(0,0,0,0.6) 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .cta-final > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-final h2 {
+    margin-bottom: clamp(12px, 2vw, 24px);
+  }
+
+  .cta-final p {
+    max-width: 50ch;
+  }
+
+  .cta-final__actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: clamp(28px, 4vw, 40px);
+  }
+
+  .btn--white-outline {
+    background-color: transparent;
+    color: #FFFFFF;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: var(--radius-full);
+    padding: 14px 32px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.25s ease;
+  }
+
+  .btn--white-outline:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: #FFFFFF;
+  }
+
+
+  /* ========== FOOTER ========== */
+  .footer {
+    padding-block: clamp(40px, 5vw, 64px);
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .footer__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer__logo {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .footer__address {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin-top: 6px;
+  }
+
+  .footer__address a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+  }
+
+  .footer__address a:hover {
+    color: var(--color-blue);
+  }
+
+  .footer__copy {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+  }
+</style>
