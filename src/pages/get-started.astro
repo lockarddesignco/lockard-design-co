@@ -1,0 +1,926 @@
+---
+import BlogLayout from '../layouts/BlogLayout.astro';
+import { industries } from '../data/intake-industries';
+---
+
+<BlogLayout
+  title="Website Onboarding — Lockard Design Co."
+  description="Welcome aboard. Fill out this onboarding form so we can build the perfect website for your business. The more we know, the better the result."
+>
+
+  <!-- ========== HERO ========== -->
+  <section class="intake-hero section--blue section--textured">
+    <div class="container">
+      <div class="intake-hero__inner">
+        <h1>Welcome Aboard.</h1>
+        <p>Now that we're working together, we need to learn everything about your business. The more you share, the better the result.</p>
+        <div class="intake-hero__trust">
+          <div class="intake-hero__stat">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span><strong>5.0</strong> on Google</span>
+          </div>
+          <span class="intake-hero__dot"></span>
+          <div class="intake-hero__stat"><span><strong>100's</strong> Businesses Served</span></div>
+          <span class="intake-hero__dot"></span>
+          <div class="intake-hero__stat"><span><strong>25+</strong> Industries</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FULL-PAGE FORM ========== -->
+  <form
+    id="intake-form"
+    name="intake-form"
+    method="POST"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+  >
+    <input type="hidden" name="form-name" value="intake-form" />
+    <p class="sr-only"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+    <!-- Hidden select for Netlify to discover industry field -->
+    <select name="industry" id="i-industry-hidden" class="sr-only" aria-hidden="true" tabindex="-1">
+      <option value="">Select your industry...</option>
+      {industries.map(ind => (
+        <option value={ind.value}>{ind.value}</option>
+      ))}
+    </select>
+
+    <!-- ───── STEP 1: About You ───── -->
+    <div class="intake-step intake-step--white">
+      <div class="container intake-step__inner">
+        <div class="intake-step__label">01</div>
+        <h2 class="intake-step__title">About You</h2>
+        <p class="intake-step__desc">Let's start with the basics.</p>
+
+        <div class="intake-fields">
+          <div class="cf__field">
+            <label for="i-name">Full Name <span class="cf__req">*</span></label>
+            <input type="text" id="i-name" name="name" required placeholder="John Smith" />
+          </div>
+
+          <div class="cf__row">
+            <div class="cf__field">
+              <label for="i-email">Email <span class="cf__req">*</span></label>
+              <input type="email" id="i-email" name="email" required placeholder="john@company.com" />
+            </div>
+            <div class="cf__field">
+              <label for="i-phone">Phone <span class="cf__req">*</span></label>
+              <input type="tel" id="i-phone" name="phone" required placeholder="(555) 123-4567" />
+            </div>
+          </div>
+
+          <div class="cf__row">
+            <div class="cf__field">
+              <label for="i-business">Business Name <span class="cf__req">*</span></label>
+              <input type="text" id="i-business" name="business-name" required placeholder="Smith & Sons Plumbing" />
+            </div>
+            <div class="cf__field">
+              <label for="i-website">Current Website</label>
+              <input type="url" id="i-website" name="website" placeholder="https://yoursite.com (leave blank if none)" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───── STEP 2: Your Industry ───── -->
+    <div class="intake-step intake-step--soft">
+      <div class="container intake-step__inner">
+        <div class="intake-step__label">02</div>
+        <h2 class="intake-step__title">Your Industry</h2>
+        <p class="intake-step__desc">Select the industry that best describes your business.</p>
+
+        <div class="industry-grid" id="industry-grid">
+          {industries.map(ind => (
+            <button
+              type="button"
+              class="industry-tile"
+              data-value={ind.value}
+              data-label={ind.headingLabel}
+            >
+              <span class="industry-tile__name">{ind.value}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- ───── STEP 3: Industry-Specific Questions ───── -->
+    <div class="intake-step intake-step--white" id="industry-step" style="display:none;">
+      <div class="container intake-step__inner">
+        <h2 class="intake-heading" id="industry-heading"></h2>
+        <p class="intake-step__desc" id="industry-desc">Help us understand the details of your operation.</p>
+
+        <div class="intake-fields">
+          {industries.map(ind => (
+            <div
+              class="industry-section"
+              data-industry={ind.value}
+              aria-hidden="true"
+              style="display:none;"
+            >
+              {ind.questions.map((q, qi) => {
+                const fieldName = `${ind.slug}-${q.slug}`;
+                const fieldId = `${ind.slug}-${q.slug}`;
+                const hasConditional = !!q.conditional;
+
+                if (q.type === 'checkbox' && q.options) {
+                  return (
+                    <fieldset
+                      class={`cf__checkboxes ${hasConditional ? 'conditional-block' : ''}`}
+                      data-conditional-field={hasConditional ? `${ind.slug}-${q.conditional!.dependsOn}` : undefined}
+                      data-conditional-values={hasConditional ? JSON.stringify(q.conditional!.showWhen) : undefined}
+                      style={hasConditional ? 'display:none;' : undefined}
+                    >
+                      <legend>{q.label}{q.required && <span class="cf__req"> *</span>}</legend>
+                      <div class="cf__checks-grid">
+                        {q.options.map((opt: string) => (
+                          <label class="cf__check">
+                            <input type="checkbox" name={fieldName} value={opt} />
+                            <span>{opt}</span>
+                          </label>
+                        ))}
+                      </div>
+                      {q.options.includes('Other') && (
+                        <div class="cf__other-input" style="display:none;">
+                          <input type="text" name={`${fieldName}-other`} placeholder="Please specify..." />
+                        </div>
+                      )}
+                    </fieldset>
+                  );
+                }
+
+                if (q.type === 'radio' && q.options) {
+                  return (
+                    <fieldset
+                      class={`cf__checkboxes ${hasConditional ? 'conditional-block' : ''}`}
+                      data-conditional-field={hasConditional ? `${ind.slug}-${q.conditional!.dependsOn}` : undefined}
+                      data-conditional-values={hasConditional ? JSON.stringify(q.conditional!.showWhen) : undefined}
+                      style={hasConditional ? 'display:none;' : undefined}
+                    >
+                      <legend>{q.label}{q.required && <span class="cf__req"> *</span>}</legend>
+                      <div class="cf__checks-grid">
+                        {q.options.map((opt: string) => (
+                          <label class="cf__check">
+                            <input type="radio" name={fieldName} value={opt} />
+                            <span>{opt}</span>
+                          </label>
+                        ))}
+                      </div>
+                    </fieldset>
+                  );
+                }
+
+                if (q.type === 'select' && q.options) {
+                  return (
+                    <div
+                      class={`cf__field ${hasConditional ? 'conditional-block' : ''}`}
+                      data-conditional-field={hasConditional ? `${ind.slug}-${q.conditional!.dependsOn}` : undefined}
+                      data-conditional-values={hasConditional ? JSON.stringify(q.conditional!.showWhen) : undefined}
+                      style={hasConditional ? 'display:none;' : undefined}
+                    >
+                      <label for={fieldId}>{q.label}{q.required && <span class="cf__req"> *</span>}</label>
+                      <select id={fieldId} name={fieldName}>
+                        <option value="" disabled selected>Select one...</option>
+                        {q.options.map((opt: string) => (
+                          <option value={opt}>{opt}</option>
+                        ))}
+                      </select>
+                    </div>
+                  );
+                }
+
+                if (q.type === 'textarea') {
+                  return (
+                    <div
+                      class={`cf__field ${hasConditional ? 'conditional-block' : ''}`}
+                      data-conditional-field={hasConditional ? `${ind.slug}-${q.conditional!.dependsOn}` : undefined}
+                      data-conditional-values={hasConditional ? JSON.stringify(q.conditional!.showWhen) : undefined}
+                      style={hasConditional ? 'display:none;' : undefined}
+                    >
+                      <label for={fieldId}>{q.label}{q.required && <span class="cf__req"> *</span>}</label>
+                      <textarea id={fieldId} name={fieldName} rows="3" placeholder={q.placeholder || ''}></textarea>
+                    </div>
+                  );
+                }
+
+                return (
+                  <div
+                    class={`cf__field ${hasConditional ? 'conditional-block' : ''}`}
+                    data-conditional-field={hasConditional ? `${ind.slug}-${q.conditional!.dependsOn}` : undefined}
+                    data-conditional-values={hasConditional ? JSON.stringify(q.conditional!.showWhen) : undefined}
+                    style={hasConditional ? 'display:none;' : undefined}
+                  >
+                    <label for={fieldId}>{q.label}{q.required && <span class="cf__req"> *</span>}</label>
+                    <input type={q.type} id={fieldId} name={fieldName} placeholder={q.placeholder || ''} />
+                  </div>
+                );
+              })}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- ───── STEP 4: Your Goals ───── -->
+    <div class="intake-step intake-step--soft">
+      <div class="container intake-step__inner">
+        <div class="intake-step__label">03</div>
+        <h2 class="intake-step__title">Your Goals</h2>
+        <p class="intake-step__desc">What are you looking to achieve?</p>
+
+        <div class="intake-fields">
+          <fieldset class="cf__checkboxes">
+            <legend>What services are you interested in? <span class="cf__req">*</span></legend>
+            <div class="cf__checks-grid">
+              <label class="cf__check">
+                <input type="checkbox" name="services" value="Web Design" />
+                <span>Web Design</span>
+              </label>
+              <label class="cf__check">
+                <input type="checkbox" name="services" value="SEO" />
+                <span>SEO</span>
+              </label>
+              <label class="cf__check">
+                <input type="checkbox" name="services" value="Lead Generation" />
+                <span>Lead Generation</span>
+              </label>
+              <label class="cf__check">
+                <input type="checkbox" name="services" value="All of the Above" />
+                <span>All of the Above</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="cf__row">
+            <div class="cf__field">
+              <label for="i-budget">Monthly Budget Range</label>
+              <select id="i-budget" name="budget">
+                <option value="" disabled selected>Select a range...</option>
+                <option value="Under $1,500">Under $1,500</option>
+                <option value="$1,500–$3,000">$1,500–$3,000</option>
+                <option value="$3,000–$5,000">$3,000–$5,000</option>
+                <option value="$5,000–$10,000">$5,000–$10,000</option>
+                <option value="$10,000+">$10,000+</option>
+                <option value="Not sure yet">Not sure yet</option>
+              </select>
+            </div>
+            <div class="cf__field">
+              <label for="i-source">How did you hear about us?</label>
+              <select id="i-source" name="source">
+                <option value="" disabled selected>Select one...</option>
+                <option value="Google Search">Google Search</option>
+                <option value="Referral">Referral</option>
+                <option value="Social Media">Social Media</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="cf__field">
+            <label for="i-challenge">What's the biggest challenge your business faces online right now?</label>
+            <textarea id="i-challenge" name="challenge" rows="3" placeholder="Tell us what's not working — low traffic, no leads, outdated site, etc."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───── SUBMIT ───── -->
+    <div class="intake-step intake-step--white intake-step--submit">
+      <div class="container intake-step__inner">
+        <button type="submit" class="cf__submit" id="intake-submit">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Submit My Details
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <!-- ========== SUCCESS STATE ========== -->
+  <div id="intake-success" class="intake-success" style="display:none;">
+    <div class="container">
+      <div class="intake-success__inner">
+        <div class="intake-success__icon">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+            <circle cx="32" cy="32" r="32" fill="#27AE60" opacity="0.1"/>
+            <circle cx="32" cy="32" r="24" fill="#27AE60" opacity="0.2"/>
+            <circle cx="32" cy="32" r="16" fill="#27AE60"/>
+            <path d="M24 32l5 5 11-11" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h2>You're all set.</h2>
+        <p>We've got everything we need to get started on your website. Will is going to review your answers and follow up with next steps.</p>
+        <a href="/" class="btn">Back to Homepage</a>
+      </div>
+    </div>
+  </div>
+
+</BlogLayout>
+
+<!-- ========== JAVASCRIPT ========== -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('intake-form') as HTMLFormElement;
+    const hiddenSelect = document.getElementById('i-industry-hidden') as HTMLSelectElement;
+    const industryStep = document.getElementById('industry-step') as HTMLElement;
+    const headingEl = document.getElementById('industry-heading') as HTMLElement;
+    const successEl = document.getElementById('intake-success') as HTMLElement;
+    const submitBtn = document.getElementById('intake-submit') as HTMLButtonElement;
+    const tiles = document.querySelectorAll<HTMLButtonElement>('.industry-tile');
+
+    const headingLabels: Record<string, string> = {
+      'HVAC': 'HVAC companies',
+      'Plumbing': 'plumbers',
+      'Roofing': 'roofers',
+      'Electrical': 'electricians',
+      'Construction': 'general contractors',
+      'Painting': 'painters',
+      'Landscaping': 'landscapers',
+      'Commercial Fire Protection': 'fire protection companies',
+      'Restaurants': 'restaurants',
+      'E-Commerce': 'e-commerce brands',
+      'Government': 'government organizations',
+      'Transport & Logistics': 'transport & logistics companies',
+      'Remodeling': 'remodelers',
+      'Lawn Care': 'lawn care companies',
+      'Security': 'security companies',
+      'Cleaning': 'cleaning companies',
+      'Pest Control': 'pest control companies',
+      'Concrete & Flooring': 'concrete & flooring contractors',
+      'Tree Service': 'tree service companies',
+      'Fencing': 'fence contractors',
+      'Garage Doors': 'garage door companies',
+      'Windows & Doors': 'window & door companies',
+      'Solar': 'solar installers',
+      'Property Management': 'property managers',
+      'Other / Not Listed': 'businesses like yours',
+    };
+
+    let activeIndustry: string | null = null;
+
+    // ─── Industry Tile Click ───
+    tiles.forEach(tile => {
+      tile.addEventListener('click', () => {
+        const value = tile.dataset.value!;
+        if (value === activeIndustry) return;
+
+        // Update tile selection
+        tiles.forEach(t => t.classList.remove('industry-tile--active'));
+        tile.classList.add('industry-tile--active');
+
+        // Update hidden select
+        hiddenSelect.value = value;
+
+        // Hide previous section
+        if (activeIndustry) {
+          const prev = form.querySelector(`[data-industry="${activeIndustry}"]`) as HTMLElement;
+          if (prev) {
+            prev.style.display = 'none';
+            prev.setAttribute('aria-hidden', 'true');
+            disableSection(prev);
+          }
+        }
+
+        // Show industry step + section
+        industryStep.style.display = '';
+        const next = form.querySelector(`[data-industry="${value}"]`) as HTMLElement;
+        if (next) {
+          next.style.display = '';
+          next.setAttribute('aria-hidden', 'false');
+          enableSection(next);
+
+          next.style.opacity = '0';
+          next.style.transform = 'translateY(12px)';
+          requestAnimationFrame(() => {
+            next.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            next.style.opacity = '1';
+            next.style.transform = 'translateY(0)';
+          });
+        }
+
+        // Update heading
+        const label = headingLabels[value] || value;
+        headingEl.textContent = `Lockard Design Co. loves working with ${label}.`;
+
+        // Animate step in if first time
+        if (!activeIndustry) {
+          industryStep.style.opacity = '0';
+          industryStep.style.transform = 'translateY(16px)';
+          requestAnimationFrame(() => {
+            industryStep.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+            industryStep.style.opacity = '1';
+            industryStep.style.transform = 'translateY(0)';
+          });
+
+          // Scroll to the industry questions
+          setTimeout(() => {
+            industryStep.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
+        }
+
+        activeIndustry = value;
+        initConditionals(next);
+      });
+    });
+
+    // ─── Enable/Disable ───
+    function disableSection(el: HTMLElement) {
+      el.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>('input, select, textarea').forEach(input => {
+        input.setAttribute('tabindex', '-1');
+        input.removeAttribute('required');
+      });
+    }
+
+    function enableSection(el: HTMLElement) {
+      el.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>('input, select, textarea').forEach(input => {
+        input.removeAttribute('tabindex');
+      });
+    }
+
+    // ─── Conditional Logic ───
+    function initConditionals(section: HTMLElement | null) {
+      if (!section) return;
+      section.querySelectorAll<HTMLElement>('.conditional-block').forEach(block => {
+        const depField = block.dataset.conditionalField;
+        const showValues = JSON.parse(block.dataset.conditionalValues || '[]');
+        if (!depField) return;
+        block.style.display = 'none';
+        const depInputs = section.querySelectorAll<HTMLInputElement | HTMLSelectElement>(`[name="${depField}"]`);
+        depInputs.forEach(input => {
+          input.addEventListener('change', () => checkConditional(section, depField, showValues, block));
+        });
+      });
+    }
+
+    function checkConditional(section: HTMLElement, depField: string, showValues: string[], block: HTMLElement) {
+      const inputs = section.querySelectorAll<HTMLInputElement | HTMLSelectElement>(`[name="${depField}"]`);
+      let currentValues: string[] = [];
+      inputs.forEach(input => {
+        if (input instanceof HTMLSelectElement) {
+          if (input.value) currentValues.push(input.value);
+        } else if (input instanceof HTMLInputElement && (input.type === 'radio' || input.type === 'checkbox') && input.checked) {
+          currentValues.push(input.value);
+        }
+      });
+      const shouldShow = currentValues.some(v => showValues.includes(v));
+      block.style.display = shouldShow ? '' : 'none';
+      if (shouldShow) {
+        block.style.opacity = '0';
+        block.style.transform = 'translateY(8px)';
+        requestAnimationFrame(() => {
+          block.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+          block.style.opacity = '1';
+          block.style.transform = 'translateY(0)';
+        });
+      }
+      block.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>('input, select, textarea').forEach(el => {
+        if (shouldShow) el.removeAttribute('tabindex');
+        else el.setAttribute('tabindex', '-1');
+      });
+    }
+
+    // ─── "Other" checkbox toggle ───
+    form.addEventListener('change', (e) => {
+      const target = e.target as HTMLInputElement;
+      if (target.type !== 'checkbox' || target.value !== 'Other') return;
+      const fieldset = target.closest('fieldset');
+      if (!fieldset) return;
+      const otherInput = fieldset.querySelector('.cf__other-input') as HTMLElement | null;
+      if (!otherInput) return;
+      otherInput.style.display = target.checked ? '' : 'none';
+    });
+
+    // ─── Disable all industry sections on load ───
+    document.querySelectorAll<HTMLElement>('.industry-section').forEach(section => disableSection(section));
+
+    // ─── AJAX Submit ───
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `
+        <svg class="cf__spinner" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+        </svg>
+        Submitting...
+      `;
+
+      const formData = new FormData();
+      formData.append('form-name', 'intake-form');
+
+      const universalFields = ['name', 'email', 'phone', 'business-name', 'website', 'industry', 'budget', 'challenge', 'source'];
+      universalFields.forEach(name => {
+        const input = form.querySelector(`[name="${name}"]`) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement | null;
+        if (input && input.value) formData.append(name, input.value);
+      });
+
+      const serviceChecks = form.querySelectorAll<HTMLInputElement>('input[name="services"]:checked');
+      serviceChecks.forEach(cb => formData.append('services', cb.value));
+
+      if (activeIndustry) {
+        const section = form.querySelector(`[data-industry="${activeIndustry}"]`) as HTMLElement;
+        if (section) {
+          section.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>('input, select, textarea').forEach(input => {
+            const condBlock = input.closest('.conditional-block') as HTMLElement | null;
+            if (condBlock && condBlock.style.display === 'none') return;
+            if (input instanceof HTMLInputElement && (input.type === 'checkbox' || input.type === 'radio')) {
+              if (input.checked) formData.append(input.name, input.value);
+            } else if (input.value) {
+              formData.append(input.name, input.value);
+            }
+          });
+        }
+      }
+
+      try {
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData as any).toString(),
+        });
+        if (response.ok) {
+          form.style.display = 'none';
+          successEl.style.display = '';
+          successEl.style.opacity = '0';
+          successEl.style.transform = 'translateY(12px)';
+          requestAnimationFrame(() => {
+            successEl.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+            successEl.style.opacity = '1';
+            successEl.style.transform = 'translateY(0)';
+          });
+          successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          throw new Error('Form submission failed');
+        }
+      } catch (err) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Submit My Details
+        `;
+        alert('Something went wrong. Please try again or call us at (856) 770-2456.');
+      }
+    });
+  });
+</script>
+
+<!-- ========== STYLES ========== -->
+<style>
+  /* ─── Hero ─── */
+  .intake-hero {
+    background: var(--color-bg-blue);
+    padding-top: clamp(160px, 20vw, 220px);
+    padding-bottom: clamp(48px, 6vw, 80px);
+    text-align: center;
+  }
+  .intake-hero__inner {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .intake-hero h1 {
+    color: #fff;
+    margin-bottom: 16px;
+  }
+  .intake-hero p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 0 auto 28px;
+  }
+  .intake-hero__trust {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .intake-hero__stat {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.82rem;
+    font-weight: 500;
+  }
+  .intake-hero__stat strong {
+    color: #fff;
+    font-weight: 700;
+  }
+  .intake-hero__dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  /* ─── Steps ─── */
+  .intake-step {
+    padding: clamp(48px, 6vw, 80px) 0;
+  }
+  .intake-step--white {
+    background: var(--color-bg);
+  }
+  .intake-step--soft {
+    background: var(--color-bg-soft);
+  }
+  .intake-step--submit {
+    padding: clamp(32px, 4vw, 48px) 0 clamp(48px, 6vw, 80px);
+  }
+  .intake-step__inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .intake-step__label {
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--color-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+  }
+  .intake-step__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+  }
+  .intake-step__desc {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 32px;
+  }
+
+  /* ─── Fields Container ─── */
+  .intake-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  /* ─── Industry Grid (Tiles) ─── */
+  .industry-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  @media (max-width: 768px) {
+    .industry-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 480px) {
+    .industry-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .industry-tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px 12px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--color-text);
+    line-height: 1.3;
+  }
+  .industry-tile:hover {
+    border-color: rgba(24, 119, 242, 0.35);
+    background: var(--color-blue-faded);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 12px rgba(24, 119, 242, 0.08);
+  }
+  .industry-tile--active {
+    background: var(--color-blue-faded);
+    border-color: var(--color-blue);
+    color: var(--color-blue);
+    font-weight: 700;
+    box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.15);
+  }
+  .industry-tile--active:hover {
+    background: var(--color-blue-faded);
+    border-color: var(--color-blue);
+  }
+
+  /* ─── Industry Heading ─── */
+  .intake-heading {
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+    font-weight: 700;
+    color: var(--color-blue);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+
+  /* ─── Industry Sections ─── */
+  .industry-section {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  /* ─── Form Fields ─── */
+  .cf__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  @media (max-width: 480px) {
+    .cf__row { grid-template-columns: 1fr; }
+  }
+  .cf__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .cf__field label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text);
+    letter-spacing: 0.02em;
+  }
+  .cf__req {
+    color: var(--color-blue);
+  }
+  .cf__field input,
+  .cf__field textarea,
+  .cf__field select {
+    background: var(--color-bg-soft);
+    border: 1px solid var(--color-rule);
+    border-radius: 10px;
+    padding: 13px 16px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--color-text);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    width: 100%;
+  }
+  .cf__field input::placeholder,
+  .cf__field textarea::placeholder {
+    color: var(--color-text-secondary);
+    opacity: 0.45;
+  }
+  .cf__field input:focus,
+  .cf__field textarea:focus,
+  .cf__field select:focus {
+    border-color: var(--color-blue);
+    box-shadow: 0 0 0 3px rgba(24, 119, 242, 0.08);
+  }
+  .cf__field textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+  .cf__field select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%236B7A90' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+    cursor: pointer;
+  }
+
+  /* ─── Checkboxes / Radios ─── */
+  .cf__checkboxes { border: none; padding: 0; margin: 0; }
+  .cf__checkboxes legend {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text);
+    letter-spacing: 0.02em;
+    margin-bottom: 10px;
+  }
+  .cf__checks-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  @media (max-width: 480px) {
+    .cf__checks-grid { grid-template-columns: 1fr; }
+  }
+  .cf__check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 12px 16px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-rule);
+    border-radius: 10px;
+    transition: all 0.2s ease;
+  }
+  .cf__check:hover {
+    background: var(--color-blue-faded);
+    border-color: rgba(24, 119, 242, 0.3);
+  }
+  .cf__check:has(input:checked) {
+    background: var(--color-blue-faded);
+    border-color: var(--color-blue);
+  }
+
+  .cf__check input[type="checkbox"] {
+    appearance: none; -webkit-appearance: none;
+    width: 18px; height: 18px;
+    border: 2px solid var(--color-rule); border-radius: 4px;
+    background: transparent; cursor: pointer; flex-shrink: 0;
+    position: relative; transition: all 0.2s ease;
+  }
+  .cf__check input[type="checkbox"]:checked {
+    background: var(--color-blue); border-color: var(--color-blue);
+  }
+  .cf__check input[type="checkbox"]:checked::after {
+    content: ''; position: absolute; left: 5px; top: 2px;
+    width: 5px; height: 9px; border: solid #fff;
+    border-width: 0 2px 2px 0; transform: rotate(45deg);
+  }
+
+  .cf__check input[type="radio"] {
+    appearance: none; -webkit-appearance: none;
+    width: 18px; height: 18px;
+    border: 2px solid var(--color-rule); border-radius: 50%;
+    background: transparent; cursor: pointer; flex-shrink: 0;
+    position: relative; transition: all 0.2s ease;
+  }
+  .cf__check input[type="radio"]:checked { border-color: var(--color-blue); }
+  .cf__check input[type="radio"]:checked::after {
+    content: ''; position: absolute; left: 3px; top: 3px;
+    width: 8px; height: 8px; border-radius: 50%; background: var(--color-blue);
+  }
+
+  .cf__check span {
+    font-size: 0.85rem; color: var(--color-text);
+    font-weight: 500; transition: color 0.2s;
+  }
+  .cf__check:has(input:checked) span {
+    color: var(--color-blue); font-weight: 600;
+  }
+
+  .cf__other-input { margin-top: 8px; }
+  .cf__other-input input {
+    background: var(--color-bg-soft); border: 1px solid var(--color-rule);
+    border-radius: 10px; padding: 10px 14px;
+    font-family: var(--font-body); font-size: 0.85rem;
+    color: var(--color-text); width: 100%;
+    transition: border-color 0.2s; outline: none;
+  }
+  .cf__other-input input:focus { border-color: var(--color-blue); }
+
+  /* ─── Submit ─── */
+  .cf__submit {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    width: 100%; max-width: 400px; margin: 0 auto;
+    padding: 16px 32px;
+    background: var(--color-blue); color: #fff; border: none;
+    border-radius: var(--radius-full);
+    font-family: var(--font-display); font-size: 1rem; font-weight: 600;
+    cursor: pointer; transition: all 0.25s ease;
+  }
+  .cf__submit:hover {
+    background: var(--color-bg-blue-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(24, 119, 242, 0.35);
+  }
+  .cf__submit:disabled {
+    opacity: 0.7; cursor: not-allowed; transform: none; box-shadow: none;
+  }
+  .cf__spinner { animation: spin 1s linear infinite; }
+  @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+  /* ─── Success ─── */
+  .intake-success {
+    padding: clamp(80px, 10vw, 140px) 0;
+    background: var(--color-bg);
+  }
+  .intake-success__inner {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .intake-success__icon { margin-bottom: 24px; }
+  .intake-success h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 800; color: var(--color-text); margin-bottom: 12px;
+  }
+  .intake-success p {
+    color: var(--color-text-secondary);
+    font-size: 1rem; line-height: 1.7;
+    margin: 0 auto 28px;
+  }
+
+  /* ─── SR Only ─── */
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+  }
+</style>
