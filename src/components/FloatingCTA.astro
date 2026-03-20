@@ -1,0 +1,241 @@
+---
+---
+
+<button class="float-cta" id="floatCta" aria-label="Get Your Free Growth Plan">
+  <svg class="float-cta__bolt" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+  <span>Your Free Plan</span>
+</button>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<aside class="sidebar" id="sidebar" aria-hidden="true">
+  <div class="sidebar__inner">
+    <button class="sidebar__close" id="sidebarClose" aria-label="Close">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="sidebar__header">
+      <img src="/images/logo.svg" alt="" width="36" height="36" />
+      <div>
+        <strong>Get Your Free Growth Plan</strong>
+        <p>Tell us about your business and we'll build you a custom roadmap.</p>
+      </div>
+    </div>
+    <form class="sidebar__form" name="growth-plan" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you/">
+      <input type="hidden" name="form-name" value="growth-plan" />
+      <p class="sr-only"><label>Don't fill this out: <input name="bot-field" /></label></p>
+      <div class="sidebar__field">
+        <label for="sb-name">Full Name</label>
+        <input type="text" id="sb-name" name="name" required placeholder="John Smith" />
+      </div>
+      <div class="sidebar__row">
+        <div class="sidebar__field">
+          <label for="sb-email">Email</label>
+          <input type="email" id="sb-email" name="email" required placeholder="john@company.com" />
+        </div>
+        <div class="sidebar__field">
+          <label for="sb-phone">Phone</label>
+          <input type="tel" id="sb-phone" name="phone" placeholder="(555) 123-4567" />
+        </div>
+      </div>
+      <div class="sidebar__row">
+        <div class="sidebar__field">
+          <label for="sb-company">Company Name</label>
+          <input type="text" id="sb-company" name="company" placeholder="Your Business Name" />
+        </div>
+        <div class="sidebar__field">
+          <label for="sb-industry">Industry</label>
+          <input type="text" id="sb-industry" name="industry" placeholder="HVAC, Plumbing, etc." />
+        </div>
+      </div>
+      <div class="sidebar__field">
+        <label for="sb-website">Current Website (if any)</label>
+        <input type="url" id="sb-website" name="website" placeholder="https://yoursite.com" />
+      </div>
+      <fieldset class="sidebar__checkboxes">
+        <legend>Help My Business <span class="sidebar__required">*</span></legend>
+        <div class="sidebar__checks-grid">
+          <label class="sidebar__check"><input type="checkbox" name="help" value="Generate Leads" /><span>Generate Leads</span></label>
+          <label class="sidebar__check"><input type="checkbox" name="help" value="Increase Revenue" /><span>Increase Revenue</span></label>
+          <label class="sidebar__check"><input type="checkbox" name="help" value="New Website" /><span>New Website</span></label>
+          <label class="sidebar__check"><input type="checkbox" name="help" value="Rank In Google" /><span>Rank In Google</span></label>
+          <label class="sidebar__check"><input type="checkbox" name="help" value="AI Visibility Optimization" /><span>AI Visibility Optimization</span></label>
+          <label class="sidebar__check"><input type="checkbox" name="help" value="Social Media Presence" /><span>Social Media Presence</span></label>
+        </div>
+      </fieldset>
+      <div class="sidebar__field">
+        <label for="sb-goals">Anything else we should know?</label>
+        <textarea id="sb-goals" name="goals" rows="2" placeholder="Tell us what's holding your business back..."></textarea>
+      </div>
+      <button type="submit" class="sidebar__submit">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        Get My Free Plan
+      </button>
+    </form>
+  </div>
+</aside>
+
+<script>
+(() => {
+  const btn = document.getElementById('floatCta');
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebarOverlay');
+  const closeBtn = document.getElementById('sidebarClose');
+  if (!btn || !sidebar || !overlay || !closeBtn) return;
+
+  function open() {
+    sidebar.classList.add('sidebar--open');
+    sidebar.setAttribute('aria-hidden', 'false');
+    overlay.classList.add('sidebar-overlay--open');
+    btn.classList.add('float-cta--hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    sidebar.classList.remove('sidebar--open');
+    sidebar.setAttribute('aria-hidden', 'true');
+    overlay.classList.remove('sidebar-overlay--open');
+    btn.classList.remove('float-cta--hidden');
+    document.body.style.overflow = '';
+  }
+
+  btn.addEventListener('click', open);
+  closeBtn.addEventListener('click', close);
+  overlay.addEventListener('click', close);
+
+  const ctaPlanBtn = document.getElementById('ctaGetPlan');
+  if (ctaPlanBtn) ctaPlanBtn.addEventListener('click', open);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') close();
+  });
+})();
+</script>
+
+<style>
+  .float-cta {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 900;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 24px;
+    background: var(--color-blue);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-full);
+    font-family: var(--font-display);
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 32px rgba(24, 119, 242, 0.35);
+    transition: all 0.25s ease;
+  }
+  .float-cta:hover {
+    background: var(--color-bg-blue-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(24, 119, 242, 0.45);
+  }
+  .float-cta__bolt { width: 18px; height: 18px; }
+  .float-cta--hidden {
+    transform: translateY(100px);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .sidebar-overlay {
+    position: fixed; inset: 0; z-index: 998;
+    background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(4px);
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s;
+  }
+  .sidebar-overlay--open { opacity: 1; visibility: visible; }
+
+  .sidebar {
+    position: fixed; top: 0; right: 0; bottom: 0; z-index: 999;
+    width: clamp(420px, 40vw, 620px); background: #0a0a14;
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+  }
+  .sidebar--open { transform: translateX(0); }
+  .sidebar__inner { padding: clamp(24px, 3vw, 32px); }
+  .sidebar__close {
+    position: absolute; top: 20px; right: 20px;
+    background: none; border: none; color: rgba(255, 255, 255, 0.4);
+    cursor: pointer; padding: 8px; transition: color 0.2s;
+  }
+  .sidebar__close:hover { color: #fff; }
+  .sidebar__header {
+    display: flex; gap: 14px; align-items: flex-start;
+    margin-bottom: 20px; padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .sidebar__header strong { display: block; color: #fff; font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
+  .sidebar__header p { color: rgba(255, 255, 255, 0.4); font-size: 0.82rem; line-height: 1.5; max-width: none; }
+  .sidebar__form { display: flex; flex-direction: column; gap: 12px; }
+  .sidebar__row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .sidebar__field { display: flex; flex-direction: column; gap: 6px; }
+  .sidebar__field label { font-size: 0.78rem; font-weight: 600; color: rgba(255, 255, 255, 0.75); letter-spacing: 0.03em; }
+  .sidebar__field input,
+  .sidebar__field textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px; padding: 10px 12px;
+    font-family: var(--font-body); font-size: 0.88rem; color: #fff;
+    transition: border-color 0.2s; outline: none;
+  }
+  .sidebar__field input::placeholder,
+  .sidebar__field textarea::placeholder { color: rgba(255, 255, 255, 0.2); }
+  .sidebar__field input:focus,
+  .sidebar__field textarea:focus { border-color: var(--color-blue); }
+  .sidebar__field textarea { resize: vertical; min-height: 80px; }
+  .sidebar__checkboxes { border: none; padding: 0; margin: 0; }
+  .sidebar__checks-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .sidebar__checkboxes legend { font-size: 0.78rem; font-weight: 600; color: rgba(255, 255, 255, 0.75); letter-spacing: 0.03em; margin-bottom: 8px; }
+  .sidebar__required { color: var(--color-blue); }
+  .sidebar__check {
+    display: flex; align-items: center; gap: 8px; cursor: pointer;
+    padding: 8px 12px; background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px;
+    transition: all 0.2s ease;
+  }
+  .sidebar__check:hover { background: rgba(24, 119, 242, 0.06); border-color: rgba(24, 119, 242, 0.2); }
+  .sidebar__check:has(input:checked) { background: rgba(24, 119, 242, 0.1); border-color: rgba(24, 119, 242, 0.35); }
+  .sidebar__check input[type="checkbox"] {
+    appearance: none; -webkit-appearance: none;
+    width: 18px; height: 18px; border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px; background: transparent; cursor: pointer;
+    flex-shrink: 0; position: relative; transition: all 0.2s ease;
+  }
+  .sidebar__check input[type="checkbox"]:checked { background: var(--color-blue); border-color: var(--color-blue); }
+  .sidebar__check input[type="checkbox"]:checked::after {
+    content: ''; position: absolute; left: 5px; top: 2px;
+    width: 5px; height: 9px; border: solid #fff;
+    border-width: 0 2px 2px 0; transform: rotate(45deg);
+  }
+  .sidebar__check span { font-size: 0.85rem; color: rgba(255, 255, 255, 0.8); font-weight: 500; transition: color 0.2s; }
+  .sidebar__check:has(input:checked) span { color: #fff; }
+  .sidebar__submit {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    width: 100%; padding: 12px 24px; margin-top: 4px;
+    background: var(--color-blue); color: #fff; border: none;
+    border-radius: var(--radius-full); font-family: var(--font-display);
+    font-size: 0.92rem; font-weight: 600; cursor: pointer; transition: all 0.25s ease;
+  }
+  .sidebar__submit:hover { background: var(--color-bg-blue-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(24, 119, 242, 0.3); }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+  }
+
+  @media (max-width: 480px) {
+    .sidebar { width: 100%; }
+    .sidebar__row { grid-template-columns: 1fr; }
+    .sidebar__checks-grid { grid-template-columns: 1fr; }
+    .float-cta span { display: none; }
+    .float-cta { padding: 16px; border-radius: 50%; }
+  }
+</style>

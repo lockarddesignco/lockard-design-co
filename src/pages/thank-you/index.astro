@@ -1,0 +1,65 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+---
+
+<BlogLayout
+  title="Thank You — Lockard Design Co."
+  description="Thanks for reaching out. We'll be in touch within 24 hours."
+  hideFloatingCTA={true}
+>
+  <section class="ty section--blue section--textured">
+    <div class="container">
+      <div class="ty__inner">
+        <div class="ty__icon">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+            <circle cx="32" cy="32" r="32" fill="#fff" opacity="0.1"/>
+            <circle cx="32" cy="32" r="24" fill="#fff" opacity="0.15"/>
+            <circle cx="32" cy="32" r="16" fill="#fff" opacity="0.2"/>
+            <path d="M24 32l5 5 11-11" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h1>We've got your details.</h1>
+        <p>Will is going to personally review your submission and reach out within 24 hours to discuss your custom growth plan. Keep an eye on your inbox.</p>
+        <div class="ty__ctas">
+          <a href="/" class="btn btn--white">Back to Homepage</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BlogLayout>
+
+<style>
+  .ty {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: clamp(160px, 20vw, 220px);
+    padding-bottom: clamp(80px, 10vw, 140px);
+    text-align: center;
+  }
+  .ty__inner {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+  .ty__icon {
+    margin-bottom: 28px;
+  }
+  .ty h1 {
+    color: #fff;
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 16px;
+  }
+  .ty p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    line-height: 1.75;
+    margin-bottom: 36px;
+  }
+  .ty__ctas {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>

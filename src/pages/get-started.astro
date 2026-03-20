@@ -540,16 +540,7 @@ import { industries } from '../data/intake-industries';
           body: new URLSearchParams(formData as any).toString(),
         });
         if (response.ok) {
-          form.style.display = 'none';
-          successEl.style.display = '';
-          successEl.style.opacity = '0';
-          successEl.style.transform = 'translateY(12px)';
-          requestAnimationFrame(() => {
-            successEl.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-            successEl.style.opacity = '1';
-            successEl.style.transform = 'translateY(0)';
-          });
-          successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          window.location.href = '/thank-you/onboarding/';
         } else {
           throw new Error('Form submission failed');
         }
