@@ -3555,9 +3555,6 @@ import Footer from '../components/Footer.astro';
       *, *::before, *::after {
         cursor: none !important;
       }
-      .header *, .header, .topbar *, .topbar, .mega *, .mega {
-        cursor: auto !important;
-      }
     `;
     document.head.appendChild(style);
 
@@ -3572,9 +3569,7 @@ import Footer from '../components/Footer.astro';
       // Swap color over blue/dark sections
       const el = document.elementFromPoint(mouseX, mouseY);
       if (el) {
-        // Hide bolt over header/topbar to prevent backdrop-blur recomposition glitch
-        const overHeader = !!el.closest('.header, .topbar, .mega');
-        bolt.style.opacity = overHeader ? '0' : '1';
+        const overHeader = false;
 
         // Check if mouse is in the triangle arrow zone
         const arrowSection = el.closest('.section--has-arrow');
@@ -3596,9 +3591,9 @@ import Footer from '../components/Footer.astro';
         const isDark = el.closest('.problem, .footer, .section--dark, .industries') || inTriangle;
         const isLight = !isDark && el.closest('.section--blue, .section--textured:not(.industries), .topbar, .footer__cta-banner');
 
-        // Flame detection — skip header to avoid backdrop-blur glitch
+        // Flame detection
         const wasInPlan = inPlan;
-        inPlan = !overHeader && !!el.closest('.plan, .industries, .problem');
+        inPlan = !!el.closest('.plan, .industries, .problem, .header');
 
         if (inPlan) {
           bolt.style.color = '#1877F2';

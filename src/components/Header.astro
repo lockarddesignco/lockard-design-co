@@ -43,6 +43,8 @@
 <header class="header fixed top-[43px] left-0 right-0 z-[950] transition-[top] duration-300 ease-in-out max-[480px]:[&_.header-inner]:h-16 max-[480px]:[&_.header-inner]:px-4" id="header">
   <!-- Glassmorphism background — 1px overlap with topbar to prevent sub-pixel gap -->
   <div class="absolute inset-0 bg-[#0d0d0d] shadow-[0_3px_0_0_var(--color-blue)] transition-colors duration-300 -z-[1] header-bg"></div>
+  <!-- Noise texture overlay -->
+  <div class="absolute inset-0 bg-[url('/images/noise.png')] bg-repeat [background-size:200px_200px] opacity-35 mix-blend-overlay pointer-events-none -z-[1]"></div>
 
   <div class="container-full header-inner flex justify-between items-center h-24 gap-6 max-[900px]:h-[72px]">
     <a href="/" class="flex items-center gap-2.5 no-underline text-white whitespace-nowrap group" aria-label="Lockard Design Co. Home">
