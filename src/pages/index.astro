@@ -55,10 +55,42 @@ import Layout from '../layouts/Layout.astro';
         <ul class="header__menu">
           <li class="header__menu-item has-mega">
             <button class="header__menu-link" aria-expanded="false" aria-haspopup="true">
+              About
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="mega" aria-hidden="true">
+              <div class="container-full mega__inner" style="grid-template-columns: 1fr 1fr 1fr;">
+                <div class="mega__col">
+                  <h4 class="mega__heading">Who We Are</h4>
+                  <ul class="mega__links">
+                    <li><a href="#about" class="mega__link">Meet the Founders</a></li>
+                    <li><a href="#" class="mega__link">Our Story</a></li>
+                    <li><a href="#" class="mega__link">Why Lockard Design Co.</a></li>
+                  </ul>
+                </div>
+                <div class="mega__col">
+                  <h4 class="mega__heading">Our Process</h4>
+                  <ul class="mega__links">
+                    <li><a href="#plan" class="mega__link">How It Works</a></li>
+                    <li><a href="#success" class="mega__link">What You Get</a></li>
+                    <li><a href="#testimonials" class="mega__link">Client Results</a></li>
+                  </ul>
+                </div>
+                <div class="mega__col mega__cta-col">
+                  <div class="mega__cta-card">
+                    <h4 class="mega__heading">Work With Us</h4>
+                    <p>See if we're the right fit for your business.</p>
+                    <a href="/contact" class="btn" style="margin-top:12px; font-size:0.8rem; padding:10px 20px;">Let's Talk</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="header__menu-item has-mega">
+            <button class="header__menu-link" aria-expanded="false" aria-haspopup="true">
               Services
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
-            <!-- MEGA MENU -->
             <div class="mega" aria-hidden="true">
               <div class="container-full mega__inner">
                 <div class="mega__col">
@@ -92,130 +124,187 @@ import Layout from '../layouts/Layout.astro';
                   <div class="mega__cta-card">
                     <h4 class="mega__heading">Not Sure Where to Start?</h4>
                     <p>Get a free growth plan tailored to your business.</p>
-                    <a href="#contact" class="btn" style="margin-top:12px; font-size:0.8rem; padding:10px 20px;">Get Your Free Plan</a>
+                    <a href="/contact" class="btn" style="margin-top:12px; font-size:0.8rem; padding:10px 20px;">Get Your Free Plan</a>
                   </div>
                 </div>
               </div>
             </div>
           </li>
+          <li class="header__menu-item"><a href="#industries" class="header__menu-link">Industries</a></li>
+          <li class="header__menu-item"><a href="#testimonials" class="header__menu-link">Results</a></li>
           <li class="header__menu-item has-mega">
             <button class="header__menu-link" aria-expanded="false" aria-haspopup="true">
-              About Us
+              Resources
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="mega" aria-hidden="true">
               <div class="container-full mega__inner" style="grid-template-columns: 1fr 1fr 1fr;">
                 <div class="mega__col">
-                  <h4 class="mega__heading">Who We Are</h4>
+                  <h4 class="mega__heading">Learn</h4>
                   <ul class="mega__links">
-                    <li><a href="#about" class="mega__link">Meet the Founder</a></li>
-                    <li><a href="#" class="mega__link">Our Story</a></li>
-                    <li><a href="#" class="mega__link">Why Lockard Design Co.</a></li>
+                    <li><a href="/blog" class="mega__link">Blog</a></li>
+                    <li><a href="#" class="mega__link">Guides & Resources</a></li>
+                    <li><a href="#faq" class="mega__link">FAQ</a></li>
                   </ul>
                 </div>
                 <div class="mega__col">
-                  <h4 class="mega__heading">Our Process</h4>
+                  <h4 class="mega__heading">Results</h4>
                   <ul class="mega__links">
-                    <li><a href="#plan" class="mega__link">How It Works</a></li>
-                    <li><a href="#success" class="mega__link">What You Get</a></li>
-                    <li><a href="#testimonials" class="mega__link">Client Results</a></li>
+                    <li><a href="#" class="mega__link">Case Studies</a></li>
+                    <li><a href="#testimonials" class="mega__link">Client Testimonials</a></li>
+                    <li><a href="#" class="mega__link">Our Work</a></li>
                   </ul>
                 </div>
                 <div class="mega__col mega__cta-col">
                   <div class="mega__cta-card">
-                    <h4 class="mega__heading">Work With Us</h4>
-                    <p>See if we're the right fit for your business.</p>
-                    <a href="#contact" class="btn" style="margin-top:12px; font-size:0.8rem; padding:10px 20px;">Let's Talk</a>
+                    <h4 class="mega__heading">Latest from the Blog</h4>
+                    <p>Real strategies for real businesses. No fluff.</p>
+                    <a href="/blog" class="btn" style="margin-top:12px; font-size:0.8rem; padding:10px 20px;">Read the Blog</a>
                   </div>
                 </div>
               </div>
             </div>
           </li>
-          <li class="header__menu-item"><a href="#testimonials" class="header__menu-link">Results</a></li>
-          <li class="header__menu-item"><a href="#" class="header__menu-link">Resources</a></li>
+          <li class="header__menu-item"><a href="/contact" class="header__menu-link">Contact</a></li>
         </ul>
       </nav>
       <div class="header__actions">
-        <a href="#contact" class="header__cta">Get Your Growth Plan</a>
+        <a href="/contact" class="header__cta btn-slide">
+          <span>Get Your Growth Plan</span>
+          <svg class="btn-slide__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <input id="mobMenuCheck" type="checkbox" class="mob-menu__checkbox" />
+        <label class="mob-menu__toggle" for="mobMenuCheck" aria-label="Menu">
+          <div id="mobBar1" class="mob-menu__bar"></div>
+          <div id="mobBar2" class="mob-menu__bar"></div>
+          <div id="mobBar3" class="mob-menu__bar"></div>
+        </label>
       </div>
     </div>
   </header>
 
+  <!-- ========== MOBILE NAV ========== -->
+  <nav class="mob-nav" id="mobNav" aria-hidden="true">
+    <ul class="mob-nav__list">
+      <li><a href="#about" class="mob-nav__link">About</a></li>
+      <li><a href="#services" class="mob-nav__link">Services</a></li>
+      <li><a href="#industries" class="mob-nav__link">Industries</a></li>
+      <li><a href="#testimonials" class="mob-nav__link">Results</a></li>
+      <li><a href="/blog" class="mob-nav__link">Blog</a></li>
+      <li><a href="/contact" class="mob-nav__link">Contact</a></li>
+    </ul>
+    <a href="/contact" class="btn mob-nav__cta">Get Your Growth Plan</a>
+  </nav>
 
   <!-- ========== HERO ========== -->
   <section class="hero" id="hero">
+    <div class="hero__bg">
+      <img src="/images/hero-bg.jpg" alt="" loading="eager" />
+    </div>
     <div class="container hero__inner">
       <div class="hero__content">
-        <div class="hero__badge">Web Design & SEO for Service Businesses</div>
-        <h1>Your Business is Great. <span class="text-blue">Your Website Isn't.</span></h1>
+        <div class="hero__badge">
+          <span class="hero__badge-dot"></span>
+          Web Design & SEO for Service Businesses
+        </div>
+        <h1>Your Business is Great.<br/><span class="text-blue hero-typewriter" id="heroTypewriter"></span></h1>
         <p class="subheadline hero__sub">
           For established service businesses, a generic website and unpredictable marketing isn't just embarrassing — it's a cap on your growth. We build the websites and growth systems that turn expert local companies into dominant regional players.
         </p>
         <div class="hero__actions">
-          <a href="#contact" class="btn">Get Your Free Growth Plan</a>
-          <a href="#plan" class="btn btn--outline">See How It Works</a>
+          <a href="#contact" class="btn btn--lg">Get Your Free Growth Plan</a>
+          <a href="#industries" class="btn btn--outline btn--lg">Find Your Industry</a>
         </div>
-      </div>
-      <div class="hero__gallery">
-        <div class="gallery-fade gallery-fade--top"></div>
-        <div class="gallery-fade gallery-fade--bottom"></div>
-        <div class="gallery-columns">
-          <div class="gallery-col">
-            <div class="gallery-scroll gallery-scroll--up">
-              <div class="gallery-item"><img src="/images/gallery-1.jpg" alt="Custom website design project" loading="eager" /></div>
-              <div class="gallery-item"><img src="/images/gallery-2.jpg" alt="SEO results dashboard" loading="eager" /></div>
-              <div class="gallery-item"><img src="/images/gallery-3.jpg" alt="Client business growth" loading="eager" /></div>
-              <div class="gallery-item"><img src="/images/gallery-4.jpg" alt="Professional web design" loading="eager" /></div>
-              <div class="gallery-item"><img src="/images/gallery-1.jpg" alt="Custom website design project" loading="eager" /></div>
-              <div class="gallery-item"><img src="/images/gallery-2.jpg" alt="SEO results dashboard" loading="eager" /></div>
-              <div class="gallery-item"><img src="/images/gallery-3.jpg" alt="Client business growth" loading="eager" /></div>
-              <div class="gallery-item"><img src="/images/gallery-4.jpg" alt="Professional web design" loading="eager" /></div>
+        <div class="hero__stats">
+          <a href="#testimonials" class="hero__stat">
+            <div class="hero__stat-stars">
+              <svg width="0" height="0" style="position:absolute">
+                <defs>
+                  <linearGradient id="gold-glitter" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#C9A84C" stop-opacity="0.5"/>
+                    <stop offset="20%" stop-color="#E8D48B" stop-opacity="0.7"/>
+                    <stop offset="35%" stop-color="#F5E6A3" stop-opacity="0.45"/>
+                    <stop offset="50%" stop-color="#D4AF37" stop-opacity="0.65"/>
+                    <stop offset="65%" stop-color="#F0D78C" stop-opacity="0.5"/>
+                    <stop offset="80%" stop-color="#C5A028" stop-opacity="0.7"/>
+                    <stop offset="100%" stop-color="#E2C76A" stop-opacity="0.5"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <svg viewBox="0 0 24 24" width="20" height="20"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="url(#gold-glitter)"/></svg>
+              <svg viewBox="0 0 24 24" width="20" height="20"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="url(#gold-glitter)"/></svg>
+              <svg viewBox="0 0 24 24" width="20" height="20"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="url(#gold-glitter)"/></svg>
+              <svg viewBox="0 0 24 24" width="20" height="20"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="url(#gold-glitter)"/></svg>
+              <svg viewBox="0 0 24 24" width="20" height="20"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="url(#gold-glitter)"/></svg>
             </div>
-          </div>
-          <div class="gallery-col">
-            <div class="gallery-scroll gallery-scroll--down">
-              <div class="gallery-item"><img src="/images/gallery-5.jpg" alt="Service business website" loading="eager" /></div>
-              <div class="gallery-item"><img src="/images/gallery-6.jpg" alt="Digital marketing strategy" loading="eager" /></div>
-              <div class="gallery-item"><img src="/images/gallery-7.jpg" alt="Local business online presence" loading="eager" /></div>
-              <div class="gallery-item"><img src="/images/gallery-8.jpg" alt="Website performance optimization" loading="eager" /></div>
-              <div class="gallery-item"><img src="/images/gallery-5.jpg" alt="Service business website" loading="eager" /></div>
-              <div class="gallery-item"><img src="/images/gallery-6.jpg" alt="Digital marketing strategy" loading="eager" /></div>
-              <div class="gallery-item"><img src="/images/gallery-7.jpg" alt="Local business online presence" loading="eager" /></div>
-              <div class="gallery-item"><img src="/images/gallery-8.jpg" alt="Website performance optimization" loading="eager" /></div>
-            </div>
-          </div>
+            <span>5.0 on Google</span>
+          </a>
+          <a href="#testimonials" class="hero__stat">
+            <strong>100's</strong>
+            <span>Businesses Served</span>
+          </a>
+          <a href="#success" class="hero__stat">
+            <strong>$10M+</strong>
+            <span>in Leads Generated</span>
+          </a>
+          <a href="#industries" class="hero__stat">
+            <strong>25+</strong>
+            <span>Industries Served</span>
+          </a>
         </div>
       </div>
     </div>
+    <a href="#problem" class="hero__scroll-hint" aria-label="Scroll down">
+      <span>Scroll</span>
+      <svg class="hero__scroll-bolt" viewBox="0 0 120 120" width="28" height="28">
+        <circle cx="60" cy="60" r="58" fill="#3889FF"/>
+        <path d="M66 20L38 66h22L48 100l32-50H56L66 20z" fill="#FFFFFF"/>
+      </svg>
+    </a>
   </section>
 
 
   <!-- ========== PROBLEM ========== -->
-  <section class="problem section--soft" id="problem">
-    <div class="container text-center">
-      <h2>Does This Sound Familiar?</h2>
+  <section class="problem" id="problem">
+    <div class="problem__lamp-glow"></div>
+    <img src="/images/crescent-moon.png" alt="" class="problem__lamp" loading="eager" />
+    <div class="problem__glow"></div>
+    <div class="container">
+      <div class="problem__header text-center">
+        <div class="hero__badge">You're Losing Money Every Month</div>
+        <h2>Does This Sound Familiar?</h2>
+      </div>
       <div class="problem__grid">
-        <div class="problem__card card">
-          <div class="problem__icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
+        <div class="problem__card">
+          <div class="problem__top">
+            <div class="problem__number">01</div>
+            <div class="problem__icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
+            </div>
           </div>
           <h3>Your Website is an Embarrassment.</h3>
           <p>
             You're a professional, but your website looks like it was built a decade ago. It doesn't reflect the quality of your work and you hesitate to even put it on your business card.
           </p>
         </div>
-        <div class="problem__card card">
-          <div class="problem__icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div class="problem__card">
+          <div class="problem__top">
+            <div class="problem__number">02</div>
+            <div class="problem__icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
           </div>
           <h3>Your Marketing is a Black Box.</h3>
           <p>
             You're paying an agency (or you were), but you have no idea what they're actually doing. You get confusing reports, but the phone isn't ringing any more than it was before.
           </p>
         </div>
-        <div class="problem__card card">
-          <div class="problem__icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        <div class="problem__card">
+          <div class="problem__top">
+            <div class="problem__number">03</div>
+            <div class="problem__icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
           </div>
           <h3>Your Growth Has Plateaued.</h3>
           <p>
@@ -227,67 +316,8 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
 
-  <!-- ========== INDUSTRIES ========== -->
-  <section class="industries" id="industries">
-    <div class="container text-center">
-      <h2>Proud partner to service businesses across <span class="text-blue">20+ industries.</span></h2>
-      <div class="industries__grid">
-        <a href="#" class="industries__card">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          <span>HVAC</span>
-        </a>
-        <a href="#" class="industries__card">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-          <span>Plumbing</span>
-        </a>
-        <a href="#" class="industries__card">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 00-8 0v2"/></svg>
-          <span>Roofing</span>
-        </a>
-        <a href="#" class="industries__card">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-          <span>Electrical</span>
-        </a>
-        <a href="#" class="industries__card">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22h20"/><path d="M6 22V4a2 2 0 012-2h8a2 2 0 012 2v18"/><path d="M10 6h4M10 10h4M10 14h4"/></svg>
-          <span>Construction</span>
-        </a>
-        <a href="#" class="industries__card">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M8 12l2 2 4-4"/></svg>
-          <span>Painting</span>
-        </a>
-        <a href="#" class="industries__card">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-          <span>Landscaping</span>
-        </a>
-        <a href="#" class="industries__card">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-          <span>Transport</span>
-        </a>
-        <a href="#" class="industries__card">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          <span>Remodeling</span>
-        </a>
-        <a href="#" class="industries__card">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-          <span>Lawn Care</span>
-        </a>
-        <a href="#" class="industries__card">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
-          <span>Security</span>
-        </a>
-        <a href="#" class="industries__card">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
-          <span>Cleaning</span>
-        </a>
-      </div>
-      <a href="#" class="industries__link">See All Industries &rarr;</a>
-    </div>
-  </section>
-
-
   <!-- ========== SOLUTION ========== -->
-  <section class="solution section--blue" id="solution">
+  <section class="solution section--blue section--textured" id="solution">
     <div class="container text-center">
       <h2>It's Time to Own Your Lead Flow.</h2>
       <p class="mx-auto" style="text-align:center;">
@@ -295,15 +325,18 @@ import Layout from '../layouts/Layout.astro';
       </p>
       <a href="#contact" class="btn btn--white" style="margin-top: 40px;">Let's Talk About Your Growth</a>
     </div>
+    <canvas class="solution__rain" aria-hidden="true"></canvas>
+    <img src="/images/palm-right.png" alt="" class="solution__palm" loading="lazy" />
   </section>
 
 
   <!-- ========== GUIDE ========== -->
   <section class="guide" id="about">
+    <canvas class="guide__dots" aria-hidden="true"></canvas>
     <div class="container guide__inner">
       <div class="guide__image">
         <img
-          src="/images/hero-sunset.jpg"
+          src="/images/will-founder.jpg"
           alt="Will Lockard — founder of Lockard Design Co."
           width="520"
           height="520"
@@ -311,46 +344,64 @@ import Layout from '../layouts/Layout.astro';
         />
       </div>
       <div class="guide__content">
-        <div class="hero__badge">Meet the Founder</div>
+        <div class="hero__badge">Meet the Founders</div>
         <h2>We Build Growth Systems for Service Businesses Like Yours.</h2>
         <p>
-          Lockard Design Co. is a US-based digital agency that works exclusively with established B2B and home service companies. We're not a big, faceless firm. You'll work directly with our founder, Will, to build a system that delivers real, measurable results.
+          We're a small, US-based team that works exclusively with established service companies. No account managers, no runaround — you work directly with us. We get to know your business, your customers, and what's actually holding you back.
         </p>
         <p>
-          We've helped companies double their revenue, expand their service area, and finally get the owner out of the day-to-day.
+          We've helped companies double their revenue, break into new markets, and finally build something that grows without the owner doing everything.
         </p>
-        <a href="#contact" class="btn" style="margin-top: 24px;">Work With Will</a>
+        <div class="guide__actions" style="display: flex; gap: 16px; margin-top: 24px; flex-wrap: wrap;">
+          <a href="#contact" class="btn">Work With Us</a>
+          <a href="#testimonials" class="btn btn--outline">See Our Work</a>
+        </div>
       </div>
     </div>
   </section>
 
 
   <!-- ========== PLAN ========== -->
-  <section class="plan section--soft" id="plan">
-    <div class="container text-center">
-      <h2>Your Path to Predictable Growth</h2>
-      <p class="subheadline mx-auto" style="text-align:center; margin-bottom: clamp(48px, 6vw, 80px);">Three steps. No confusion. Just results.</p>
-      <div class="plan__steps">
-        <div class="plan__step card">
-          <span class="plan__number">01</span>
-          <h3>Get Your Custom Growth Plan</h3>
-          <p>
-            We'll start with a free, no-obligation strategy session to understand your business and your goals. We'll deliver a clear plan showing you exactly how to get there.
-          </p>
+  <section class="plan" id="plan">
+    <div class="container">
+      <div class="plan__layout">
+        <div class="plan__left">
+          <h2>Three Steps.<br/><span class="plan__typewriter" id="planTypewriter"></span></h2>
+          <p class="plan__desc">You've been burned by agencies that overcomplicate everything. We keep it dead simple.</p>
+          <a href="#contact" class="btn">Get Your Free Growth Plan</a>
         </div>
-        <div class="plan__step card">
-          <span class="plan__number">02</span>
-          <h3>We Build Your Growth Engine</h3>
-          <p>
-            We'll build you a world-class website and install our proven SEO and lead management system. You'll have a professional online presence that converts visitors into leads.
-          </p>
-        </div>
-        <div class="plan__step card">
-          <span class="plan__number">03</span>
-          <h3>You Dominate Your Market</h3>
-          <p>
-            With your new growth engine running, you'll see a consistent flow of high-quality leads, allowing you to scale your business, increase your profits, and achieve your long-term goals.
-          </p>
+        <div class="plan__right">
+          <div class="plan__timeline">
+            <div class="plan__step">
+              <div class="plan__marker">
+                <span class="plan__number">01</span>
+                <div class="plan__line"></div>
+              </div>
+              <div class="plan__content">
+                <h3>We Talk. You Talk More.</h3>
+                <p>30-minute strategy call. We learn your business, find where you're bleeding leads, and hand you a custom growth plan. Free — whether you hire us or not.</p>
+              </div>
+            </div>
+            <div class="plan__step">
+              <div class="plan__marker">
+                <span class="plan__number">02</span>
+                <div class="plan__line"></div>
+              </div>
+              <div class="plan__content">
+                <h3>We Build the Machine.</h3>
+                <p>A website that actually converts. SEO that compounds. A lead system that runs while you sleep. Done in weeks, not months.</p>
+              </div>
+            </div>
+            <div class="plan__step">
+              <div class="plan__marker">
+                <span class="plan__number">03</span>
+              </div>
+              <div class="plan__content">
+                <h3>Your Phone Starts Ringing.</h3>
+                <p>Qualified leads, every month, with clear data showing exactly where they came from. That's it. That's the whole plan.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -358,104 +409,516 @@ import Layout from '../layouts/Layout.astro';
 
 
   <!-- ========== SUCCESS ========== -->
-  <section class="success" id="success">
-    <div class="container success__inner text-center">
-      <h2>Imagine a Year From Now...</h2>
-      <ul class="success__list">
-        <li>Your phone is ringing with high-quality leads, not tire-kickers.</li>
-        <li>You're bidding on bigger, more profitable jobs.</li>
-        <li>You're recognized as the go-to expert in your market.</li>
-        <li>You're working <em>on</em> the business, not <em>in</em> it.</li>
-        <li>You're finally in control of your growth.</li>
-      </ul>
+  <section class="success section--blue" id="success">
+    <div class="container">
+      <div class="success__layout">
+        <div class="success__left">
+          <h2>Imagine a Year<br>From Now...</h2>
+          <p class="subheadline">Everything you built with your hands finally has the online presence to match.</p>
+          <a href="#contact" class="btn btn--white success__cta-btn">Let's Make It Happen</a>
+        </div>
+        <div class="success__right">
+          <div class="success__item">
+            <span class="success__num">01</span>
+            <div class="success__item-content">
+              <p>Your phone rings before your morning coffee is cold — and every call is a homeowner ready to buy, not a price-shopper wasting your afternoon.</p>
+            </div>
+          </div>
+          <div class="success__item">
+            <span class="success__num">02</span>
+            <div class="success__item-content">
+              <p>You're cherry-picking jobs. Turning down the $800 fixes so you can take the $15K installs — and your calendar is still full.</p>
+            </div>
+          </div>
+          <div class="success__item">
+            <span class="success__num">03</span>
+            <div class="success__item-content">
+              <p>When someone in your city Googles what you do, <em>your name comes up first</em> — not the franchise. Not the guy running ads out of his garage.</p>
+            </div>
+          </div>
+          <div class="success__item">
+            <span class="success__num">04</span>
+            <div class="success__item-content">
+              <p>You stop wondering where the next job is coming from. Your pipeline is predictable. Your revenue is steady. You sleep through the night.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="success__closer">
+        <p>You built something real. It's time the internet showed that to every person in your market who's looking for exactly what you do.</p>
+      </div>
     </div>
   </section>
 
 
-  <!-- ========== TESTIMONIALS ========== -->
-  <section class="testimonials section--soft" id="testimonials">
-    <div class="container text-center">
-      <h2>Don't Just Take Our Word For It.</h2>
-      <div class="testimonials__grid">
+  <!-- ========== GROWTH SYSTEM ========== -->
+  <section class="growth" id="services">
+    <div class="container">
+      <div class="growth__header text-center">
+        <div class="hero__badge">
+          <span class="hero__badge-dot"></span>
+          Our Approach
+        </div>
+        <h2>The Lockard Growth System</h2>
+        <p class="subheadline mx-auto">We don't just build websites. We build the complete engine that makes your phone ring — and keeps it ringing.</p>
+      </div>
+      <div class="growth__grid">
 
-        <blockquote class="testimonial card">
-          <div class="testimonial__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p>
-            "Will and his team have been a contributing factor in our growth over the past 18 months. Can't thank him and his team enough! Let's go!!"
-          </p>
-          <cite>
-            <strong>Jared Brown</strong>
-          </cite>
-        </blockquote>
+        <div class="growth__card">
+          <div class="growth__step">01</div>
+          <h3>Build Your Foundation</h3>
+          <p class="growth__problem">"My website is outdated and embarrassing. It doesn't reflect the quality of my work."</p>
+          <p class="growth__solution">We build you a professional, high-converting website that acts as your #1 salesperson, working 24/7. It's built on a foundation of strong branding to make you the obvious choice in your market.</p>
+          <div class="growth__services">
+            <span>Custom Website Design</span>
+            <span>Professional Brand Identity</span>
+          </div>
+          <a href="#contact" class="btn btn--outline growth__cta">Get a Professional Website</a>
+        </div>
 
-        <blockquote class="testimonial card">
-          <div class="testimonial__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p>
-            "Will is a master of his craft. His skillset is so broad and his approach so unbiased that we've solved problems we didn't know we had. Can't think of anyone else I'd rather work with."
-          </p>
-          <cite>
-            <strong>Silvio Dobrovat</strong>
-          </cite>
-        </blockquote>
+        <div class="growth__card growth__card--featured">
+          <div class="growth__step">02</div>
+          <h3>Fill Your Pipeline</h3>
+          <p class="growth__problem">"I'm tired of relying on inconsistent referrals. I need a predictable way to get new customers."</p>
+          <p class="growth__solution">We implement targeted marketing strategies — from dominating Google search to precision-targeted ad campaigns — to create a reliable, scalable system for generating qualified leads every single month.</p>
+          <div class="growth__services">
+            <span>Get Found on Google (SEO)</span>
+            <span>Predictable Lead Flow (Ads)</span>
+            <span>B2B Outreach Systems</span>
+          </div>
+          <a href="#contact" class="btn growth__cta">Start Getting More Leads</a>
+        </div>
 
-        <blockquote class="testimonial card">
-          <div class="testimonial__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p>
-            "Will and his team made my vision come to life with my website. They took their time and paid close attention to every detail and made recommendations that I didn't consider prior. They really exceeded my expectations."
-          </p>
-          <cite>
-            <strong>Dawn O'Brien</strong>
-          </cite>
-        </blockquote>
-
-        <blockquote class="testimonial card">
-          <div class="testimonial__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p>
-            "He's passionate about what he does and really takes the time to understand his customers. He listens, asks good questions, and makes sure you feel confident in your decisions. He's also very dependable."
-          </p>
-          <cite>
-            <strong>Andrea S.</strong>
-            <span>Google Local Guide</span>
-          </cite>
-        </blockquote>
-
-        <blockquote class="testimonial card">
-          <div class="testimonial__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p>
-            "Will overdelivers and understands websites from a marketer's point of view. I see most businesses using websites as a business card vs one designed to collect and nurture leads. Highly recommend."
-          </p>
-          <cite>
-            <strong>Adam Maggio</strong>
-          </cite>
-        </blockquote>
-
-        <blockquote class="testimonial card">
-          <div class="testimonial__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p>
-            "I work with Lockard Design on a consistent basis because they consistently deliver quality work. Anybody looking for a website or Local SEO should take a look at Will and his team."
-          </p>
-          <cite>
-            <strong>Richard Burner</strong>
-          </cite>
-        </blockquote>
+        <div class="growth__card">
+          <div class="growth__step">03</div>
+          <h3>Automate Your Operations</h3>
+          <p class="growth__problem">"I'm swamped with busywork and repetitive tasks. I don't have time to focus on growth."</p>
+          <p class="growth__solution">We build automated systems that handle your client intake, follow-ups, and day-to-day website management. This frees up your time so you can focus on what you do best: running your business.</p>
+          <div class="growth__services">
+            <span>Business Process Automation</span>
+            <span>AI-Powered Operations</span>
+            <span>Website Care & Support</span>
+          </div>
+          <a href="#contact" class="btn btn--outline growth__cta">Automate Your Workflow</a>
+        </div>
 
       </div>
     </div>
   </section>
 
 
-  <!-- ========== BADGE ========== -->
-  <section class="badge-section">
-    <div class="container text-center">
-      <img
-        src="/images/designrush-badge.png"
-        alt="Top New Jersey Web Design Agencies 2025 — DesignRush"
-        width="180"
-        height="180"
-        loading="lazy"
-      />
+  <!-- ========== SERVICES GRID ========== -->
+  <section class="svcs" id="all-services">
+    <div class="container">
+      <div class="svcs__rule"></div>
+      <div class="svcs__header text-center">
+        <div class="hero__badge">
+          <span class="hero__badge-dot"></span>
+          What We Do
+        </div>
+        <h2>Every Tool You Need to Win</h2>
+        <p class="subheadline mx-auto">A complete toolkit to build your foundation, fill your pipeline, and automate your growth.</p>
+      </div>
+      <div class="svcs__cards">
+        <a href="/services/custom-website-design" class="svcs__card">
+          <div class="svcs__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <h3>Custom Website Design</h3>
+          <p>We build professional, high-converting websites that work as your #1 salesperson, 24/7.</p>
+          <span class="svcs__link">See Our Work <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+        <a href="/services/seo" class="svcs__card">
+          <div class="svcs__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+          <h3>Get Found on Google</h3>
+          <p>Climb the search rankings and own your local market with our proven SEO strategies.</p>
+          <span class="svcs__link">Rank Higher <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+        <a href="/services/lead-generation" class="svcs__card">
+          <div class="svcs__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+          <h3>Predictable Lead Flow</h3>
+          <p>Turn on the faucet for qualified leads with precision-targeted digital advertising campaigns.</p>
+          <span class="svcs__link">Get More Leads <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+        <a href="/services/branding" class="svcs__card">
+          <div class="svcs__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8z"/></svg></div>
+          <h3>Professional Brand Identity</h3>
+          <p>We craft a memorable brand that makes you the obvious and only choice for your ideal clients.</p>
+          <span class="svcs__link">Build Your Brand <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+        <a href="/services/website-care" class="svcs__card">
+          <div class="svcs__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+          <h3>Website Care & Support</h3>
+          <p>Your website is a valuable asset — we keep it secure, updated, and running at peak performance.</p>
+          <span class="svcs__link">Protect Your Site <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+        <a href="/services/automation" class="svcs__card">
+          <div class="svcs__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></div>
+          <h3>Business Process Automation</h3>
+          <p>Stop wasting time on repetitive tasks and let us build systems that run your business for you.</p>
+          <span class="svcs__link">Save Time <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+        <a href="/services/ai-integration" class="svcs__card">
+          <div class="svcs__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="15" x2="23" y2="15"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="15" x2="4" y2="15"/></svg></div>
+          <h3>AI-Powered Operations</h3>
+          <p>Gain an unfair advantage by integrating intelligent AI systems into your daily workflow.</p>
+          <span class="svcs__link">Work Smarter <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+        <a href="/services/b2b-outreach" class="svcs__card">
+          <div class="svcs__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <h3>B2B Outreach Systems</h3>
+          <p>We build and manage direct outreach campaigns to land high-value B2B clients.</p>
+          <span class="svcs__link">Land Bigger Clients <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+      </div>
+      <div class="svcs__ctas text-center">
+        <a href="/services" class="btn btn--outline btn--lg">Explore All Services</a>
+        <a href="#contact" class="btn btn--lg">Get Your Growth Plan</a>
+      </div>
     </div>
   </section>
+
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="testimonials" id="testimonials">
+    <div class="testimonials__header">
+      <div class="container">
+        <div class="testimonials__rating">
+          <div class="testimonials__stars-big">
+            <svg viewBox="0 0 24 24" fill="#F5A623" width="28" height="28"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F5A623" width="28" height="28"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F5A623" width="28" height="28"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F5A623" width="28" height="28"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F5A623" width="28" height="28"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+        </div>
+        <h2>Don't Just Take<br/>Our Word For It.</h2>
+        <p class="testimonials__sub">Real business owners. Real results. Straight from Google.</p>
+      </div>
+    </div>
+
+    <div class="testimonials__marquee-wrap">
+      <div class="testimonials__fade testimonials__fade--left"></div>
+      <div class="testimonials__marquee">
+        <div class="testimonials__track">
+          <blockquote class="testimonial">
+            <p>"Will and his team have been a contributing factor in our growth over the past 18 months. Can't thank him and his team enough! Let's go!!"</p>
+            <cite><strong>Jared Brown</strong></cite>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>"Will is a master of his craft. His skillset is so broad and his approach so unbiased that we've solved problems we didn't know we had."</p>
+            <cite><strong>Silvio Dobrovat</strong></cite>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>"Will overdelivers and understands websites from a marketer's point of view. I see most businesses using websites as a business card vs one designed to collect and nurture leads."</p>
+            <cite><strong>Adam Maggio</strong></cite>
+          </blockquote>
+          <blockquote class="testimonial testimonial--featured">
+            <p>"Will and his team made my vision come to life with my website. They took their time and paid close attention to every detail and made recommendations that I didn't consider prior. They really exceeded my expectations."</p>
+            <cite><strong>Dawn O'Brien</strong></cite>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>"He's passionate about what he does and really takes the time to understand his customers. He listens, asks good questions, and makes sure you feel confident."</p>
+            <cite><strong>Andrea S.</strong><span>Google Local Guide</span></cite>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>"I work with Lockard Design on a consistent basis because they consistently deliver quality work. Anybody looking for a website or Local SEO should take a look."</p>
+            <cite><strong>Richard Burner</strong></cite>
+          </blockquote>
+          <!-- duplicated for seamless loop -->
+          <blockquote class="testimonial">
+            <p>"Will and his team have been a contributing factor in our growth over the past 18 months. Can't thank him and his team enough! Let's go!!"</p>
+            <cite><strong>Jared Brown</strong></cite>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>"Will is a master of his craft. His skillset is so broad and his approach so unbiased that we've solved problems we didn't know we had."</p>
+            <cite><strong>Silvio Dobrovat</strong></cite>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>"Will overdelivers and understands websites from a marketer's point of view. I see most businesses using websites as a business card vs one designed to collect and nurture leads."</p>
+            <cite><strong>Adam Maggio</strong></cite>
+          </blockquote>
+          <blockquote class="testimonial testimonial--featured">
+            <p>"Will and his team made my vision come to life with my website. They took their time and paid close attention to every detail and made recommendations that I didn't consider prior. They really exceeded my expectations."</p>
+            <cite><strong>Dawn O'Brien</strong></cite>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>"He's passionate about what he does and really takes the time to understand his customers. He listens, asks good questions, and makes sure you feel confident."</p>
+            <cite><strong>Andrea S.</strong><span>Google Local Guide</span></cite>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>"I work with Lockard Design on a consistent basis because they consistently deliver quality work. Anybody looking for a website or Local SEO should take a look."</p>
+            <cite><strong>Richard Burner</strong></cite>
+          </blockquote>
+        </div>
+      </div>
+      <div class="testimonials__fade testimonials__fade--right"></div>
+    </div>
+
+    <div class="container" style="margin-top: 40px;">
+      <a href="#contact" class="testimonials__cta">
+        Start your growth story
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </section>
+
+
+
+  <!-- ========== INDUSTRIES ========== -->
+  <section class="industries section--textured" id="industries">
+    <div class="container">
+      <div class="industries__layout">
+        <div class="industries__left">
+          <h2>Built for Businesses<br/>That Build Things.</h2>
+          <p class="industries__sub">From fire protection contractors to restaurant owners — if your business runs on reputation and referrals, we know how to put you in front of the right people.</p>
+          <div class="industries__count">
+            <span class="industries__number">25+</span>
+            <span class="industries__label">Industries Served</span>
+          </div>
+        </div>
+        <div class="industries__right">
+          <div class="industries__tags">
+            <span class="industries__tag">HVAC</span>
+            <span class="industries__tag">Plumbing</span>
+            <span class="industries__tag">Roofing</span>
+            <span class="industries__tag">Electrical</span>
+            <span class="industries__tag">Construction</span>
+            <span class="industries__tag">Painting</span>
+            <span class="industries__tag">Landscaping</span>
+            <span class="industries__tag">Fire Protection</span>
+            <span class="industries__tag">Restaurants</span>
+            <span class="industries__tag">E-Commerce</span>
+            <span class="industries__tag">Government</span>
+            <span class="industries__tag">Transport</span>
+            <span class="industries__tag">Remodeling</span>
+            <span class="industries__tag">Lawn Care</span>
+            <span class="industries__tag">Security</span>
+            <span class="industries__tag">Cleaning</span>
+            <span class="industries__tag">Pest Control</span>
+            <span class="industries__tag">Concrete</span>
+            <span class="industries__tag">Flooring</span>
+            <span class="industries__tag">Tree Service</span>
+            <span class="industries__tag">Fencing</span>
+            <span class="industries__tag">Garage Doors</span>
+            <span class="industries__tag">Windows & Doors</span>
+            <span class="industries__tag">Solar</span>
+            <span class="industries__tag">Property Management</span>
+          </div>
+          <div class="industries__cta">
+            <p>Don't see your industry?</p>
+            <a href="#contact">Let's talk.</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== BLOG PREVIEW ========== -->
+  <section class="blog-preview" id="blog">
+    <div class="container">
+      <div class="blog-preview__header text-center">
+        <div class="hero__badge">
+          <span class="hero__badge-dot"></span>
+          Insights
+        </div>
+        <h2>From the Growth Playbook</h2>
+        <p class="subheadline mx-auto">Practical strategies and hard-won lessons to help service businesses generate more leads and grow smarter.</p>
+      </div>
+      <div class="blog-preview__grid">
+        <a href="/blog/why-your-website-isnt-generating-leads" class="blog-preview__card">
+          <div class="blog-preview__img">
+            <img src="/images/blog-placeholder-1.jpg" alt="Why your website isn't generating leads" loading="lazy" />
+          </div>
+          <div class="blog-preview__body">
+            <span class="blog-preview__tag">Lead Generation</span>
+            <h3>Why Your Website Isn't Generating Leads (And How to Fix It)</h3>
+            <p>Most service business websites look decent but fail at the one thing that matters — converting visitors into phone calls and form submissions.</p>
+            <span class="blog-preview__read">Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </a>
+        <a href="/blog/seo-for-service-businesses" class="blog-preview__card">
+          <div class="blog-preview__img">
+            <img src="/images/blog-placeholder-2.jpg" alt="SEO for service businesses" loading="lazy" />
+          </div>
+          <div class="blog-preview__body">
+            <span class="blog-preview__tag">SEO</span>
+            <h3>The Only SEO Strategy Service Businesses Actually Need</h3>
+            <p>Forget the noise. Here's the straightforward playbook we use to get our clients ranking on page one and staying there.</p>
+            <span class="blog-preview__read">Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </a>
+        <a href="/blog/automation-for-small-business" class="blog-preview__card">
+          <div class="blog-preview__img">
+            <img src="/images/blog-placeholder-3.jpg" alt="Automation for small business" loading="lazy" />
+          </div>
+          <div class="blog-preview__body">
+            <span class="blog-preview__tag">Automation</span>
+            <h3>5 Tasks You Should Automate Before Hiring Your Next Employee</h3>
+            <p>Before you add headcount, make sure you're not paying people to do work a system could handle in seconds.</p>
+            <span class="blog-preview__read">Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </a>
+      </div>
+      <div class="blog-preview__cta text-center">
+        <a href="/blog" class="btn btn--outline btn--lg">Read the Blog</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== FAQ ========== -->
+  <section class="faq section--soft" id="faq">
+    <div class="container">
+      <div class="faq__layout">
+        <div class="faq__left">
+          <h2>Frequently Asked<br>Questions</h2>
+          <p class="subheadline">Everything you need to know before we get started.</p>
+          <a href="#contact" class="btn">Still Have Questions? Let's Talk</a>
+
+          <div class="faq__authority">
+            <div class="faq__authority-item">
+              <span class="faq__authority-num">100's</span>
+              <span class="faq__authority-label">Websites Launched</span>
+            </div>
+            <div class="faq__authority-item">
+              <span class="faq__authority-num">25+</span>
+              <span class="faq__authority-label">Industries Served</span>
+            </div>
+            <div class="faq__authority-item">
+              <span class="faq__authority-num">5.0</span>
+              <span class="faq__authority-label">Google Rating</span>
+            </div>
+            <div class="faq__authority-item">
+              <span class="faq__authority-num">100%</span>
+              <span class="faq__authority-label">Satisfaction Guarantee</span>
+            </div>
+          </div>
+        </div>
+        <div class="faq__right">
+          <div class="faq__group">
+            <h3 class="faq__group-title">Investment & Value</h3>
+            <details class="faq__item">
+              <summary class="faq__question">What is the typical cost range for a lead-generating website for a service business?</summary>
+              <div class="faq__answer"><p>A professionally built, lead-generating website for a service business typically costs between $5,000 and $25,000. The final investment depends on the project's scope — number of custom-designed pages, complexity of features (like online booking or cost calculators), and the depth of the SEO and content strategy. For example, a 10-page website for a local contractor with foundational SEO will be closer to the $5,000–$8,000 range, while a 25-page site for a multi-location firm with a comprehensive content strategy could be $15,000 or more. We provide a detailed, fixed-price proposal after our initial discovery call.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary class="faq__question">What specific deliverables are included in a standard website design package?</summary>
+              <div class="faq__answer"><p>A standard website design package from Lockard Design Co. is a complete growth system that includes: custom strategy and design tailored to your brand and ideal customer (not a generic template), professional SEO-optimized copywriting written to convert visitors into leads, full technical SEO setup including sitemaps, schema markup, and Google Analytics, strategically placed lead capture forms integrated with your CRM, mobile-first responsive development, and post-launch training with a video walkthrough.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary class="faq__question">Are payment plans available for web design projects?</summary>
+              <div class="faq__answer"><p>Yes, we offer flexible payment options. Our standard structure is a 50% deposit to secure your spot in our project calendar and 50% upon completion before the site goes live. For larger projects exceeding $15,000, we can arrange a milestone-based plan — typically 40% deposit, 30% at design approval, and 30% at launch.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary class="faq__question">How does a custom website's ROI compare to using a DIY website builder like Wix or Squarespace?</summary>
+              <div class="faq__answer"><p>A custom website delivers a significantly higher return on investment than a DIY builder by focusing on lead generation and conversion, not just aesthetics. While DIY platforms have a lower upfront cost, they often result in a 'digital business card' that generates little to no traffic or leads. Our clients typically see a positive ROI within the first 12–18 months, as the website becomes a reliable source of qualified customer inquiries. The key difference is strategy — we build a system engineered to attract your ideal customer and guide them to a sale.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary class="faq__question">What are the typical ongoing costs for maintaining a professional business website?</summary>
+              <div class="faq__answer"><p>After the initial build, the primary ongoing costs are hosting (typically $30–$100/month for high-quality, secure hosting) and your domain name (around $20/year). We also offer an optional Website Care Plan starting at $150/month, which includes daily backups, security monitoring, software updates, and minor content edits. This plan protects your investment and ensures your site remains fast, secure, and operational.</p></div>
+            </details>
+          </div>
+          <div class="faq__group">
+            <h3 class="faq__group-title">Process & Timelines</h3>
+            <details class="faq__item">
+              <summary class="faq__question">What is a realistic timeline for building a new website, from start to finish?</summary>
+              <div class="faq__answer"><p>A realistic timeline for a new, custom service business website is 6 to 12 weeks. This breaks down into: Discovery & Strategy (1–2 weeks), Design & Copywriting (3–4 weeks), Development & SEO (3–4 weeks), and Testing & Launch (1–2 weeks). The timeline can be influenced by the project's complexity and the client's speed in providing feedback.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary class="faq__question">Can you describe the step-by-step process of a web design project?</summary>
+              <div class="faq__answer"><p>Our process has three phases. Phase 1 — Strategy & Discovery: a 90-minute deep-dive call to understand your goals, audience, and competition, resulting in a detailed project blueprint. Phase 2 — Design & Development: we create wireframes and full-fidelity mockups for your approval, write the copy, and build on a private staging server. Phase 3 — Launch & Optimization: thorough QA, full migration and launch, then performance monitoring to ensure a smooth transition.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary class="faq__question">What specific information and materials do you need from me to begin?</summary>
+              <div class="faq__answer"><p>To begin, the only thing we require is your participation in the initial 90-minute strategy session. During the project, we'll need any existing brand assets (logo in vector format, professional photography) and access to your domain registrar. We handle the rest, including all copywriting and stock image sourcing.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary class="faq__question">How much of my personal time will be required during the project?</summary>
+              <div class="faq__answer"><p>We've engineered our process to minimize the time required from you. Expect approximately 2–3 hours for the initial strategy and discovery phase. After that, the commitment drops to about 30–60 minutes per week for providing feedback on designs and reviewing progress updates.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary class="faq__question">What kind of support is provided after the website is launched?</summary>
+              <div class="faq__answer"><p>After launch, we provide 30 days of complimentary support to address any questions or minor issues. You'll also receive a comprehensive training video showing you how to manage your site's content. Following the initial 30 days, we offer ongoing Website Care Plans for continued support, updates, and security.</p></div>
+            </details>
+          </div>
+          <div class="faq__group">
+            <h3 class="faq__group-title">Results & ROI</h3>
+            <details class="faq__item">
+              <summary class="faq__question">How long does it take to see a measurable increase in leads from a new website?</summary>
+              <div class="faq__answer"><p>While a new website provides an immediate boost in professionalism and credibility, measurable results like a significant increase in organic traffic and leads typically begin to appear within 3 to 6 months post-launch. This timeframe allows for Google to fully index the new site architecture and for our foundational SEO efforts to begin generating traction in search rankings.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary class="faq__question">What is a typical return on investment for a professionally designed website?</summary>
+              <div class="faq__answer"><p>A typical ROI is realized when the cost of the website is offset by the profit from new business it generates. For many of our service business clients, this means closing just 1 to 3 new clients to achieve a full return on their investment. Our goal is for the website to pay for itself within the first year and become a consistent, profitable source of new business thereafter.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary class="faq__question">Which key performance indicators are most important for measuring a website's success?</summary>
+              <div class="faq__answer"><p>We focus on KPIs tied directly to business growth: number of qualified leads (inquiries from ideal potential customers), conversion rate (percentage of visitors who take action), organic keyword rankings (visibility on Google for high-intent search terms), and cost per acquisition (effective cost to acquire a new lead through the website).</p></div>
+            </details>
+            <details class="faq__item">
+              <summary class="faq__question">Can you provide specific examples or case studies of results you've achieved?</summary>
+              <div class="faq__answer"><p>Yes. For example, we recently redesigned the website for a commercial roofing contractor. Within six months of launch, their organic traffic increased by 120%, and they were generating an average of 15 qualified quote requests per month, directly attributable to the new site. We're happy to share other relevant case studies during our initial consultation.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary class="faq__question">How exactly does a new website translate into more customer leads?</summary>
+              <div class="faq__answer"><p>A new website translates into more leads through a three-part system. Attraction: it uses targeted SEO and content to attract high-intent visitors searching for your specific services. Trust: it builds credibility instantly with professional design, clear messaging, and social proof. Conversion: it guides visitors to take action with clear calls-to-action, simple forms, and a frictionless user experience.</p></div>
+            </details>
+          </div>
+          <div class="faq__group">
+            <h3 class="faq__group-title">Trust & Fit</h3>
+            <details class="faq__item">
+              <summary class="faq__question">What type of business is the ideal client for Lockard Design Co.?</summary>
+              <div class="faq__answer"><p>The ideal client is an established service-based business with a proven track record that is ready to invest in a high-performance website to fuel its next stage of growth. Our process is best suited for owners who view their website as critical business infrastructure and a long-term asset, not just a line-item expense.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary class="faq__question">What is the advantage of working with a specialized founder-led company versus a large agency?</summary>
+              <div class="faq__answer"><p>The primary advantage is direct access and accountability. When you work with Lockard Design Co., you work directly with the founder, Will Lockard. This ensures a deep understanding of your goals and a highly personalized level of service. Unlike large agencies where clients are often passed to junior account managers, our model provides a single point of contact dedicated entirely to your project's success.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary class="faq__question">Do you offer any kind of satisfaction or performance guarantee?</summary>
+              <div class="faq__answer"><p>We offer a 100% Design Satisfaction Guarantee. This means we provide unlimited design revisions during the mockup phase of the project. We will continue to refine the design until you are completely happy with the look and feel, ensuring the final website is something you are proud of before we ever write a line of code.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary class="faq__question">What is your core philosophy that makes you different from other web designers?</summary>
+              <div class="faq__answer"><p>Our core philosophy is that a website should be your #1 salesperson. This makes us different because we are not just designers — we are growth partners. While many designers focus solely on aesthetics, our entire process is built around a single goal: generating more qualified leads for your business. We measure our success by your business's growth, not just by how pretty the website looks.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary class="faq__question">Do you work with businesses located outside of your immediate geographic area?</summary>
+              <div class="faq__answer"><p>Yes, approximately 70% of our clients are located outside of our immediate area. We are a remote-first company with a refined, seamless process for collaborating with businesses across the United States. Through video conferencing, project management software, and clear communication, we ensure a high-touch, personal experience regardless of your physical location.</p></div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"What is the typical cost range for a lead-generating website for a service business?","acceptedAnswer":{"@type":"Answer","text":"A professionally built, lead-generating website for a service business typically costs between $5,000 and $25,000. The final investment depends on the project's scope — number of custom-designed pages, complexity of features (like online booking or cost calculators), and the depth of the SEO and content strategy. For example, a 10-page website for a local contractor with foundational SEO will be closer to the $5,000–$8,000 range, while a 25-page site for a multi-location firm with a comprehensive content strategy could be $15,000 or more. We provide a detailed, fixed-price proposal after our initial discovery call."}},
+      {"@type":"Question","name":"What specific deliverables are included in a standard website design package?","acceptedAnswer":{"@type":"Answer","text":"A standard website design package from Lockard Design Co. is a complete growth system that includes: custom strategy and design tailored to your brand and ideal customer (not a generic template), professional SEO-optimized copywriting written to convert visitors into leads, full technical SEO setup including sitemaps, schema markup, and Google Analytics, strategically placed lead capture forms integrated with your CRM, mobile-first responsive development, and post-launch training with a video walkthrough."}},
+      {"@type":"Question","name":"Are payment plans available for web design projects?","acceptedAnswer":{"@type":"Answer","text":"Yes, we offer flexible payment options. Our standard structure is a 50% deposit to secure your spot in our project calendar and 50% upon completion before the site goes live. For larger projects exceeding $15,000, we can arrange a milestone-based plan — typically 40% deposit, 30% at design approval, and 30% at launch."}},
+      {"@type":"Question","name":"How does a custom website's ROI compare to using a DIY website builder like Wix or Squarespace?","acceptedAnswer":{"@type":"Answer","text":"A custom website delivers a significantly higher return on investment than a DIY builder by focusing on lead generation and conversion, not just aesthetics. While DIY platforms have a lower upfront cost, they often result in a 'digital business card' that generates little to no traffic or leads. Our clients typically see a positive ROI within the first 12–18 months, as the website becomes a reliable source of qualified customer inquiries. The key difference is strategy — we build a system engineered to attract your ideal customer and guide them to a sale."}},
+      {"@type":"Question","name":"What are the typical ongoing costs for maintaining a professional business website?","acceptedAnswer":{"@type":"Answer","text":"After the initial build, the primary ongoing costs are hosting (typically $30–$100/month for high-quality, secure hosting) and your domain name (around $20/year). We also offer an optional Website Care Plan starting at $150/month, which includes daily backups, security monitoring, software updates, and minor content edits. This plan protects your investment and ensures your site remains fast, secure, and operational."}},
+      {"@type":"Question","name":"What is a realistic timeline for building a new website, from start to finish?","acceptedAnswer":{"@type":"Answer","text":"A realistic timeline for a new, custom service business website is 6 to 12 weeks. This breaks down into: Discovery & Strategy (1–2 weeks), Design & Copywriting (3–4 weeks), Development & SEO (3–4 weeks), and Testing & Launch (1–2 weeks). The timeline can be influenced by the project's complexity and the client's speed in providing feedback."}},
+      {"@type":"Question","name":"Can you describe the step-by-step process of a web design project?","acceptedAnswer":{"@type":"Answer","text":"Our process has three phases. Phase 1 — Strategy & Discovery: a 90-minute deep-dive call to understand your goals, audience, and competition, resulting in a detailed project blueprint. Phase 2 — Design & Development: we create wireframes and full-fidelity mockups for your approval, write the copy, and build on a private staging server. Phase 3 — Launch & Optimization: thorough QA, full migration and launch, then performance monitoring to ensure a smooth transition."}},
+      {"@type":"Question","name":"What specific information and materials do you need from me to begin?","acceptedAnswer":{"@type":"Answer","text":"To begin, the only thing we require is your participation in the initial 90-minute strategy session. During the project, we'll need any existing brand assets (logo in vector format, professional photography) and access to your domain registrar. We handle the rest, including all copywriting and stock image sourcing."}},
+      {"@type":"Question","name":"How much of my personal time will be required during the project?","acceptedAnswer":{"@type":"Answer","text":"We've engineered our process to minimize the time required from you. Expect approximately 2–3 hours for the initial strategy and discovery phase. After that, the commitment drops to about 30–60 minutes per week for providing feedback on designs and reviewing progress updates."}},
+      {"@type":"Question","name":"What kind of support is provided after the website is launched?","acceptedAnswer":{"@type":"Answer","text":"After launch, we provide 30 days of complimentary support to address any questions or minor issues. You'll also receive a comprehensive training video showing you how to manage your site's content. Following the initial 30 days, we offer ongoing Website Care Plans for continued support, updates, and security."}},
+      {"@type":"Question","name":"How long does it take to see a measurable increase in leads from a new website?","acceptedAnswer":{"@type":"Answer","text":"While a new website provides an immediate boost in professionalism and credibility, measurable results like a significant increase in organic traffic and leads typically begin to appear within 3 to 6 months post-launch. This timeframe allows for Google to fully index the new site architecture and for our foundational SEO efforts to begin generating traction in search rankings."}},
+      {"@type":"Question","name":"What is a typical return on investment for a professionally designed website?","acceptedAnswer":{"@type":"Answer","text":"A typical ROI is realized when the cost of the website is offset by the profit from new business it generates. For many of our service business clients, this means closing just 1 to 3 new clients to achieve a full return on their investment. Our goal is for the website to pay for itself within the first year and become a consistent, profitable source of new business thereafter."}},
+      {"@type":"Question","name":"Which key performance indicators are most important for measuring a website's success?","acceptedAnswer":{"@type":"Answer","text":"We focus on KPIs tied directly to business growth: number of qualified leads (inquiries from ideal potential customers), conversion rate (percentage of visitors who take action), organic keyword rankings (visibility on Google for high-intent search terms), and cost per acquisition (effective cost to acquire a new lead through the website)."}},
+      {"@type":"Question","name":"Can you provide specific examples or case studies of results you've achieved?","acceptedAnswer":{"@type":"Answer","text":"Yes. For example, we recently redesigned the website for a commercial roofing contractor. Within six months of launch, their organic traffic increased by 120%, and they were generating an average of 15 qualified quote requests per month, directly attributable to the new site. We're happy to share other relevant case studies during our initial consultation."}},
+      {"@type":"Question","name":"How exactly does a new website translate into more customer leads?","acceptedAnswer":{"@type":"Answer","text":"A new website translates into more leads through a three-part system. Attraction: it uses targeted SEO and content to attract high-intent visitors searching for your specific services. Trust: it builds credibility instantly with professional design, clear messaging, and social proof. Conversion: it guides visitors to take action with clear calls-to-action, simple forms, and a frictionless user experience."}},
+      {"@type":"Question","name":"What type of business is the ideal client for Lockard Design Co.?","acceptedAnswer":{"@type":"Answer","text":"The ideal client is an established service-based business with a proven track record that is ready to invest in a high-performance website to fuel its next stage of growth. Our process is best suited for owners who view their website as critical business infrastructure and a long-term asset, not just a line-item expense."}},
+      {"@type":"Question","name":"What is the advantage of working with a specialized founder-led company versus a large agency?","acceptedAnswer":{"@type":"Answer","text":"The primary advantage is direct access and accountability. When you work with Lockard Design Co., you work directly with the founder, Will Lockard. This ensures a deep understanding of your goals and a highly personalized level of service. Unlike large agencies where clients are often passed to junior account managers, our model provides a single point of contact dedicated entirely to your project's success."}},
+      {"@type":"Question","name":"Do you offer any kind of satisfaction or performance guarantee?","acceptedAnswer":{"@type":"Answer","text":"We offer a 100% Design Satisfaction Guarantee. This means we provide unlimited design revisions during the mockup phase of the project. We will continue to refine the design until you are completely happy with the look and feel, ensuring the final website is something you are proud of before we ever write a line of code."}},
+      {"@type":"Question","name":"What is your core philosophy that makes you different from other web designers?","acceptedAnswer":{"@type":"Answer","text":"Our core philosophy is that a website should be your #1 salesperson. This makes us different because we are not just designers — we are growth partners. While many designers focus solely on aesthetics, our entire process is built around a single goal: generating more qualified leads for your business. We measure our success by your business's growth, not just by how pretty the website looks."}},
+      {"@type":"Question","name":"Do you work with businesses located outside of your immediate geographic area?","acceptedAnswer":{"@type":"Answer","text":"Yes, approximately 70% of our clients are located outside of our immediate area. We are a remote-first company with a refined, seamless process for collaborating with businesses across the United States. Through video conferencing, project management software, and clear communication, we ensure a high-touch, personal experience regardless of your physical location."}}
+    ]
+  })} />
 
 
   <!-- ========== FINAL CTA ========== -->
@@ -466,12 +929,64 @@ import Layout from '../layouts/Layout.astro';
         Schedule a free strategy session and we'll build you a custom growth plan. No obligation, no pitch — just a clear path to predictable growth.
       </p>
       <div class="cta-final__actions">
-        <a href="tel:+18567702456" class="btn btn--white">Call (856) 770-2456</a>
-        <a href="mailto:will@lockarddesignco.com" class="btn btn--white-outline">Email Us</a>
+        <button class="btn btn--white" id="ctaGetPlan">Get Your Growth Plan</button>
+        <a href="https://wa.me/18567702456" class="btn btn--white-outline" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-3px;margin-right:6px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.019-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Us
+        </a>
       </div>
     </div>
   </section>
 
+
+  <!-- ========== MAP ========== -->
+  <div class="map-section">
+    <div class="map-card">
+      <div class="map-card__logo">
+        <img src="/images/logo.svg" alt="" width="36" height="36" />
+        <span class="map-card__name">
+          <strong>LOCKARD</strong>
+          <span>DESIGN CO.</span>
+        </span>
+      </div>
+      <div class="map-card__info">
+        <div class="map-card__row">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Turnersville, NJ
+        </div>
+        <div class="map-card__row">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (856) 770-2456
+        </div>
+        <div class="map-card__row">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Growing businesses Coast to Coast
+        </div>
+      </div>
+      <a href="https://maps.app.goo.gl/7iepW7fBYRLb76Wf9" target="_blank" rel="noopener noreferrer" class="map-card__btn">
+        Get Directions
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+      </a>
+      <div class="map-card__stars">
+        <svg viewBox="0 0 24 24" fill="#F5A623" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24" fill="#F5A623" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24" fill="#F5A623" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24" fill="#F5A623" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24" fill="#F5A623" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <span>5.0 on Google</span>
+      </div>
+    </div>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d98000.0!2d-75.05073892402105!3d39.76668637155151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6d3c33f0ad269%3A0x65cd09a7ce31a611!2sLockard%20Design%20Co.!5e0!3m2!1sen!2sus!4v1773728359109!5m2!1sen!2sus"
+      width="100%"
+      height="450"
+      style="border:0; display:block;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Lockard Design Co. — Turnersville, NJ"
+    ></iframe>
+  </div>
 
   <!-- ========== FOOTER ========== -->
   <footer class="footer">
@@ -537,13 +1052,13 @@ import Layout from '../layouts/Layout.astro';
           <div class="footer__col">
             <h4 class="footer__col-title">Company</h4>
             <ul class="footer__links">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Our Work</a></li>
-              <li><a href="#">Case Studies</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Resources</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/portfolio">Our Work</a></li>
+              <li><a href="/portfolio">Case Studies</a></li>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/blog">Resources</a></li>
+              <li><a href="/careers">Careers</a></li>
+              <li><a href="/contact">Contact</a></li>
             </ul>
           </div>
 
@@ -587,14 +1102,104 @@ import Layout from '../layouts/Layout.astro';
       <div class="footer__bottom">
         <p class="footer__copy">&copy; {new Date().getFullYear()} Lockard Design Co. All rights reserved.</p>
         <div class="footer__legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Sitemap</a>
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms-of-service">Terms of Service</a>
+          <a href="/sitemap-page">Sitemap</a>
         </div>
       </div>
 
     </div>
   </footer>
+
+  <!-- ========== SOUND TOGGLE ========== -->
+  <button class="sound-toggle" id="soundToggle" aria-label="Toggle background music">
+    <svg class="sound-toggle__icon sound-toggle__icon--off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+      <line x1="23" y1="9" x2="17" y2="15"/>
+      <line x1="17" y1="9" x2="23" y2="15"/>
+    </svg>
+    <svg class="sound-toggle__icon sound-toggle__icon--on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+      <path d="M19.07 4.93a10 10 0 010 14.14"/>
+      <path d="M15.54 8.46a5 5 0 010 7.07"/>
+    </svg>
+  </button>
+  <audio id="bgMusic" loop preload="none">
+    <source src="/audio/focus-loop-in-motion.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- ========== FLOATING CTA + SIDEBAR ========== -->
+  <button class="float-cta" id="floatCta" aria-label="Get Your Free Growth Plan">
+    <svg class="float-cta__bolt" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+    <span>Your Free Plan</span>
+  </button>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar" aria-hidden="true">
+    <div class="sidebar__inner">
+      <button class="sidebar__close" id="sidebarClose" aria-label="Close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="sidebar__header">
+        <img src="/images/logo.svg" alt="" width="36" height="36" />
+        <div>
+          <strong>Get Your Free Growth Plan</strong>
+          <p>Tell us about your business and we'll build you a custom roadmap.</p>
+        </div>
+      </div>
+      <form class="sidebar__form" name="growth-plan" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="growth-plan" />
+        <p class="sr-only"><label>Don't fill this out: <input name="bot-field" /></label></p>
+        <div class="sidebar__field">
+          <label for="sb-name">Full Name</label>
+          <input type="text" id="sb-name" name="name" required placeholder="John Smith" />
+        </div>
+        <div class="sidebar__row">
+          <div class="sidebar__field">
+            <label for="sb-email">Email</label>
+            <input type="email" id="sb-email" name="email" required placeholder="john@company.com" />
+          </div>
+          <div class="sidebar__field">
+            <label for="sb-phone">Phone</label>
+            <input type="tel" id="sb-phone" name="phone" placeholder="(555) 123-4567" />
+          </div>
+        </div>
+        <div class="sidebar__row">
+          <div class="sidebar__field">
+            <label for="sb-company">Company Name</label>
+            <input type="text" id="sb-company" name="company" placeholder="Your Business Name" />
+          </div>
+          <div class="sidebar__field">
+            <label for="sb-industry">Industry</label>
+            <input type="text" id="sb-industry" name="industry" placeholder="HVAC, Plumbing, etc." />
+          </div>
+        </div>
+        <div class="sidebar__field">
+          <label for="sb-website">Current Website (if any)</label>
+          <input type="url" id="sb-website" name="website" placeholder="https://yoursite.com" />
+        </div>
+        <fieldset class="sidebar__checkboxes">
+          <legend>Help My Business <span class="sidebar__required">*</span></legend>
+          <div class="sidebar__checks-grid">
+            <label class="sidebar__check"><input type="checkbox" name="help" value="Generate Leads" /><span>Generate Leads</span></label>
+            <label class="sidebar__check"><input type="checkbox" name="help" value="Increase Revenue" /><span>Increase Revenue</span></label>
+            <label class="sidebar__check"><input type="checkbox" name="help" value="New Website" /><span>New Website</span></label>
+            <label class="sidebar__check"><input type="checkbox" name="help" value="Rank In Google" /><span>Rank In Google</span></label>
+            <label class="sidebar__check"><input type="checkbox" name="help" value="AI Visibility Optimization" /><span>AI Visibility Optimization</span></label>
+            <label class="sidebar__check"><input type="checkbox" name="help" value="Social Media Presence" /><span>Social Media Presence</span></label>
+          </div>
+        </fieldset>
+        <div class="sidebar__field">
+          <label for="sb-goals">Anything else we should know?</label>
+          <textarea id="sb-goals" name="goals" rows="2" placeholder="Tell us what's holding your business back..."></textarea>
+        </div>
+        <button type="submit" class="sidebar__submit">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Get My Free Plan
+        </button>
+      </form>
+    </div>
+  </aside>
 
 </Layout>
 
@@ -603,7 +1208,7 @@ import Layout from '../layouts/Layout.astro';
   /* ========== FULL-WIDTH CONTAINER ========== */
   .container-full {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1600px;
     margin-inline: auto;
     padding-inline: clamp(20px, 4vw, 48px);
   }
@@ -614,6 +1219,9 @@ import Layout from '../layouts/Layout.astro';
     color: var(--color-text-on-blue);
     font-size: 0.78rem;
     padding-block: 8px;
+    position: relative;
+    z-index: 101;
+    transition: transform 0.3s ease, opacity 0.3s ease;
   }
 
   .topbar__inner {
@@ -684,21 +1292,42 @@ import Layout from '../layouts/Layout.astro';
 
   /* ========== MAIN HEADER ========== */
   .header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background-color: rgba(13, 13, 13, 0.97);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    position: fixed;
+    top: 44px;
+    left: 0;
+    right: 0;
+    z-index: 950;
+    background-color: transparent;
+    border-bottom: none;
     padding-block: 0;
+    transition: top 0.3s ease;
+  }
+
+  .header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(13, 13, 13, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 18px), 50% 100%, 0 calc(100% - 18px));
+    transition: background-color 0.3s ease, clip-path 0.3s ease;
+    z-index: -1;
+  }
+
+  .header.scrolled {
+    top: 0;
+  }
+
+  .header.scrolled::before {
+    background-color: rgba(13, 13, 13, 0.95);
   }
 
   .header__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 64px;
+    height: 96px;
     gap: 24px;
   }
 
@@ -715,6 +1344,11 @@ import Layout from '../layouts/Layout.astro';
     width: 42px;
     height: 42px;
     flex-shrink: 0;
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .header__logo:hover .header__logo-icon {
+    transform: rotate(360deg);
   }
 
   .header__logo-text {
@@ -738,7 +1372,7 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 500;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.75);
     margin-top: 1px;
   }
 
@@ -752,7 +1386,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .header__menu-item {
-    position: relative;
+    position: static;
     display: flex;
     align-items: center;
   }
@@ -764,14 +1398,14 @@ import Layout from '../layouts/Layout.astro';
     font-size: 0.9rem;
     font-weight: 500;
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.85);
     padding: 0 20px;
     height: 100%;
     border: none;
     background: none;
     cursor: pointer;
     font-family: inherit;
-    transition: color 0.2s ease, background-color 0.2s ease;
+    transition: color 0.3s ease, background-color 0.3s ease;
   }
 
   .header__menu-link:hover {
@@ -781,20 +1415,44 @@ import Layout from '../layouts/Layout.astro';
 
   /* ========== MEGA MENU ========== */
   .mega {
-    position: fixed;
-    top: 64px;
+    position: absolute;
+    top: calc(100% - 18px);
     left: 0;
     right: 0;
     width: 100vw;
     background: #FFFFFF;
-    border-top: 3px solid var(--color-blue);
     box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
     padding: 32px 0;
+    padding-top: 50px;
     opacity: 0;
     visibility: hidden;
     transform: translateY(8px);
     transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
     z-index: 200;
+    clip-path: polygon(0 0, 50% 18px, 100% 0, 100% calc(100% - 18px), 50% 100%, 0 calc(100% - 18px));
+    padding-bottom: 50px;
+  }
+
+  .mega::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 21px;
+    background: var(--color-blue);
+    clip-path: polygon(0 0, 50% 18px, 100% 0, 100% 3px, 50% 21px, 0 3px);
+  }
+
+  .mega::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 21px;
+    background: var(--color-blue);
+    clip-path: polygon(0 3px, 50% 21px, 100% 3px, 100% 0, 50% 18px, 0 0);
   }
 
   .has-mega:hover .mega,
@@ -869,64 +1527,303 @@ import Layout from '../layouts/Layout.astro';
     gap: 20px;
   }
 
-  .header__cta {
-    display: inline-block;
+  .btn-slide {
+    --height: 48px;
+    display: grid;
+    place-items: center;
+    height: var(--height);
+    padding: 0 2rem;
+    border-radius: 999px;
+    background: none;
+    color: var(--color-text);
     font-family: var(--font-display);
     font-size: 0.82rem;
-    font-weight: 600;
-    padding: 10px 24px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     white-space: nowrap;
-    border-radius: 6px;
-    background-color: var(--color-blue);
-    color: #fff;
-    letter-spacing: 0.02em;
-    border: 2px solid var(--color-blue);
+    transition: color 0.3s ease;
     text-decoration: none;
     cursor: pointer;
-    transition: all 0.2s ease;
+    position: relative;
+    -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
   }
 
-  .header__cta:hover {
-    background-color: transparent;
-    color: var(--color-blue);
+  .btn-slide span {
+    font-weight: 800;
+    color: #FFFFFF;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+  }
+
+  .btn-slide__arrow {
+    position: absolute;
+    left: calc(var(--height) / 1.7 / 2 - 7px);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    color: #FFFFFF;
+    transition: opacity 0.25s ease, left 0.25s ease;
+  }
+
+  .btn-slide:hover .btn-slide__arrow {
+    opacity: 0;
+  }
+
+  .btn-slide::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: calc(var(--height) / 1.7);
+    height: calc(var(--height) / 1.7);
+    background: var(--color-blue);
+    border-radius: 14px;
+    pointer-events: none;
+    transition: width 0.25s ease;
+  }
+
+  .btn-slide:hover span {
+    color: #fff !important;
+  }
+
+  .btn-slide:hover::before {
+    width: 100%;
+    border-radius: 999px;
   }
 
   @media (max-width: 900px) {
     .header__nav { display: none; }
   }
 
+  @media (max-width: 480px) {
+    .btn-slide {
+      --height: 42px;
+      padding: 0 1.25rem;
+      font-size: 0.72rem;
+    }
+    .btn-slide__arrow {
+      width: 12px;
+      height: 12px;
+    }
+    .header__inner {
+      height: 72px;
+      padding-inline: 16px;
+    }
+    .header__logo-icon {
+      width: 36px;
+      height: 36px;
+    }
+    .header__logo-name {
+      font-size: 1.15rem;
+    }
+    .header__logo-sub {
+      font-size: 0.55rem;
+    }
+  }
+
+
+  /* ========== MOBILE HAMBURGER ========== */
+  .mob-menu__checkbox {
+    display: none;
+  }
+
+  .mob-menu__toggle {
+    display: none;
+    position: relative;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    transition-duration: 0.3s;
+  }
+
+  .mob-menu__bar {
+    width: 100%;
+    height: 3px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    transition-duration: 0.3s;
+  }
+
+  .mob-menu__checkbox:checked + .mob-menu__toggle #mobBar2 {
+    transform: translateY(10px) rotate(60deg);
+    margin-left: 0;
+    transform-origin: right;
+    transition-duration: 0.3s;
+    z-index: 2;
+  }
+
+  .mob-menu__checkbox:checked + .mob-menu__toggle #mobBar1 {
+    transform: translateY(20px) rotate(-60deg);
+    transition-duration: 0.3s;
+    transform-origin: left;
+    z-index: 1;
+  }
+
+  .mob-menu__checkbox:checked + .mob-menu__toggle {
+    transform: rotate(-90deg);
+  }
+
+  @media (max-width: 900px) {
+    .mob-menu__toggle {
+      display: flex;
+    }
+    .header__cta.btn-slide {
+      display: none;
+    }
+  }
+
+  /* ========== MOBILE NAV PANEL ========== */
+  .mob-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 899;
+    background: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s;
+  }
+
+  .mob-nav--open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mob-nav__list {
+    list-style: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .mob-nav__link {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    color: var(--color-text);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    transition: color 0.2s ease;
+  }
+
+  .mob-nav__link:hover {
+    color: var(--color-blue);
+  }
+
+  .mob-nav__cta {
+    margin-top: 8px;
+  }
+
 
   /* ========== HERO ========== */
   .hero {
-    padding-block: clamp(60px, 10vw, 140px) clamp(60px, 10vw, 140px);
+    position: relative;
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    padding-top: 108px;
+    padding-bottom: 0;
+    overflow: hidden;
   }
 
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .hero__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+    opacity: 0.15;
+    filter: saturate(0.3);
+    transform: scaleX(-1);
+  }
+
+
   .hero__inner {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: clamp(40px, 6vw, 80px);
-    align-items: center;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero__content {
+    padding-bottom: 0;
   }
 
   .hero__badge {
-    display: inline-block;
-    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
     font-weight: 600;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--color-blue);
     background: var(--color-blue-faded);
-    padding: 6px 16px;
+    padding: 8px 18px;
     border-radius: var(--radius-full);
-    margin-bottom: 24px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(24, 119, 242, 0.12);
+  }
+
+  .hero__badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-blue);
+    animation: hero-pulse 2s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+
+  @keyframes hero-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.8); }
   }
 
   .hero h1 {
-    margin-bottom: clamp(20px, 3vw, 32px);
+    margin-bottom: clamp(12px, 1.5vw, 16px);
+    font-size: clamp(2.75rem, 5vw, 4rem);
+  }
+
+  /* Hero typewriter */
+  .hero-typewriter {
+    border-right: 3px solid var(--color-blue);
+    animation: hero-blink 0.7s step-end infinite;
+  }
+
+  .hero-typewriter--done {
+    border-right-color: transparent;
+    animation: none;
+  }
+
+  @keyframes hero-blink {
+    50% { border-right-color: transparent; }
   }
 
   .hero__sub {
-    margin-bottom: clamp(28px, 4vw, 40px);
+    margin-bottom: clamp(16px, 2vw, 24px);
   }
 
   .hero__actions {
@@ -935,112 +1832,662 @@ import Layout from '../layouts/Layout.astro';
     flex-wrap: wrap;
   }
 
+  .btn--lg {
+    padding: 16px 36px;
+    font-size: 1rem;
+  }
+
+  .hero__stats {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: clamp(20px, 2.5vw, 32px);
+  }
+
+  .hero__stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    color: inherit;
+    line-height: 1.3;
+    transition: all 0.25s ease;
+    cursor: pointer;
+  }
+
+  .hero__stat:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(24, 119, 242, 0.2);
+    box-shadow: 0 4px 16px rgba(24, 119, 242, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .hero__stat-stars {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .hero__stat strong {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+  }
+
+  .hero__stat span {
+    font-size: 0.78rem;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .hero__scroll-hint {
+    position: absolute;
+    bottom: clamp(24px, 3vw, 40px);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 1;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .hero__scroll-hint span {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-text-secondary);
+    transition: color 0.3s ease;
+  }
+
+  .hero__scroll-hint:hover span {
+    color: var(--color-blue);
+  }
+
+  .hero__scroll-bolt {
+    animation: hero-bolt-bounce 2s ease-in-out infinite;
+    filter: drop-shadow(0 2px 8px rgba(56, 137, 255, 0.3));
+    transition: filter 0.3s ease;
+  }
+
+  .hero__scroll-hint:hover .hero__scroll-bolt {
+    filter: drop-shadow(0 4px 16px rgba(56, 137, 255, 0.5));
+  }
+
+  @keyframes hero-bolt-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
   .hero__gallery {
-    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+
+  .gallery-col:first-child {
     height: 520px;
-    overflow: hidden;
-    border-radius: var(--radius-lg);
+  }
+
+  .gallery-col:last-child {
+    height: 520px;
+    margin-top: 80px;
   }
 
   @media (max-width: 768px) {
-    .hero__inner {
-      grid-template-columns: 1fr;
+    .hero__bg img {
+      opacity: 0.08;
     }
-    .hero__gallery {
-      order: -1;
-      height: 360px;
+    .hero {
+      height: auto;
+      min-height: 100dvh;
+      padding-top: 100px;
+      padding-bottom: 24px;
+      display: flex;
+      align-items: center;
+    }
+    .hero__inner {
+      gap: 0;
+      align-items: stretch;
+      justify-content: center;
+      flex: 1;
+    }
+    .hero__content {
+      padding-bottom: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .hero__badge {
+      font-size: 0.68rem;
+      padding: 6px 14px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 9vw, 2.75rem);
+      line-height: 1.08;
+      margin-bottom: 16px;
+    }
+    .hero__sub {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-bottom: 24px;
+      color: var(--color-text-secondary);
+      max-width: 340px;
+    }
+    .hero__actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      width: 100%;
+    }
+    .hero__actions .btn {
+      width: 100%;
+      text-align: center;
+      padding: 14px 12px;
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+    .hero__actions .btn--outline {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+    }
+    .hero__stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 24px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--color-rule);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .hero__stat {
+      padding: 14px 8px;
+      gap: 0;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: none;
+      border: none;
+      border-radius: 0;
+      border-right: 1px solid var(--color-rule);
+    }
+    .hero__stat:last-child {
+      border-right: none;
+    }
+    .hero__stat:hover {
+      background: rgba(255, 255, 255, 0.04);
+      transform: none;
+      box-shadow: none;
+    }
+    .hero__stat strong {
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+    .hero__stat span {
+      font-size: 0.55rem;
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+    }
+    .hero__stat-stars {
+      margin-bottom: 2px;
+    }
+    .hero__stat-stars svg {
+      width: 12px;
+      height: 12px;
+    }
+    .hero__scroll-hint {
+      display: none;
     }
   }
 
 
   /* ========== PROBLEM ========== */
-  .problem h2 {
-    margin-bottom: clamp(40px, 5vw, 64px);
+  .problem {
+    padding-top: clamp(80px, 10vw, 140px);
+    padding-bottom: calc(clamp(80px, 10vw, 140px) + 50px);
+    margin-bottom: -50px;
+    background: #0a0a14;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 50% 100%, 0 calc(100% - 50px));
+  }
+
+  .problem__lamp-glow {
+    position: absolute;
+    top: -40px;
+    right: -20px;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245, 190, 70, 0.4) 0%, rgba(245, 190, 70, 0.15) 35%, rgba(245, 190, 70, 0.05) 55%, transparent 70%);
+    pointer-events: none;
+    z-index: 2;
+    animation: lamp-pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes lamp-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+
+  .problem__lamp {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    width: clamp(150px, 15vw, 228px);
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  .problem__glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245, 190, 70, 0.15) 0%, rgba(245, 190, 70, 0.05) 40%, transparent 70%);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    left: 30%;
+    top: 50%;
+    transition: left 0.3s ease-out, top 0.3s ease-out;
+    z-index: 0;
+  }
+
+  .problem__header {
+    margin-bottom: clamp(56px, 7vw, 80px);
+    position: relative;
+    z-index: 2;
+  }
+
+  .problem__header h2 {
+    margin-bottom: 0;
+    color: #fff;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+  }
+
+  .problem__header .hero__badge {
+    background: rgba(24, 119, 242, 0.15);
+    color: var(--color-blue);
+    border: 1px solid rgba(24, 119, 242, 0.25);
   }
 
   .problem__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--grid-gap);
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(20px, 3vw, 32px);
     text-align: left;
+    position: relative;
+    z-index: 2;
   }
 
-  .problem__icon {
+  .problem__card {
+    padding: clamp(32px, 3vw, 40px);
+    position: relative;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    transition: all 0.35s ease;
+  }
+
+  .problem__card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(24, 119, 242, 0.3);
+    transform: translateY(-4px);
+  }
+
+  .problem__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  .problem__number {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, rgba(24, 119, 242, 0.5), rgba(24, 119, 242, 0.1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    font-family: var(--font-display);
+  }
+
+  .problem__icon-wrap {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(24, 119, 242, 0.12);
+    border: 1px solid rgba(24, 119, 242, 0.2);
+    display: grid;
+    place-items: center;
     color: var(--color-blue);
-    margin-bottom: 16px;
   }
 
   .problem__card h3 {
     margin-bottom: 12px;
+    font-size: clamp(1.15rem, 1.5vw, 1.3rem);
+    color: #fff;
+  }
+
+  .problem__card p {
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.75;
+    font-size: 0.92rem;
+  }
+
+  @media (max-width: 768px) {
+    .problem__grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .problem__lamp {
+      width: clamp(80px, 12vw, 120px);
+      top: 5px;
+      right: 5px;
+      opacity: 0.6;
+    }
+    .problem__lamp-glow {
+      width: 200px;
+      height: 200px;
+      top: -30px;
+      right: -30px;
+      opacity: 0.5;
+    }
+    .problem__header {
+      position: relative;
+      z-index: 4;
+    }
   }
 
 
   /* ========== INDUSTRIES ========== */
   .industries {
-    padding-block: clamp(60px, 8vw, 100px);
-    background: var(--color-bg-soft);
+    padding-top: var(--section-gap);
+    padding-bottom: calc(var(--section-gap) + 50px);
+    margin-bottom: -50px;
+    background: #0a0a14;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 50% 100%, 0 calc(100% - 50px));
+  }
+
+  .industries__layout {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: clamp(48px, 6vw, 100px);
+    align-items: center;
   }
 
   .industries h2 {
-    margin-bottom: clamp(40px, 5vw, 56px);
-    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    color: #fff;
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    margin-bottom: 16px;
   }
 
-  .industries__grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
+  .industries__sub {
+    color: rgba(255, 255, 255, 0.45);
+    font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+    line-height: 1.7;
     margin-bottom: 32px;
+    max-width: 40ch;
   }
 
-  .industries__card {
+  .industries__count {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 12px;
-    padding: 24px;
-    background: var(--color-bg-muted, #E8ECF1);
-    border-radius: var(--radius-sm);
-    text-decoration: none;
-    color: var(--color-text);
+  }
+
+  .industries__number {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--color-blue), #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .industries__label {
+    font-size: 0.85rem;
     font-weight: 600;
-    font-size: 0.95rem;
-    transition: background 0.2s ease, transform 0.2s ease;
+    color: rgba(255, 255, 255, 0.35);
+    letter-spacing: 0.04em;
+    line-height: 1.3;
   }
 
-  .industries__card:hover {
-    background: #dce1e8;
-    transform: translateY(-2px);
+  .industries__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
-  .industries__card svg {
-    color: var(--color-text);
+  .industries__tag {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.25s ease;
+    cursor: default;
   }
 
-  .industries__link {
-    display: inline-block;
-    margin-top: 8px;
+  .industries__tag:hover,
+  .industries__tag--lit {
+    background: rgba(24, 119, 242, 0.12);
+    border-color: rgba(24, 119, 242, 0.3);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(24, 119, 242, 0.15);
+  }
+
+  .industries__cta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .industries__cta p {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.35);
+    margin: 0;
+  }
+
+  .industries__cta a {
+    font-size: 0.88rem;
     font-weight: 600;
-    font-size: 1rem;
-    color: var(--color-text);
+    color: var(--color-blue);
     text-decoration: none;
     transition: color 0.2s ease;
   }
 
-  .industries__link:hover {
-    color: var(--color-bg-blue);
+  .industries__cta a:hover {
+    color: #60a5fa;
   }
 
   @media (max-width: 768px) {
-    .industries__grid {
-      grid-template-columns: repeat(2, 1fr);
+    .industries__layout {
+      grid-template-columns: 1fr;
+    }
+
+    .industries__left {
+      text-align: center;
+    }
+
+    .industries__sub {
+      margin-inline: auto;
+    }
+
+    .industries__count {
+      justify-content: center;
+    }
+
+    .industries__tags {
+      justify-content: center;
     }
   }
 
 
   /* ========== SOLUTION ========== */
+  .section--dark {
+    background: #0a0a14;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section--dark::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .section--dark::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(24, 119, 242, 0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 50%, rgba(24, 119, 242, 0.04) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .section--dark > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .section--dark h2 {
+    color: #fff;
+  }
+
+  .section--dark p {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  /* ========== SECTION ARROWS ========== */
+  .problem__arrow {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    margin-top: clamp(40px, 6vw, 80px);
+    background: #0a0a14;
+    clip-path: polygon(0 0, 100% 0, 50% 100%, 0 0);
+    z-index: 3;
+  }
+
+  .section--textured {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section--textured::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/images/noise.png");
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.35;
+    mix-blend-mode: overlay;
+  }
+
+  .section--textured.industries::after {
+    mix-blend-mode: screen;
+    opacity: 0.12;
+    filter: invert(1);
+  }
+
+  .section--textured > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .section--blue {
+    background: var(--color-blue);
+    color: #fff;
+  }
+
+  .section--blue h2 {
+    color: #fff;
+  }
+
+  .section--blue p {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
   .solution {
-    padding-block: clamp(80px, 10vw, 140px);
+    position: relative;
+    padding-bottom: clamp(80px, 10vw, 140px);
+    overflow: hidden;
+  }
+
+  .solution__rain {
+    position: absolute !important;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0 !important;
+    opacity: 0.25;
+  }
+
+  .solution__palm {
+    position: absolute !important;
+    left: -5%;
+    bottom: -20%;
+    height: 130%;
+    opacity: 0.1;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    z-index: 0 !important;
+    transform-origin: bottom center;
+    animation: solution-palm-sway 6s ease-in-out infinite;
+  }
+
+  @keyframes solution-palm-sway {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(1.5deg); }
+    75% { transform: rotate(-1.5deg); }
   }
 
   .solution h2 {
@@ -1055,7 +2502,28 @@ import Layout from '../layouts/Layout.astro';
 
 
   /* ========== GUIDE ========== */
+  .guide {
+    position: relative;
+    background-color: var(--color-bg-soft);
+    overflow: hidden;
+    padding-bottom: calc(clamp(80px, 10vw, 140px) + 50px);
+    margin-bottom: -50px;
+    z-index: 2;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 50% 100%, 0 calc(100% - 50px));
+  }
+
+  .guide__dots {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
   .guide__inner {
+    position: relative;
+    z-index: 1;
     display: grid;
     grid-template-columns: 0.8fr 1.2fr;
     gap: clamp(40px, 6vw, 80px);
@@ -1101,15 +2569,10 @@ import Layout from '../layouts/Layout.astro';
     background: linear-gradient(to top, var(--color-bg), transparent);
   }
 
-  .gallery-columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    height: 100%;
-  }
-
   .gallery-col {
+    position: relative;
     overflow: hidden;
+    border-radius: var(--radius-sm);
   }
 
   .gallery-scroll {
@@ -1150,8 +2613,21 @@ import Layout from '../layouts/Layout.astro';
   }
 
   @media (max-width: 768px) {
+    .guide {
+      clip-path: none;
+      margin-bottom: 0;
+      padding-bottom: var(--section-gap);
+    }
     .guide__inner {
       grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .guide__image img {
+      max-width: 280px;
+      margin-inline: auto;
+    }
+    .guide__actions {
+      justify-content: center;
     }
     .guide__gallery {
       height: 400px;
@@ -1165,103 +2641,784 @@ import Layout from '../layouts/Layout.astro';
     margin-bottom: 8px;
   }
 
-  .plan__steps {
+  .plan {
+    background: #0a0a14;
+    color: #fff;
+  }
+
+  .plan__layout {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--grid-gap);
-    text-align: left;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(60px, 8vw, 120px);
+    align-items: start;
+  }
+
+  .plan__left h2 {
+    color: #fff;
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  .plan__typewriter {
+    display: inline;
+    border-right: 3px solid var(--color-blue);
+    animation: plan-blink 0.7s step-end infinite;
+  }
+
+  .plan__typewriter--done {
+    border-right-color: transparent;
+    animation: none;
+  }
+
+  @keyframes plan-blink {
+    50% { border-right-color: transparent; }
+  }
+
+  .plan__desc {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: clamp(1rem, 1.2vw, 1.1rem);
+    line-height: 1.7;
+    margin-bottom: 36px;
+    max-width: 40ch;
+  }
+
+  .plan__left .btn {
+    background: #fff;
+    color: #0a0a14;
+    border-color: #fff;
+  }
+
+  .plan__left .btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
+  }
+
+  .plan__timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
 
   .plan__step {
-    text-align: left;
+    display: flex;
+    gap: clamp(20px, 2.5vw, 32px);
+    align-items: stretch;
+  }
+
+  .plan__marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    width: 48px;
   }
 
   .plan__number {
     font-family: var(--font-display);
-    font-size: clamp(2rem, 3vw, 3rem);
-    font-weight: 800;
-    line-height: 1;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
     color: var(--color-blue);
-    opacity: 0.3;
-    display: block;
-    margin-bottom: 12px;
+    background: rgba(24, 119, 242, 0.12);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    border: 1px solid rgba(24, 119, 242, 0.25);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                background 0.5s ease,
+                color 0.5s ease,
+                border-color 0.5s ease,
+                box-shadow 0.5s ease;
+  }
+
+  .plan__step.is-active .plan__number {
+    transform: scale(1.35);
+    background: var(--color-blue);
+    color: #fff;
+    border-color: var(--color-blue);
+    box-shadow: 0 0 24px rgba(24, 119, 242, 0.45), 0 0 60px rgba(24, 119, 242, 0.15);
+  }
+
+  .plan__step h3,
+  .plan__step p {
+    transition: color 0.5s ease, opacity 0.5s ease;
+  }
+
+  .plan__step.is-active h3 {
+    color: #fff;
+  }
+
+  .plan__step.is-active p {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .plan__line {
+    width: 1px;
+    flex: 1;
+    background: linear-gradient(180deg, rgba(24, 119, 242, 0.4), rgba(24, 119, 242, 0.05));
+    margin-top: 8px;
+  }
+
+  .plan__content {
+    padding-bottom: clamp(36px, 4vw, 52px);
+  }
+
+  .plan__step:last-child .plan__content {
+    padding-bottom: 0;
   }
 
   .plan__step h3 {
-    margin-bottom: 10px;
+    color: #fff;
+    font-size: clamp(1.2rem, 1.6vw, 1.4rem);
+    margin-bottom: 8px;
+    padding-top: 10px;
+  }
+
+  .plan__step p {
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.93rem;
+    line-height: 1.75;
+    max-width: 42ch;
+  }
+
+  @media (max-width: 768px) {
+    .plan__layout {
+      grid-template-columns: 1fr;
+      gap: clamp(40px, 6vw, 60px);
+    }
+
+    .plan__left {
+      text-align: center;
+    }
+
+    .plan__desc {
+      margin-inline: auto;
+    }
   }
 
 
   /* ========== SUCCESS ========== */
-  .success__inner {
-    max-width: 640px;
-    margin-inline: auto;
-  }
-
-  .success h2 {
-    margin-bottom: clamp(32px, 4vw, 48px);
-  }
-
-  .success__list {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-  }
-
-  .success__list li {
-    font-size: clamp(1.05rem, 1.5vw, 1.2rem);
-    font-weight: 500;
-    line-height: 1.5;
-    padding: 16px 0 16px 32px;
-    border-bottom: 1px solid var(--color-rule);
-    position: relative;
-  }
-
-  .success__list li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 8px;
-    height: 8px;
-    background: var(--color-blue);
-    border-radius: 50%;
-  }
-
-  .success__list li:first-child {
-    border-top: 1px solid var(--color-rule);
-  }
-
-  .success__list em {
-    font-style: italic;
-    color: var(--color-blue);
-  }
-
-
-  /* ========== TESTIMONIALS ========== */
-  .testimonials h2 {
-    margin-bottom: clamp(48px, 6vw, 64px);
-  }
-
-  .testimonials__grid {
+  .success__layout {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 20px;
-    text-align: left;
+    grid-template-columns: 1.2fr 1fr;
+    gap: clamp(48px, 8vw, 100px);
+    align-items: start;
   }
 
-  .testimonial__stars {
-    color: #F5A623;
-    font-size: 1rem;
-    letter-spacing: 2px;
+  .success__left {
+    position: sticky;
+    top: clamp(120px, 15vw, 180px);
+    order: 2;
+  }
+
+  .success__left h2 {
+    margin-bottom: 20px;
+  }
+
+  .success__left .subheadline {
+    margin-bottom: clamp(28px, 4vw, 40px);
+  }
+
+  .success__right {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .success__item {
+    display: flex;
+    gap: clamp(16px, 2vw, 24px);
+    padding: clamp(20px, 3vw, 28px) 0;
+    padding-left: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    opacity: 0.4;
+    transform: scale(1);
+    transition: opacity 0.4s ease, transform 0.4s ease, padding-left 0.4s ease;
+  }
+
+  .success__item.is-active {
+    opacity: 1;
+    transform: scale(1.03);
+    padding-left: 16px;
+  }
+
+  .success__item:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .success__num {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.15);
+    flex-shrink: 0;
+    width: 48px;
+    padding-top: 2px;
+    transition: color 0.4s ease;
+  }
+
+  .success__item.is-active .success__num {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .success__item-content p {
+    font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+    line-height: 1.65;
+    max-width: none;
+  }
+
+  .success__item-content em {
+    font-style: italic;
+    color: #FFFFFF;
+  }
+
+  .success__closer {
+    margin-top: clamp(48px, 6vw, 72px);
+    padding-top: clamp(32px, 4vw, 48px);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+  }
+
+  .success__closer p {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+    font-weight: 600;
+    line-height: 1.4;
+    max-width: 700px;
+    margin-inline: auto;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .success__cta-btn {
+    margin-top: 8px;
+  }
+
+  @media (max-width: 768px) {
+    .success__layout {
+      grid-template-columns: 1fr;
+      gap: clamp(32px, 5vw, 48px);
+    }
+
+    .success__left {
+      text-align: center;
+      position: static;
+      order: 0;
+    }
+
+    .success__left .subheadline {
+      margin-inline: auto;
+    }
+  }
+
+
+  /* ========== GROWTH SYSTEM ========== */
+  .growth {
+    padding-top: var(--section-gap);
+    padding-bottom: calc(var(--section-gap) + 50px);
+    margin-bottom: -50px;
+    background: #0a0a14;
+    position: relative;
+    z-index: 2;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 50% 100%, 0 calc(100% - 50px));
+    overflow: hidden;
+  }
+
+  .growth::before {
+    content: "";
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(24, 119, 242, 0.12) 0%, transparent 70%);
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .growth .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .growth__header {
+    margin-bottom: clamp(48px, 6vw, 72px);
+  }
+
+  .growth__header h2 {
+    color: #fff;
+    margin-bottom: 16px;
+  }
+
+  .growth__header .subheadline {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .growth__header .hero__badge {
+    background: rgba(24, 119, 242, 0.15);
+    color: var(--color-blue);
+    border-color: rgba(24, 119, 242, 0.25);
+  }
+
+  .growth__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(20px, 2.5vw, 32px);
+    align-items: end;
+  }
+
+  .growth__card {
+    background: #fff;
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-lg);
+    padding: clamp(28px, 3vw, 40px);
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .growth__card:hover {
+    box-shadow: 0 12px 40px rgba(24, 119, 242, 0.15);
+    transform: translateY(-4px);
+  }
+
+  .growth__card--featured {
+    background: var(--color-bg-blue);
+    border-color: var(--color-bg-blue);
+    color: #fff;
+    box-shadow: 0 8px 32px rgba(24, 119, 242, 0.25);
+    padding-top: clamp(48px, 5vw, 64px);
+    padding-bottom: clamp(48px, 5vw, 64px);
+    margin-bottom: -20px;
+  }
+
+  .growth__card--featured h3 {
+    color: #fff;
+  }
+
+  .growth__card--featured .growth__solution {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .growth__card--featured .growth__problem {
+    color: rgba(255, 255, 255, 0.65);
+    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .growth__card--featured .growth__services span {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .growth__card--featured .growth__step {
+    color: rgba(255, 255, 255, 0.2);
+  }
+
+  .growth__card--featured:hover {
+    box-shadow: 0 16px 48px rgba(24, 119, 242, 0.35);
+    transform: translateY(-6px);
+  }
+
+  .growth__card--featured .growth__cta {
+    background: #fff;
+    color: var(--color-blue);
+    border-color: #fff;
+  }
+
+  .growth__card--featured .growth__cta:hover {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 255, 255, 0.9);
+  }
+
+  .growth__step {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 5vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--color-blue);
+    opacity: 0.25;
+    line-height: 1;
     margin-bottom: 12px;
   }
 
-  .testimonial p {
-    font-size: 0.95rem;
+  .growth__card h3 {
+    font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+    margin-bottom: 16px;
+  }
+
+  .growth__problem {
     font-style: italic;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    padding: 16px;
+    background: var(--color-bg-soft);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-sm);
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  .growth__solution {
+    font-size: 0.95rem;
     line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin-bottom: 20px;
+    flex: 1;
+  }
+
+  .growth__services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .growth__services span {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 5px 12px;
+    border-radius: var(--radius-full);
+    background: var(--color-blue-faded);
+    color: var(--color-blue);
+    border: 1px solid rgba(24, 119, 242, 0.12);
+  }
+
+  .growth__cta {
+    align-self: flex-start;
+    margin-top: auto;
+  }
+
+  @media (max-width: 900px) {
+    .growth__grid {
+      grid-template-columns: 1fr;
+      max-width: 500px;
+      margin-inline: auto;
+      gap: 24px;
+    }
+    .growth__card--featured {
+      margin-bottom: 0;
+    }
+  }
+
+
+  /* ========== SERVICES GRID ========== */
+  .svcs {
+    padding-top: var(--section-gap);
+    padding-bottom: var(--section-gap);
+    background: #0a0a14;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .svcs::before {
+    content: "";
+    position: absolute;
+    width: 900px;
+    height: 900px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(24, 119, 242, 0.08) 0%, transparent 70%);
+    bottom: -300px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  .svcs .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .svcs__rule {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+    margin-bottom: var(--section-gap);
+  }
+
+  .svcs__header {
+    margin-bottom: clamp(48px, 6vw, 72px);
+  }
+
+  .svcs__header .hero__badge {
+    background: rgba(24, 119, 242, 0.15);
+    color: var(--color-blue);
+    border: 1px solid rgba(24, 119, 242, 0.25);
+  }
+
+  .svcs__header h2 {
+    color: #fff;
+    margin-bottom: 16px;
+  }
+
+  .svcs__header .subheadline {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .svcs__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(16px, 2vw, 24px);
+  }
+
+  .svcs__card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    padding: clamp(24px, 2.5vw, 32px);
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .svcs__card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(24, 119, 242, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(24, 119, 242, 0.1);
+  }
+
+  .svcs__icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    background: rgba(24, 119, 242, 0.1);
+    color: var(--color-blue);
+    margin-bottom: 20px;
+  }
+
+  .svcs__card h3 {
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .svcs__card p {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.5);
+    flex: 1;
+    margin-bottom: 20px;
+  }
+
+  .svcs__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-blue);
+    margin-top: auto;
+    transition: gap 0.2s ease;
+  }
+
+  .svcs__card:hover .svcs__link {
+    gap: 10px;
+  }
+
+  .svcs__ctas {
+    margin-top: clamp(40px, 5vw, 64px);
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 1024px) {
+    .svcs__cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .svcs__cards {
+      grid-template-columns: 1fr;
+    }
+  }
+
+
+  /* ========== TESTIMONIALS — Marquee rows ========== */
+
+  .testimonials__header {
+    text-align: center;
+    margin-bottom: clamp(40px, 5vw, 60px);
+  }
+
+  .testimonials__rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--color-bg-soft);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-full);
+    padding: 8px 16px;
+    margin-bottom: 24px;
+  }
+
+  .testimonials__stars-big {
+    display: flex;
+    gap: 1px;
+  }
+
+  .testimonials h2 {
+    margin-bottom: 16px;
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+  }
+
+  .testimonials__sub {
+    color: var(--color-text-secondary);
+    font-size: clamp(1rem, 1.2vw, 1.1rem);
+    line-height: 1.6;
+  }
+
+  .testimonials__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--color-blue);
+    text-decoration: none;
+    transition: gap 0.3s ease;
+  }
+
+  .testimonials__cta:hover {
+    gap: 12px;
+  }
+
+  /* Marquee wrapper */
+  .testimonials__marquee-wrap {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .testimonials__fade {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: clamp(60px, 10vw, 160px);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .testimonials__fade--left {
+    left: 0;
+    background: linear-gradient(to right, var(--color-bg) 0%, transparent 100%);
+  }
+
+  .testimonials__fade--right {
+    right: 0;
+    background: linear-gradient(to left, var(--color-bg) 0%, transparent 100%);
+  }
+
+  .testimonials__marquee {
+    overflow: hidden;
+  }
+
+  .testimonials__track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: marquee-scroll 35s linear infinite;
+  }
+
+  @keyframes marquee-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* Pause on hover */
+  .testimonials__marquee-wrap:hover .testimonials__track {
+    animation-play-state: paused;
+  }
+
+  .testimonial {
+    background: var(--color-bg);
+    border: 1px solid var(--color-rule);
+    border-radius: 16px;
+    padding: clamp(24px, 2.5vw, 32px);
+    transition: all 0.3s ease;
+    position: relative;
+    flex-shrink: 0;
+    width: clamp(300px, 30vw, 400px);
+  }
+
+  .testimonial::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 24px;
+    width: 32px;
+    height: 3px;
+    background: var(--color-blue);
+    border-radius: 0 0 3px 3px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .testimonial:hover {
+    border-color: rgba(24, 119, 242, 0.25);
+    box-shadow: 0 12px 40px rgba(24, 119, 242, 0.08);
+    transform: translateY(-3px);
+  }
+
+  .testimonial:hover::before {
+    opacity: 1;
+  }
+
+  .testimonial--featured {
+    background: linear-gradient(135deg, #0F3460 0%, #1464CC 60%, #0F3460 100%);
+    border-color: transparent;
+    overflow: hidden;
+  }
+
+  .testimonial--featured::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("/images/noise.png");
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    pointer-events: none;
+    opacity: 0.12;
+    mix-blend-mode: overlay;
+    z-index: 0;
+  }
+
+  .testimonial--featured p,
+  .testimonial--featured cite {
+    position: relative;
+    z-index: 1;
+  }
+
+  .testimonial--featured::before {
+    opacity: 0;
+  }
+
+  .testimonial--featured:hover {
+    border-color: transparent;
+    box-shadow: 0 12px 40px rgba(24, 119, 242, 0.3);
+  }
+
+  .testimonial p {
+    font-size: 0.9rem;
+    line-height: 1.75;
     margin-bottom: 16px;
     max-width: none;
     color: var(--color-text-secondary);
@@ -1269,34 +3426,820 @@ import Layout from '../layouts/Layout.astro';
 
   .testimonial cite {
     font-style: normal;
-    font-size: 0.9rem;
-    display: block;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 
   .testimonial cite strong {
-    display: block;
     font-weight: 600;
     color: var(--color-text);
   }
 
   .testimonial cite span {
     color: var(--color-text-secondary);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+    opacity: 0.7;
+  }
+
+  .testimonial--featured p {
+    color: #FFFFFF;
+  }
+
+  .testimonial--featured cite strong {
+    color: #FFFFFF;
+  }
+
+  .testimonial--featured cite span {
+    color: rgba(255, 255, 255, 0.6);
+    opacity: 1;
+  }
+
+  @media (max-width: 900px) {
+    .testimonials__header {
+      text-align: center;
+    }
   }
 
 
   /* ========== BADGE ========== */
-  .badge-section {
-    padding-block: clamp(40px, 5vw, 64px);
+
+  /* ========== MAP ========== */
+  .map-section {
+    width: 100%;
+    line-height: 0;
+    position: relative;
   }
 
-  .badge-section img {
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
+  .map-section iframe {
+    width: 100%;
+    height: 450px;
+    filter: grayscale(1) contrast(1.1);
+    transition: filter 0.4s ease;
   }
 
-  .badge-section img:hover {
+  .map-section:hover iframe {
+    filter: grayscale(0) contrast(1);
+  }
+
+  /* Floating business card */
+  .map-card {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    background: #0a0a14;
+    border: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0;
+    padding: clamp(32px, 3vw, 48px);
+    width: clamp(300px, 26vw, 380px);
+    box-shadow: 16px 0 48px rgba(0, 0, 0, 0.3);
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .map-card__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .map-card__name {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+  }
+
+  .map-card__name strong {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 0.06em;
+  }
+
+  .map-card__name span {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.12em;
+  }
+
+  .map-card__info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .map-card__row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .map-card__row svg {
+    flex-shrink: 0;
+    color: var(--color-blue);
+  }
+
+  .map-card__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 20px;
+    background: var(--color-blue);
+    color: #fff;
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+  }
+
+  .map-card__btn:hover {
+    background: var(--color-bg-blue-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(24, 119, 242, 0.3);
+  }
+
+  .map-card__stars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    margin-top: 14px;
+  }
+
+  .map-card__stars span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.4);
+    margin-left: 6px;
+  }
+
+  @media (max-width: 600px) {
+    .map-card {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      border-radius: 0;
+      border-left: 0;
+      border-right: 0;
+    }
+  }
+
+
+  /* ========== BLOG PREVIEW ========== */
+
+  .blog-preview {
+    padding: clamp(80px, 10vw, 140px) 0;
+  }
+
+  .blog-preview__header {
+    margin-bottom: clamp(40px, 5vw, 64px);
+  }
+
+  .blog-preview__header h2 {
+    font-size: clamp(2rem, 4vw, 3.25rem);
+  }
+
+  .blog-preview__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .blog-preview__card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blog-preview__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  }
+
+  .blog-preview__img {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: linear-gradient(135deg, #e8e8e8 0%, #d4d4d4 100%);
+  }
+
+  .blog-preview__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .blog-preview__card:hover .blog-preview__img img {
+    transform: scale(1.05);
+  }
+
+  .blog-preview__body {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .blog-preview__tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .blog-preview__body h3 {
+    font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+    line-height: 1.35;
+    margin-bottom: 12px;
+  }
+
+  .blog-preview__body p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #666;
+    flex: 1;
+  }
+
+  .blog-preview__read {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: 16px;
+    transition: gap 0.3s ease;
+  }
+
+  .blog-preview__card:hover .blog-preview__read {
+    gap: 10px;
+  }
+
+  .blog-preview__cta {
+    margin-top: clamp(40px, 5vw, 64px);
+  }
+
+  @media (max-width: 900px) {
+    .blog-preview__grid {
+      grid-template-columns: 1fr;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
+
+
+  /* ========== FAQ ========== */
+  .faq__layout {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: clamp(48px, 8vw, 100px);
+    align-items: start;
+  }
+
+  .faq__left {
+    position: sticky;
+    top: clamp(120px, 15vw, 180px);
+  }
+
+  .faq__left h2 {
+    margin-bottom: 16px;
+  }
+
+  .faq__left .subheadline {
+    margin-bottom: clamp(24px, 3vw, 32px);
+  }
+
+  .faq__authority {
+    margin-top: clamp(40px, 5vw, 56px);
+    padding-top: clamp(32px, 4vw, 40px);
+    border-top: 1px solid var(--color-rule);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(20px, 3vw, 28px);
+  }
+
+  .faq__authority-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .faq__authority-num {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+    font-weight: 800;
+    line-height: 1;
+    color: var(--color-blue);
+  }
+
+  .faq__authority-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    letter-spacing: 0.01em;
+  }
+
+  .faq__group {
+    margin-bottom: clamp(32px, 4vw, 48px);
+  }
+
+  .faq__group:last-child {
+    margin-bottom: 0;
+  }
+
+  .faq__group-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-blue);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--color-blue);
+  }
+
+  .faq__item {
+    border-bottom: 1px solid var(--color-rule);
+  }
+
+  .faq__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    font-family: var(--font-heading);
+    font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+    font-weight: 600;
+    color: var(--color-text);
+    list-style: none;
+    transition: color 0.2s ease;
+  }
+
+  .faq__question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq__question::after {
+    content: '+';
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--color-blue);
+    flex-shrink: 0;
+    margin-left: 16px;
+    transition: transform 0.3s ease;
+  }
+
+  .faq__item[open] .faq__question::after {
+    content: '\2212';
+    transform: rotate(180deg);
+  }
+
+  .faq__item[open] .faq__question {
+    color: var(--color-blue);
+  }
+
+  .faq__answer {
+    padding: 0 0 20px 0;
+  }
+
+  .faq__answer p {
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    max-width: none;
+  }
+
+  @media (max-width: 768px) {
+    .faq__layout {
+      grid-template-columns: 1fr;
+      gap: clamp(32px, 5vw, 48px);
+    }
+
+    .faq__left {
+      position: static;
+      text-align: center;
+    }
+
+    .faq__left .subheadline {
+      margin-inline: auto;
+    }
+  }
+
+
+  /* ========== SOUND TOGGLE ========== */
+  .sound-toggle {
+    position: fixed;
+    bottom: 28px;
+    left: 28px;
+    z-index: 900;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .sound-toggle:hover {
+    transform: translateY(-1px);
+    border-color: rgba(24, 119, 242, 0.3);
+    color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .sound-toggle.is-playing {
+    background: var(--color-blue);
+    border-color: var(--color-blue);
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(24, 119, 242, 0.35);
+  }
+
+  .sound-toggle.is-playing:hover {
+    background: var(--color-bg-blue-dark);
+    border-color: var(--color-bg-blue-dark);
+    box-shadow: 0 6px 28px rgba(24, 119, 242, 0.45);
+  }
+
+  .sound-toggle__icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .sound-toggle__icon--on {
+    display: none;
+  }
+
+  .sound-toggle.is-playing .sound-toggle__icon--off {
+    display: none;
+  }
+
+  .sound-toggle.is-playing .sound-toggle__icon--on {
+    display: block;
+  }
+
+  /* Adapt to light backgrounds */
+  .sound-toggle--on-light {
+    border-color: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.04);
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+  .sound-toggle--on-light:hover {
+    border-color: rgba(24, 119, 242, 0.3);
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .sound-toggle--on-light.is-playing {
+    background: var(--color-blue);
+    border-color: var(--color-blue);
+    color: #fff;
+  }
+
+  /* ========== FLOATING CTA + SIDEBAR ========== */
+  .float-cta {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 900;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 24px;
+    background: var(--color-blue);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-full);
+    font-family: var(--font-display);
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 32px rgba(24, 119, 242, 0.35);
+    transition: all 0.25s ease;
+  }
+
+  .float-cta:hover {
+    background: var(--color-bg-blue-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(24, 119, 242, 0.45);
+  }
+
+  .float-cta__bolt {
+    width: 18px;
+    height: 18px;
+  }
+
+  .float-cta--hidden {
+    transform: translateY(100px);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* Overlay */
+  .sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 998;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s;
+  }
+
+  .sidebar-overlay--open {
     opacity: 1;
+    visibility: visible;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    width: clamp(420px, 40vw, 620px);
+    background: #0a0a14;
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+  }
+
+  .sidebar--open {
+    transform: translateX(0);
+  }
+
+  .sidebar__inner {
+    padding: clamp(24px, 3vw, 32px);
+  }
+
+  .sidebar__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    padding: 8px;
+    transition: color 0.2s;
+  }
+
+  .sidebar__close:hover {
+    color: #fff;
+  }
+
+  .sidebar__header {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .sidebar__header strong {
+    display: block;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .sidebar__header p {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.82rem;
+    line-height: 1.5;
+    max-width: none;
+  }
+
+  .sidebar__form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .sidebar__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .sidebar__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .sidebar__field label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.75);
+    letter-spacing: 0.03em;
+  }
+
+  .sidebar__field input,
+  .sidebar__field textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    color: #fff;
+    transition: border-color 0.2s;
+    outline: none;
+  }
+
+  .sidebar__field input::placeholder,
+  .sidebar__field textarea::placeholder {
+    color: rgba(255, 255, 255, 0.2);
+  }
+
+  .sidebar__field input:focus,
+  .sidebar__field textarea:focus {
+    border-color: var(--color-blue);
+  }
+
+  .sidebar__field textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+
+  .sidebar__checkboxes {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sidebar__checks-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .sidebar__checkboxes legend {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.75);
+    letter-spacing: 0.03em;
+    margin-bottom: 8px;
+  }
+
+  .sidebar__required {
+    color: var(--color-blue);
+  }
+
+  .sidebar__check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    transition: all 0.2s ease;
+  }
+
+  .sidebar__check:hover {
+    background: rgba(24, 119, 242, 0.06);
+    border-color: rgba(24, 119, 242, 0.2);
+  }
+
+  .sidebar__check:has(input:checked) {
+    background: rgba(24, 119, 242, 0.1);
+    border-color: rgba(24, 119, 242, 0.35);
+  }
+
+  .sidebar__check input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    background: transparent;
+    cursor: pointer;
+    flex-shrink: 0;
+    position: relative;
+    transition: all 0.2s ease;
+  }
+
+  .sidebar__check input[type="checkbox"]:checked {
+    background: var(--color-blue);
+    border-color: var(--color-blue);
+  }
+
+  .sidebar__check input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 5px;
+    height: 9px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  .sidebar__check span {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .sidebar__check:has(input:checked) span {
+    color: #fff;
+  }
+
+  .sidebar__submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px 24px;
+    margin-top: 4px;
+    background: var(--color-blue);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-full);
+    font-family: var(--font-display);
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .sidebar__submit:hover {
+    background: var(--color-bg-blue-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(24, 119, 242, 0.3);
+  }
+
+  @media (max-width: 480px) {
+    .sidebar {
+      width: 100%;
+    }
+
+    .float-cta span {
+      display: none;
+    }
+
+    .float-cta {
+      padding: 16px;
+      border-radius: 50%;
+    }
+
+    .sound-toggle {
+      width: 42px;
+      height: 42px;
+      bottom: 28px;
+      left: 20px;
+    }
+
+    .sound-toggle__icon {
+      width: 18px;
+      height: 18px;
+    }
   }
 
 
@@ -1311,12 +4254,13 @@ import Layout from '../layouts/Layout.astro';
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='40' x2='40' y2='0' stroke='%23B91C1C' stroke-width='1.5' opacity='0.35'/%3E%3C/svg%3E");
-    background-size: 20px 20px;
-    mask-image: linear-gradient(135deg, transparent 0%, transparent 30%, rgba(0,0,0,0.6) 100%);
-    -webkit-mask-image: linear-gradient(135deg, transparent 0%, transparent 30%, rgba(0,0,0,0.6) 100%);
+    background-image: url("/images/noise.png");
+    background-repeat: repeat;
+    background-size: 200px 200px;
     pointer-events: none;
     z-index: 0;
+    opacity: 0.35;
+    mix-blend-mode: overlay;
   }
 
   .cta-final > * {
@@ -1391,6 +4335,23 @@ import Layout from '../layouts/Layout.astro';
     width: 48px;
     height: 48px;
     flex-shrink: 0;
+    transition: transform 0.5s ease;
+  }
+
+  .footer__logo-link:hover .footer__logo-icon {
+    transform: rotate(360deg);
+  }
+
+  @keyframes footer-bolt-flip {
+    0%   { transform: perspective(600px) rotateY(0deg); }
+    40%  { transform: perspective(600px) rotateY(360deg); }
+    50%  { transform: perspective(600px) rotateY(360deg); }
+    90%  { transform: perspective(600px) rotateY(0deg); }
+    100% { transform: perspective(600px) rotateY(0deg); }
+  }
+
+  .footer__logo-icon--flip {
+    animation: footer-bolt-flip 1.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   }
 
   .footer__logo-text {
@@ -1414,14 +4375,14 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 500;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.75);
     margin-top: 2px;
   }
 
   .footer__tagline {
     font-size: 0.9rem;
     line-height: 1.7;
-    color: rgba(255, 255, 255, 0.55);
+    color: rgba(255, 255, 255, 0.75);
     max-width: 320px;
   }
 
@@ -1439,7 +4400,7 @@ import Layout from '../layouts/Layout.astro';
     height: 40px;
     border-radius: 8px;
     background-color: rgba(255, 255, 255, 0.08);
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.8);
     transition: all 0.2s ease;
   }
 
@@ -1474,7 +4435,7 @@ import Layout from '../layouts/Layout.astro';
 
   .footer__links a {
     font-size: 0.88rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
     transition: color 0.2s ease;
   }
@@ -1488,7 +4449,7 @@ import Layout from '../layouts/Layout.astro';
     align-items: flex-start;
     gap: 10px;
     font-size: 0.88rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.75);
   }
 
   .footer__links--contact svg {
@@ -1498,7 +4459,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .footer__links--contact a {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
     transition: color 0.2s ease;
   }
@@ -1629,3 +4590,698 @@ import Layout from '../layouts/Layout.astro';
     }
   }
 </style>
+
+<script>
+  // Header scroll effect — transparent to glass
+  const header = document.querySelector('.header');
+  const topbar = document.querySelector('.topbar');
+
+  if (header) {
+    const onScroll = () => {
+      const scrolled = window.scrollY > 60;
+      header.classList.toggle('scrolled', scrolled);
+      if (topbar) {
+        topbar.style.transform = scrolled ? 'translateY(-100%)' : 'translateY(0)';
+        topbar.style.opacity = scrolled ? '0' : '1';
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  // Problem section mouse glow
+  const problemSection = document.querySelector('.problem');
+  const glow = document.querySelector('.problem__glow');
+
+  if (problemSection && glow) {
+    problemSection.addEventListener('mousemove', (e) => {
+      const rect = problemSection.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      glow.style.left = x + '%';
+      glow.style.top = y + '%';
+    });
+  }
+
+  // Industry tags — random glow
+  (() => {
+    const tags = document.querySelectorAll('.industries__tag');
+    if (!tags.length) return;
+    let lastIdx = -1;
+
+    function lightRandom() {
+      let idx;
+      do {
+        idx = Math.floor(Math.random() * tags.length);
+      } while (idx === lastIdx);
+      lastIdx = idx;
+
+      tags[idx].classList.add('industries__tag--lit');
+      setTimeout(() => tags[idx].classList.remove('industries__tag--lit'), 800);
+    }
+
+    // Light one up every 1.2s
+    setInterval(lightRandom, 1200);
+    // Start one immediately
+    setTimeout(lightRandom, 500);
+  })();
+
+  // Hero typewriter
+  (() => {
+    const el = document.getElementById('heroTypewriter');
+    if (!el) return;
+    const base = "Your Website Isn't";
+    let i = 0;
+
+    setTimeout(() => {
+      // Type out the base text
+      const interval = setInterval(() => {
+        el.textContent = base.slice(0, i + 1);
+        i++;
+        if (i >= base.length) {
+          clearInterval(interval);
+          // Type the emoji "period"
+          setTimeout(() => {
+            el.textContent = base + '\u{1F629}';
+            // Pause, then backspace the emoji
+            setTimeout(() => {
+              el.textContent = base;
+              // Type the real period
+              setTimeout(() => {
+                el.textContent = base + '.';
+                setTimeout(() => el.classList.add('hero-typewriter--done'), 1500);
+              }, 150);
+            }, 600);
+          }, 70);
+        }
+      }, 70);
+    }, 600);
+  })();
+
+  // Lightning bolt cursor follower
+  (() => {
+    const isMobile = window.matchMedia('(pointer: coarse)').matches;
+    if (isMobile) return;
+
+    const BOLT_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`;
+
+    const bolt = document.createElement('div');
+    bolt.innerHTML = BOLT_SVG;
+    bolt.style.cssText = `
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      width: 28px;
+      height: 28px;
+      color: #1877F2;
+      filter: drop-shadow(0 0 6px rgba(24, 119, 242, 0.4));
+      transform: translate(4px, 4px);
+      will-change: transform;
+      left: 0;
+      top: 0;
+    `;
+    document.body.appendChild(bolt);
+
+    // Hide default cursor
+    document.documentElement.style.cursor = 'none';
+
+    // Restore cursor on interactive elements
+    const style = document.createElement('style');
+    style.textContent = `
+      *, *::before, *::after {
+        cursor: none !important;
+      }
+    `;
+    document.head.appendChild(style);
+
+    let mouseX = -100, mouseY = -100;
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      bolt.style.transition = 'none';
+      bolt.style.transform = `translate(${mouseX + 4}px, ${mouseY + 4}px) rotate(${rotation}deg)`;
+
+      // Swap color over blue/dark sections
+      const el = document.elementFromPoint(mouseX, mouseY);
+      if (el) {
+        // Check if mouse is in the triangle arrow zone
+        const arrowSection = el.closest('.section--has-arrow');
+        let inTriangle = false;
+        if (arrowSection) {
+          const rect = arrowSection.getBoundingClientRect();
+          const relX = mouseX - rect.left;
+          const centerX = rect.width / 2;
+          const relY = mouseY - rect.top;
+          // Triangle is 120px wide (60px each side) and 40px tall at top of section
+          if (relY < 40) {
+            const triHalfWidth = 60 * (1 - relY / 40);
+            if (Math.abs(relX - centerX) < triHalfWidth) {
+              inTriangle = true;
+            }
+          }
+        }
+
+        const isDark = el.closest('.problem, .footer, .section--dark, .industries') || inTriangle;
+        const isLight = !isDark && el.closest('.section--blue, .section--textured:not(.industries), .topbar, .footer__cta-banner');
+
+        // Flame detection — use el.closest instead of bounding rect
+        const wasInPlan = inPlan;
+        inPlan = !!el.closest('.plan, .industries, .header');
+
+        if (inPlan) {
+          bolt.style.color = '#1877F2';
+          bolt.style.filter = 'drop-shadow(0 0 12px rgba(24,119,242,0.8)) drop-shadow(0 0 24px rgba(255,140,0,0.4))';
+          const now = performance.now();
+          if (now - lastFlameSpawn > 25) {
+            lastFlameSpawn = now;
+            for (let k = 0; k < 3; k++) spawnFlame(mouseX + 14, mouseY + 14);
+            if (!flameRunning) { flameRunning = true; requestAnimationFrame(tickFlames); }
+          }
+        } else if (isLight) {
+          bolt.style.color = '#000';
+          bolt.style.filter = 'drop-shadow(0 0 6px rgba(0, 0, 0, 0.3))';
+        } else {
+          bolt.style.color = '#1877F2';
+          bolt.style.filter = 'drop-shadow(0 0 6px rgba(24, 119, 242, 0.4))';
+        }
+      }
+    });
+
+    document.addEventListener('mouseleave', () => {
+      bolt.style.opacity = '0';
+    });
+
+    document.addEventListener('mouseenter', () => {
+      bolt.style.opacity = '1';
+    });
+
+    // Spin 360 on click
+    let rotation = 0;
+    document.addEventListener('click', () => {
+      rotation += 360;
+      bolt.style.transition = 'transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
+      bolt.style.transform = `translate(${mouseX + 4}px, ${mouseY + 4}px) rotate(${rotation}deg)`;
+    });
+
+    // === Electric flames in Plan section ===
+    const POOL_SIZE = 50;
+    const flamePool = [] as HTMLDivElement[];
+    const flames = [] as {el: HTMLDivElement, x: number, y: number, vx: number, vy: number, life: number, maxLife: number, size: number, hue: number}[];
+    let flamePoolIdx = 0;
+    let flameRunning = false;
+    let lastFlameSpawn = 0;
+    let inPlan = false;
+
+    for (let i = 0; i < POOL_SIZE; i++) {
+      const p = document.createElement('div');
+      p.style.cssText = 'position:fixed;left:0;top:0;pointer-events:none;z-index:99999;border-radius:50%;will-change:transform,opacity;opacity:0;';
+      document.body.appendChild(p);
+      flamePool.push(p);
+    }
+
+    function spawnFlame(x: number, y: number) {
+      const el = flamePool[flamePoolIdx % POOL_SIZE];
+      flamePoolIdx++;
+      const angle = Math.random() * Math.PI * 2;
+      const speed = 0.5 + Math.random() * 2;
+      const size = 3 + Math.random() * 6;
+      const maxLife = 20 + Math.random() * 25;
+      const hue = Math.random() < 0.6 ? 200 + Math.random() * 30 : 20 + Math.random() * 30;
+      el.style.width = size + 'px';
+      el.style.height = size + 'px';
+      el.style.opacity = '1';
+      flames.push({ el, x: x + (Math.random()-0.5)*10, y: y + (Math.random()-0.5)*10, vx: Math.cos(angle)*speed, vy: -Math.abs(Math.sin(angle)*speed) - 1.5, life: 0, maxLife, size, hue });
+    }
+
+    function tickFlames() {
+      for (let i = flames.length - 1; i >= 0; i--) {
+        const f = flames[i];
+        f.life++;
+        f.x += f.vx;
+        f.y += f.vy;
+        f.vy -= 0.03;
+        const t = f.life / f.maxLife;
+        const op = t < 0.2 ? t / 0.2 : 1 - (t - 0.2) / 0.8;
+        const sc = 1 - t * 0.5;
+        f.el.style.transform = `translate(${f.x}px,${f.y}px) scale(${sc})`;
+        f.el.style.opacity = String(Math.max(0, op * 0.8));
+        f.el.style.background = `radial-gradient(circle, hsla(${f.hue},100%,65%,0.9), hsla(${f.hue},100%,50%,0) 70%)`;
+        f.el.style.boxShadow = `0 0 ${f.size}px hsla(${f.hue},100%,60%,${op*0.5})`;
+        if (f.life >= f.maxLife) { f.el.style.opacity = '0'; flames.splice(i, 1); }
+      }
+      if (flames.length > 0 || inPlan) { requestAnimationFrame(tickFlames); } else { flameRunning = false; }
+    }
+  })();
+
+  // Success items — activate on scroll
+  (() => {
+    const items = document.querySelectorAll('.success__item');
+    if (!items.length) return;
+
+    const activate = () => {
+      const zone = window.innerHeight * 0.45;
+      let closest: Element | null = null;
+      let closestDist = Infinity;
+
+      items.forEach((item) => {
+        const rect = item.getBoundingClientRect();
+        const center = rect.top + rect.height / 2;
+        const dist = Math.abs(center - zone);
+        if (dist < closestDist) {
+          closestDist = dist;
+          closest = item;
+        }
+      });
+
+      items.forEach((item) => {
+        item.classList.toggle('is-active', item === closest);
+      });
+    };
+
+    window.addEventListener('scroll', activate, { passive: true });
+    activate();
+  })();
+</script>
+
+<!-- Solution rain effect -->
+<script>
+  (() => {
+    const canvas = document.querySelector('.solution__rain') as HTMLCanvasElement;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const drops: { x: number; y: number; len: number; speed: number; opacity: number }[] = [];
+    const DROP_COUNT = 120;
+
+    function resize() {
+      const dpr = window.devicePixelRatio || 1;
+      const rect = canvas.parentElement!.getBoundingClientRect();
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      canvas.style.width = rect.width + 'px';
+      canvas.style.height = rect.height + 'px';
+      ctx.scale(dpr, dpr);
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    for (let i = 0; i < DROP_COUNT; i++) {
+      drops.push({
+        x: Math.random() * 2000,
+        y: Math.random() * 800,
+        len: 15 + Math.random() * 25,
+        speed: 2 + Math.random() * 4,
+        opacity: 0.15 + Math.random() * 0.35,
+      });
+    }
+
+    let running = false;
+
+    function draw() {
+      if (!running) return;
+      const w = canvas.clientWidth;
+      const h = canvas.clientHeight;
+      ctx.clearRect(0, 0, w, h);
+
+      for (const d of drops) {
+        d.y += d.speed;
+        if (d.y > h + d.len) {
+          d.y = -d.len;
+          d.x = Math.random() * w;
+        }
+        ctx.beginPath();
+        ctx.moveTo(d.x, d.y);
+        ctx.lineTo(d.x, d.y + d.len);
+        ctx.strokeStyle = `rgba(255, 255, 255, ${d.opacity})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+      requestAnimationFrame(draw);
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !running) {
+          running = true;
+          draw();
+        } else if (!entry.isIntersecting) {
+          running = false;
+        }
+      });
+    }, { threshold: 0 });
+
+    observer.observe(canvas.parentElement!);
+  })();
+</script>
+
+<!-- GSAP ScrollTrigger -->
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Only animate a few key sections — keep it subtle
+
+  // Problem cards — stagger in (use fromTo so initial state is explicit)
+  gsap.fromTo('.problem__card',
+    { y: 40, opacity: 0 },
+    {
+      scrollTrigger: { trigger: '.problem__grid', start: 'top 85%', toggleActions: 'play none none none' },
+      y: 0,
+      opacity: 1,
+      duration: 0.6,
+      stagger: 0.15,
+    }
+  );
+
+  // Plan heading — typewriter effect
+  (() => {
+    const el = document.getElementById('planTypewriter');
+    if (!el) return;
+    const text = 'Zero Guesswork.';
+    let hasPlayed = false;
+
+    ScrollTrigger.create({
+      trigger: '#plan',
+      start: 'top 70%',
+      onEnter: () => {
+        if (hasPlayed) return;
+        hasPlayed = true;
+        let i = 0;
+        const interval = setInterval(() => {
+          el.textContent = text.slice(0, i + 1);
+          i++;
+          if (i >= text.length) {
+            clearInterval(interval);
+            setTimeout(() => el.classList.add('plan__typewriter--done'), 1200);
+          }
+        }, 60);
+      },
+    });
+  })();
+
+  // Plan steps — stagger up
+  gsap.fromTo('.plan__step',
+    { y: 30, opacity: 0 },
+    {
+      scrollTrigger: { trigger: '.plan__timeline', start: 'top 85%', toggleActions: 'play none none none' },
+      y: 0,
+      opacity: 1,
+      duration: 0.6,
+      stagger: 0.2,
+    }
+  );
+
+  // Plan steps — sequential highlight on scroll
+  document.querySelectorAll('.plan__step').forEach((step) => {
+    ScrollTrigger.create({
+      trigger: step,
+      start: 'top 65%',
+      end: 'bottom 35%',
+      onEnter: () => step.classList.add('is-active'),
+      onLeaveBack: () => step.classList.remove('is-active'),
+    });
+  });
+
+  // Testimonial header — fade in
+  gsap.fromTo('.testimonials__header',
+    { y: 30, opacity: 0 },
+    {
+      scrollTrigger: { trigger: '.testimonials', start: 'top 85%', toggleActions: 'play none none none' },
+      y: 0,
+      opacity: 1,
+      duration: 0.6,
+    }
+  );
+
+</script>
+
+<script>
+  // Scroll-linked dot grid for Guide section
+  (() => {
+    const canvas = document.querySelector('.guide__dots') as HTMLCanvasElement;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const SPACING = 28;
+    const BASE_RADIUS = 0.8;
+    const MAX_RADIUS = 2;
+    const INFLUENCE = 120;
+    const BASE_ALPHA = 0.04;
+    const MAX_ALPHA = 0.18;
+
+    let dots: { x: number; y: number }[] = [];
+    let scrollProgress = 0;
+    let running = false;
+    let needsDraw = true;
+
+    function resize() {
+      const rect = canvas.parentElement!.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      canvas.style.width = rect.width + 'px';
+      canvas.style.height = rect.height + 'px';
+      ctx!.setTransform(dpr, 0, 0, dpr, 0, 0);
+      buildGrid(rect.width, rect.height);
+    }
+
+    function buildGrid(w: number, h: number) {
+      dots = [];
+      for (let x = SPACING / 2; x < w; x += SPACING) {
+        for (let y = SPACING / 2; y < h; y += SPACING) {
+          dots.push({ x, y });
+        }
+      }
+    }
+
+    function draw() {
+      if (!running) return;
+      if (!needsDraw) { requestAnimationFrame(draw); return; }
+      needsDraw = false;
+
+      const w = canvas.clientWidth;
+      const h = canvas.clientHeight;
+      ctx!.clearRect(0, 0, w, h);
+
+      // Sweep zone moves left-to-right based on scroll progress
+      const sweepX = scrollProgress * (w + INFLUENCE * 2) - INFLUENCE;
+
+      for (const dot of dots) {
+        const dx = dot.x - sweepX;
+        const dy = dot.y - (h * 0.5);
+        const dist = Math.sqrt(dx * dx + (dy * dy) * 0.3);
+
+        const t = Math.max(0, 1 - dist / INFLUENCE);
+        const r = BASE_RADIUS + (MAX_RADIUS - BASE_RADIUS) * t;
+        const a = BASE_ALPHA + (MAX_ALPHA - BASE_ALPHA) * t;
+
+        ctx!.beginPath();
+        ctx!.arc(dot.x, dot.y, r, 0, Math.PI * 2);
+        ctx!.fillStyle = `rgba(24, 119, 242, ${a})`;
+        ctx!.fill();
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    function onScroll() {
+      const section = canvas.parentElement!;
+      const rect = section.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const raw = (vh - rect.top) / (vh + rect.height);
+      scrollProgress = Math.max(0, Math.min(1, raw));
+      needsDraw = true;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !running) {
+          running = true;
+          window.addEventListener('scroll', onScroll, { passive: true });
+          onScroll();
+          draw();
+        } else if (!entry.isIntersecting) {
+          running = false;
+          window.removeEventListener('scroll', onScroll);
+        }
+      });
+    }, { threshold: 0 });
+
+    resize();
+    observer.observe(canvas.parentElement!);
+
+    let resizeTimer: number;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(() => {
+        resize();
+        needsDraw = true;
+      }, 150);
+    });
+  })();
+</script>
+
+<script>
+  // Floating CTA + Sidebar
+  (() => {
+    const btn = document.getElementById('floatCta');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+    const closeBtn = document.getElementById('sidebarClose');
+    if (!btn || !sidebar || !overlay || !closeBtn) return;
+
+    function open() {
+      sidebar.classList.add('sidebar--open');
+      sidebar.setAttribute('aria-hidden', 'false');
+      overlay.classList.add('sidebar-overlay--open');
+      btn.classList.add('float-cta--hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function close() {
+      sidebar.classList.remove('sidebar--open');
+      sidebar.setAttribute('aria-hidden', 'true');
+      overlay.classList.remove('sidebar-overlay--open');
+      btn.classList.remove('float-cta--hidden');
+      document.body.style.overflow = '';
+    }
+
+    btn.addEventListener('click', open);
+    closeBtn.addEventListener('click', close);
+    overlay.addEventListener('click', close);
+
+    // Also open sidebar from the CTA section button
+    const ctaPlanBtn = document.getElementById('ctaGetPlan');
+    if (ctaPlanBtn) ctaPlanBtn.addEventListener('click', open);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') close();
+    });
+  })();
+</script>
+
+<script>
+  // Mobile hamburger menu
+  (() => {
+    const checkbox = document.getElementById('mobMenuCheck') as HTMLInputElement;
+    const nav = document.getElementById('mobNav') as HTMLElement;
+    const header = document.querySelector('.header') as HTMLElement;
+    if (!checkbox || !nav) return;
+
+    function updateNavClip() {
+      if (!header) return;
+      const rect = header.getBoundingClientRect();
+      const base = rect.bottom - 18; // top of the gem triangle
+      const tip = rect.bottom;       // bottom of the gem point
+      nav.style.clipPath = `polygon(0 ${base}px, 50% ${tip}px, 100% ${base}px, 100% 100%, 0 100%)`;
+    }
+
+    checkbox.addEventListener('change', () => {
+      if (checkbox.checked) {
+        updateNavClip();
+        nav.classList.add('mob-nav--open');
+        nav.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      } else {
+        nav.classList.remove('mob-nav--open');
+        nav.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Close nav when a link is clicked
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        checkbox.checked = false;
+        nav.classList.remove('mob-nav--open');
+        nav.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      });
+    });
+  })();
+</script>
+
+<script>
+  (() => {
+    const footer = document.querySelector('.footer');
+    const bolt = document.querySelector('.footer__logo-icon');
+    if (!footer || !bolt) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          bolt.classList.remove('footer__logo-icon--flip');
+          void bolt.offsetWidth;
+          bolt.classList.add('footer__logo-icon--flip');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    observer.observe(footer);
+  })();
+</script>
+
+<script>
+  // Background music toggle
+  (() => {
+    const btn = document.getElementById('soundToggle') as HTMLButtonElement;
+    const audio = document.getElementById('bgMusic') as HTMLAudioElement;
+    if (!btn || !audio) return;
+
+    audio.volume = 0.3;
+
+    btn.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        btn.classList.add('is-playing');
+      } else {
+        audio.pause();
+        btn.classList.remove('is-playing');
+      }
+    });
+  })();
+
+  // Detect background color behind sound toggle and adapt styling
+  (() => {
+    const toggle = document.querySelector('.sound-toggle') as HTMLElement;
+    if (!toggle) return;
+
+    const lightSelectors = '.guide, .growth, .blog-preview, .testimonials, .faq, .section--soft';
+
+    function checkBackground() {
+      const rect = toggle.getBoundingClientRect();
+      const midX = rect.left + rect.width / 2;
+      const midY = rect.top + rect.height / 2;
+
+      toggle.style.pointerEvents = 'none';
+      toggle.style.visibility = 'hidden';
+      const el = document.elementFromPoint(midX, midY);
+      toggle.style.visibility = '';
+      toggle.style.pointerEvents = '';
+
+      if (el) {
+        const onLight = !!el.closest(lightSelectors);
+        toggle.classList.toggle('sound-toggle--on-light', onLight);
+      }
+    }
+
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(() => {
+          checkBackground();
+          ticking = false;
+        });
+      }
+    }, { passive: true });
+
+    checkBackground();
+  })();
+</script>
+
