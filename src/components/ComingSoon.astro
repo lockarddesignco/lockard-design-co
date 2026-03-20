@@ -1,0 +1,20 @@
+---
+interface Props {
+  title?: string;
+}
+
+const { title = 'This Page' } = Astro.props;
+---
+
+<section class="flex items-center justify-center min-h-[60vh] py-[clamp(60px,10vw,120px)] px-[clamp(20px,5vw,48px)] bg-[#0a0a14] text-center">
+  <div class="max-w-[600px] flex flex-col items-center gap-6">
+    <div class="w-16 h-16 mb-2 opacity-90">
+      <img src="/images/logo.svg" alt="Lockard Design Co." class="w-full h-full object-contain" width="64" height="64" />
+    </div>
+    <h1 class="font-[var(--font-display)] text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold tracking-tight leading-[1.15] text-white">{title} — Under Maintenance</h1>
+    <p class="font-[var(--font-body)] text-[clamp(0.95rem,1.5vw,1.1rem)] leading-[1.7] text-white/65 max-w-[480px]">
+      This page is currently under maintenance. Check back shortly — or get in touch if you need something right away.
+    </p>
+    <a href="/" class="btn mt-2">Back to Homepage</a>
+  </div>
+</section>

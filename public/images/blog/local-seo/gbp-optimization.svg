@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" rx="12" fill="#F4F7FB"/>
+  <!-- GBP Knowledge Panel -->
+  <rect x="80" y="40" width="640" height="370" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <!-- Header image area -->
+  <rect x="80" y="40" width="640" height="120" rx="12" fill="#E8F0FE"/>
+  <rect x="80" y="148" width="640" height="2" fill="#E2E8F0"/>
+  <!-- Business name -->
+  <rect x="100" y="175" width="240" height="18" rx="4" fill="#1A1A2E"/>
+  <!-- Stars -->
+  <rect x="100" y="205" width="100" height="12" rx="4" fill="#F59E0B"/>
+  <rect x="210" y="205" width="60" height="12" rx="4" fill="#6B7A90"/>
+  <!-- Info rows -->
+  <circle cx="112" cy="245" r="8" fill="#1877F2" opacity="0.2"/>
+  <rect x="130" y="239" width="200" height="12" rx="4" fill="#6B7A90"/>
+  <circle cx="112" cy="275" r="8" fill="#1877F2" opacity="0.2"/>
+  <rect x="130" y="269" width="160" height="12" rx="4" fill="#6B7A90"/>
+  <circle cx="112" cy="305" r="8" fill="#1877F2" opacity="0.2"/>
+  <rect x="130" y="299" width="180" height="12" rx="4" fill="#6B7A90"/>
+  <!-- Action buttons -->
+  <rect x="100" y="340" width="90" height="32" rx="16" fill="#1877F2" opacity="0.15"/>
+  <rect x="200" y="340" width="90" height="32" rx="16" fill="#1877F2" opacity="0.15"/>
+  <rect x="300" y="340" width="90" height="32" rx="16" fill="#1877F2" opacity="0.15"/>
+  <!-- Label -->
+  <text x="180" y="435" font-family="Inter, sans-serif" font-size="13" fill="#6B7A90">PLACEHOLDER — Replace with GBP panel screenshot</text>
+</svg>

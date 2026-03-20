@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" rx="12" fill="#F4F7FB"/>
+  <!-- Pie/donut chart placeholder -->
+  <circle cx="300" cy="220" r="140" fill="none" stroke="#E2E8F0" stroke-width="40"/>
+  <!-- GBP slice -->
+  <circle cx="300" cy="220" r="140" fill="none" stroke="#1877F2" stroke-width="40" stroke-dasharray="281 600" stroke-dashoffset="0" transform="rotate(-90 300 220)"/>
+  <!-- On-page slice -->
+  <circle cx="300" cy="220" r="140" fill="none" stroke="#27AE60" stroke-width="40" stroke-dasharray="176 600" stroke-dashoffset="-281" transform="rotate(-90 300 220)"/>
+  <!-- Review slice -->
+  <circle cx="300" cy="220" r="140" fill="none" stroke="#F59E0B" stroke-width="40" stroke-dasharray="141 600" stroke-dashoffset="-457" transform="rotate(-90 300 220)"/>
+  <!-- Link slice -->
+  <circle cx="300" cy="220" r="140" fill="none" stroke="#E74C3C" stroke-width="40" stroke-dasharray="106 600" stroke-dashoffset="-598" transform="rotate(-90 300 220)"/>
+  <!-- Legend -->
+  <rect x="520" y="120" width="16" height="16" rx="4" fill="#1877F2"/>
+  <text x="545" y="133" font-family="Inter, sans-serif" font-size="14" fill="#1A1A2E">GBP Signals — 32%</text>
+  <rect x="520" y="155" width="16" height="16" rx="4" fill="#27AE60"/>
+  <text x="545" y="168" font-family="Inter, sans-serif" font-size="14" fill="#1A1A2E">On-Page Signals — 20%</text>
+  <rect x="520" y="190" width="16" height="16" rx="4" fill="#F59E0B"/>
+  <text x="545" y="203" font-family="Inter, sans-serif" font-size="14" fill="#1A1A2E">Review Signals — 16%</text>
+  <rect x="520" y="225" width="16" height="16" rx="4" fill="#E74C3C"/>
+  <text x="545" y="238" font-family="Inter, sans-serif" font-size="14" fill="#1A1A2E">Link Signals — 12%</text>
+  <rect x="520" y="260" width="16" height="16" rx="4" fill="#6B7A90"/>
+  <text x="545" y="273" font-family="Inter, sans-serif" font-size="14" fill="#1A1A2E">Citations + Other — 20%</text>
+  <!-- Title -->
+  <text x="200" y="50" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="#1A1A2E">Local Pack Ranking Factors</text>
+  <!-- Label -->
+  <text x="180" y="430" font-family="Inter, sans-serif" font-size="13" fill="#6B7A90">PLACEHOLDER — Replace with branded ranking factors chart</text>
+</svg>

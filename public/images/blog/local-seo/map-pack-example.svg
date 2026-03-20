@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" rx="12" fill="#F4F7FB"/>
+  <!-- Search bar -->
+  <rect x="100" y="30" width="600" height="44" rx="22" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="130" y="57" font-family="Inter, sans-serif" font-size="14" fill="#6B7A90">plumber near me</text>
+  <!-- Map Pack card -->
+  <rect x="100" y="94" width="600" height="310" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <!-- Result 1 -->
+  <rect x="120" y="114" width="36" height="36" rx="4" fill="#1877F2" opacity="0.15"/>
+  <text x="130" y="137" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#1877F2">1</text>
+  <rect x="172" y="114" width="200" height="14" rx="4" fill="#1A1A2E"/>
+  <rect x="172" y="136" width="140" height="10" rx="4" fill="#6B7A90"/>
+  <rect x="400" y="114" width="80" height="12" rx="4" fill="#F59E0B"/>
+  <!-- Result 2 -->
+  <rect x="120" y="180" width="36" height="36" rx="4" fill="#1877F2" opacity="0.15"/>
+  <text x="130" y="203" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#1877F2">2</text>
+  <rect x="172" y="180" width="180" height="14" rx="4" fill="#1A1A2E"/>
+  <rect x="172" y="202" width="160" height="10" rx="4" fill="#6B7A90"/>
+  <rect x="400" y="180" width="80" height="12" rx="4" fill="#F59E0B"/>
+  <!-- Result 3 -->
+  <rect x="120" y="246" width="36" height="36" rx="4" fill="#1877F2" opacity="0.15"/>
+  <text x="130" y="269" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#1877F2">3</text>
+  <rect x="172" y="246" width="220" height="14" rx="4" fill="#1A1A2E"/>
+  <rect x="172" y="268" width="150" height="10" rx="4" fill="#6B7A90"/>
+  <rect x="400" y="246" width="80" height="12" rx="4" fill="#F59E0B"/>
+  <!-- Mini map -->
+  <rect x="520" y="114" width="160" height="170" rx="8" fill="#E8F0FE"/>
+  <circle cx="580" cy="180" r="8" fill="#1877F2"/>
+  <circle cx="620" cy="210" r="8" fill="#1877F2"/>
+  <circle cx="560" cy="230" r="8" fill="#1877F2"/>
+  <!-- Label -->
+  <text x="200" y="430" font-family="Inter, sans-serif" font-size="13" fill="#6B7A90">PLACEHOLDER — Replace with Google Map Pack screenshot</text>
+</svg>

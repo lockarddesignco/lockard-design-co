@@ -1,0 +1,67 @@
+---
+import BlogLayout from '../layouts/BlogLayout.astro';
+---
+
+<BlogLayout
+  title="Sitemap | Lockard Design Co."
+  description="Find every page on the Lockard Design Co. website. Browse our services, resources, and more."
+>
+  <!-- ========== HERO ========== -->
+  <section class="section--blue section--textured py-[clamp(60px,8vw,100px)_clamp(48px,6vw,80px)] text-center text-white">
+    <div class="container">
+      <h1 class="font-[var(--font-display)] text-[clamp(2rem,5vw,3.2rem)] font-extrabold tracking-tight leading-[1.1]">Sitemap</h1>
+      <p class="text-[clamp(1rem,2vw,1.15rem)] text-white/80 mt-3">Find everything on our site.</p>
+    </div>
+  </section>
+
+  <!-- ========== SITEMAP CONTENT ========== -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="grid grid-cols-4 gap-[clamp(32px,4vw,48px)] max-[1024px]:grid-cols-2 max-[600px]:grid-cols-1">
+
+        <div class="flex flex-col">
+          <h2 class="font-[var(--font-display)] text-[0.8rem] font-bold uppercase tracking-[0.08em] text-[var(--color-text)] mb-5 pb-3 border-b-2 border-[var(--color-bg-blue)]">Main Pages</h2>
+          <ul class="list-none flex flex-col gap-3">
+            <li><a href="/" class="text-[0.95rem] text-[var(--color-text-secondary)] no-underline transition-colors duration-200 leading-[1.4] hover:text-[var(--color-bg-blue)]">Home</a></li>
+            <li><a href="/about" class="text-[0.95rem] text-[var(--color-text-secondary)] no-underline transition-colors duration-200 leading-[1.4] hover:text-[var(--color-bg-blue)]">About</a></li>
+            <li><a href="/contact" class="text-[0.95rem] text-[var(--color-text-secondary)] no-underline transition-colors duration-200 leading-[1.4] hover:text-[var(--color-bg-blue)]">Contact</a></li>
+            <li><a href="/portfolio" class="text-[0.95rem] text-[var(--color-text-secondary)] no-underline transition-colors duration-200 leading-[1.4] hover:text-[var(--color-bg-blue)]">Portfolio</a></li>
+            <li><a href="/careers" class="text-[0.95rem] text-[var(--color-text-secondary)] no-underline transition-colors duration-200 leading-[1.4] hover:text-[var(--color-bg-blue)]">Careers</a></li>
+          </ul>
+        </div>
+
+        <div class="flex flex-col">
+          <h2 class="font-[var(--font-display)] text-[0.8rem] font-bold uppercase tracking-[0.08em] text-[var(--color-text)] mb-5 pb-3 border-b-2 border-[var(--color-bg-blue)]">Services</h2>
+          <ul class="list-none flex flex-col gap-3">
+            <li><a href="/web-design/" class="text-[0.95rem] text-[var(--color-text-secondary)] no-underline transition-colors duration-200 leading-[1.4] hover:text-[var(--color-bg-blue)]">Web Design</a></li>
+            <li><a href="/web-design/custom-website-design/" class="text-[0.95rem] text-[var(--color-text-secondary)] no-underline transition-colors duration-200 leading-[1.4] hover:text-[var(--color-bg-blue)]">Custom Website Design</a></li>
+            <li><a href="/web-design/website-redesign/" class="text-[0.95rem] text-[var(--color-text-secondary)] no-underline transition-colors duration-200 leading-[1.4] hover:text-[var(--color-bg-blue)]">Website Redesign</a></li>
+            <li><a href="/seo/" class="text-[0.95rem] text-[var(--color-text-secondary)] no-underline transition-colors duration-200 leading-[1.4] hover:text-[var(--color-bg-blue)]">SEO Services</a></li>
+            <li><a href="/seo/local-seo/" class="text-[0.95rem] text-[var(--color-text-secondary)] no-underline transition-colors duration-200 leading-[1.4] hover:text-[var(--color-bg-blue)]">Local SEO</a></li>
+            <li><a href="/seo/national-seo/" class="text-[0.95rem] text-[var(--color-text-secondary)] no-underline transition-colors duration-200 leading-[1.4] hover:text-[var(--color-bg-blue)]">National SEO</a></li>
+            <li><a href="/digital-marketing/" class="text-[0.95rem] text-[var(--color-text-secondary)] no-underline transition-colors duration-200 leading-[1.4] hover:text-[var(--color-bg-blue)]">Digital Marketing</a></li>
+            <li><a href="/digital-marketing/ppc-management/" class="text-[0.95rem] text-[var(--color-text-secondary)] no-underline transition-colors duration-200 leading-[1.4] hover:text-[var(--color-bg-blue)]">PPC Management</a></li>
+          </ul>
+        </div>
+
+        <div class="flex flex-col">
+          <h2 class="font-[var(--font-display)] text-[0.8rem] font-bold uppercase tracking-[0.08em] text-[var(--color-text)] mb-5 pb-3 border-b-2 border-[var(--color-bg-blue)]">Resources</h2>
+          <ul class="list-none flex flex-col gap-3">
+            <li><a href="/blog" class="text-[0.95rem] text-[var(--color-text-secondary)] no-underline transition-colors duration-200 leading-[1.4] hover:text-[var(--color-bg-blue)]">Blog</a></li>
+            <li><a href="/portfolio" class="text-[0.95rem] text-[var(--color-text-secondary)] no-underline transition-colors duration-200 leading-[1.4] hover:text-[var(--color-bg-blue)]">Case Studies</a></li>
+            <li><a href="/#faq" class="text-[0.95rem] text-[var(--color-text-secondary)] no-underline transition-colors duration-200 leading-[1.4] hover:text-[var(--color-bg-blue)]">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="flex flex-col">
+          <h2 class="font-[var(--font-display)] text-[0.8rem] font-bold uppercase tracking-[0.08em] text-[var(--color-text)] mb-5 pb-3 border-b-2 border-[var(--color-bg-blue)]">Legal</h2>
+          <ul class="list-none flex flex-col gap-3">
+            <li><a href="/privacy-policy" class="text-[0.95rem] text-[var(--color-text-secondary)] no-underline transition-colors duration-200 leading-[1.4] hover:text-[var(--color-bg-blue)]">Privacy Policy</a></li>
+            <li><a href="/terms-of-service" class="text-[0.95rem] text-[var(--color-text-secondary)] no-underline transition-colors duration-200 leading-[1.4] hover:text-[var(--color-bg-blue)]">Terms of Service</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</BlogLayout>

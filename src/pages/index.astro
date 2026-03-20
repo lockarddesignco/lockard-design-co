@@ -80,7 +80,6 @@ import Footer from '../components/Footer.astro';
   <section class="problem" id="problem">
     <div class="problem__lamp-glow"></div>
     <img src="/images/crescent-moon.png" alt="" class="problem__lamp" loading="eager" />
-    <div class="problem__glow"></div>
     <div class="container">
       <div class="problem__header text-center">
         <div class="hero__badge"><span class="hero__badge-dot"></span>You're Losing Money Every Month</div>
@@ -903,7 +902,7 @@ import Footer from '../components/Footer.astro';
     height: min(100dvh, 900px);
     display: flex;
     align-items: flex-start;
-    padding-top: clamp(140px, 18vh, 200px);
+    padding-top: clamp(180px, 22vh, 240px);
     padding-bottom: 40px;
     overflow: hidden;
   }
@@ -1121,7 +1120,7 @@ import Footer from '../components/Footer.astro';
     .hero {
       min-height: auto;
       max-height: none;
-      padding-top: 120px;
+      padding-top: 160px;
       padding-bottom: 24px;
       display: flex;
       align-items: flex-start;
@@ -1268,19 +1267,6 @@ import Footer from '../components/Footer.astro';
     pointer-events: none;
   }
 
-  .problem__glow {
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(245, 190, 70, 0.15) 0%, rgba(245, 190, 70, 0.05) 40%, transparent 70%);
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    left: 30%;
-    top: 50%;
-    transition: left 0.3s ease-out, top 0.3s ease-out;
-    z-index: 0;
-  }
 
   .problem__header {
     margin-bottom: clamp(56px, 7vw, 80px);
@@ -1970,6 +1956,14 @@ import Footer from '../components/Footer.astro';
 
 
   /* ========== SUCCESS ========== */
+  .success {
+    position: relative;
+    z-index: 3;
+    padding-bottom: calc(var(--section-gap) + 50px);
+    margin-bottom: -50px;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 50% 100%, 0 calc(100% - 50px));
+  }
+
   .success__layout {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -3472,19 +3466,6 @@ import Footer from '../components/Footer.astro';
 
 <script>
 
-  // Problem section mouse glow
-  const problemSection = document.querySelector('.problem');
-  const glow = document.querySelector('.problem__glow');
-
-  if (problemSection && glow) {
-    problemSection.addEventListener('mousemove', (e) => {
-      const rect = problemSection.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 100;
-      const y = ((e.clientY - rect.top) / rect.height) * 100;
-      glow.style.left = x + '%';
-      glow.style.top = y + '%';
-    });
-  }
 
   // Industry tags — random glow
   (() => {
@@ -3610,7 +3591,7 @@ import Footer from '../components/Footer.astro';
 
         // Flame detection — use el.closest instead of bounding rect
         const wasInPlan = inPlan;
-        inPlan = !!el.closest('.plan, .industries, .header');
+        inPlan = !!el.closest('.plan, .industries, .header, .problem');
 
         if (inPlan) {
           bolt.style.color = '#1877F2';

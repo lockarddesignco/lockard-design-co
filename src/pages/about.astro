@@ -1,0 +1,122 @@
+---
+import BlogLayout from '../layouts/BlogLayout.astro';
+---
+
+<BlogLayout
+  title="About — Lockard Design Co."
+  description="Lockard Design Co. builds high-performance websites and SEO systems that generate real leads for service businesses. Based in Turnersville, NJ."
+>
+
+  <!-- ========== HERO ========== -->
+  <section class="section--blue section--textured pt-[clamp(160px,20vw,240px)] pb-[clamp(60px,8vw,100px)] text-center">
+    <div class="container">
+      <div class="max-w-[760px] mx-auto">
+        <p class="text-[0.8rem] font-bold uppercase tracking-[0.12em] text-white/60 mb-4">About Lockard Design Co.</p>
+        <h1 class="text-white mb-5">We Build Growth Systems<br/>for Service Businesses.</h1>
+        <p class="text-white/80 text-[clamp(1rem,1.5vw,1.15rem)] leading-[1.7] max-w-[60ch] mx-auto">Your website should be your hardest-working salesperson. We design, build, and optimize the digital infrastructure that turns clicks into customers — so you can focus on running your business.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STORY / MISSION ========== -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="grid grid-cols-[1.2fr_1fr] gap-[clamp(40px,6vw,80px)] items-center max-[900px]:grid-cols-1">
+        <div>
+          <h2 class="mb-6 leading-[1.2]">We Don't Just Build Websites.<br/>We Build Growth Engines.</h2>
+          <p class="text-[var(--color-text-secondary)] text-base leading-[1.8] mb-4">Lockard Design Co. was founded because Will Lockard saw the same pattern playing out across the trades and service industries: businesses paying thousands of dollars for websites that looked decent but generated zero leads. Agencies delivering pretty pages with no strategy, no SEO foundation, and no accountability for results.</p>
+          <p class="text-[var(--color-text-secondary)] text-base leading-[1.8] mb-4">That needed to change.</p>
+          <p class="text-[var(--color-text-secondary)] text-base leading-[1.8] mb-4">We built this agency on a simple principle — every dollar a client spends should move the needle. That means websites engineered to convert, search strategies designed to compound, and reporting that proves what's working. No vanity metrics. No black boxes. Just measurable growth.</p>
+          <p class="text-[var(--color-text-secondary)] text-base leading-[1.8]">Based in Turnersville, NJ, we work with service businesses across the country — HVAC companies, contractors, plumbers, painters, and every trade in between. We understand your customers because we've spent years studying what makes them pick up the phone.</p>
+        </div>
+        <div class="relative max-[900px]:order-[-1] max-[900px]:max-w-[400px]">
+          <img src="/images/will-founder.jpg" alt="Will Lockard, Founder of Lockard Design Co." class="w-full rounded-[var(--radius-lg)] object-cover aspect-[4/5] block" loading="lazy" />
+          <div class="absolute bottom-0 left-0 right-0 px-6 py-5 bg-gradient-to-t from-black/70 to-transparent rounded-b-[var(--radius-lg)]">
+            <strong class="block text-white text-base font-bold">Will Lockard</strong>
+            <span class="block text-white/70 text-[0.8rem] font-medium mt-0.5">Founder &amp; Creative Director</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== VALUES ========== -->
+  <section class="section--soft section-padding">
+    <div class="container">
+      <div class="text-center max-w-[600px] mx-auto mb-[clamp(40px,5vw,64px)]">
+        <h2 class="mb-3">What Makes Us Different</h2>
+        <p class="text-[var(--color-text-secondary)] text-base leading-[1.7]">We're not a factory. We're a partner. Every project gets the same level of strategic thinking and craftsmanship — because your business deserves better than a template and a handshake.</p>
+      </div>
+      <div class="grid grid-cols-4 gap-6 max-[1024px]:grid-cols-2 max-[600px]:grid-cols-1">
+        <div class="bg-[var(--color-bg)] border border-[var(--color-rule)] rounded-[var(--radius-lg)] p-[clamp(24px,3vw,36px)] transition-all duration-[250ms] hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)]">
+          <div class="w-[52px] h-[52px] rounded-[var(--radius-md)] bg-[var(--color-bg-soft)] flex items-center justify-center mb-5 text-[var(--color-bg-blue)]">
+            <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+          </div>
+          <h3 class="text-[1.05rem] font-bold text-[var(--color-text)] mb-2.5">Results Over Aesthetics</h3>
+          <p class="text-[0.88rem] text-[var(--color-text-secondary)] leading-[1.7]">A beautiful website that doesn't generate leads is a liability. We build to convert first — then we make it look incredible. Every design decision serves a strategic purpose.</p>
+        </div>
+        <div class="bg-[var(--color-bg)] border border-[var(--color-rule)] rounded-[var(--radius-lg)] p-[clamp(24px,3vw,36px)] transition-all duration-[250ms] hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)]">
+          <div class="w-[52px] h-[52px] rounded-[var(--radius-md)] bg-[var(--color-bg-soft)] flex items-center justify-center mb-5 text-[var(--color-bg-blue)]">
+            <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="text-[1.05rem] font-bold text-[var(--color-text)] mb-2.5">Ownership, Not Rentals</h3>
+          <p class="text-[0.88rem] text-[var(--color-text-secondary)] leading-[1.7]">You own everything we build. Your website, your code, your content, your domain. If we ever part ways, you walk away with all of it. No hostage situations. No proprietary lock-in.</p>
+        </div>
+        <div class="bg-[var(--color-bg)] border border-[var(--color-rule)] rounded-[var(--radius-lg)] p-[clamp(24px,3vw,36px)] transition-all duration-[250ms] hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)]">
+          <div class="w-[52px] h-[52px] rounded-[var(--radius-md)] bg-[var(--color-bg-soft)] flex items-center justify-center mb-5 text-[var(--color-bg-blue)]">
+            <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3 class="text-[1.05rem] font-bold text-[var(--color-text)] mb-2.5">Transparent Partnership</h3>
+          <p class="text-[0.88rem] text-[var(--color-text-secondary)] leading-[1.7]">No black-box reporting. No jargon-filled updates designed to confuse you. You get clear, honest reporting that shows exactly what we're doing and exactly what it's producing.</p>
+        </div>
+        <div class="bg-[var(--color-bg)] border border-[var(--color-rule)] rounded-[var(--radius-lg)] p-[clamp(24px,3vw,36px)] transition-all duration-[250ms] hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)]">
+          <div class="w-[52px] h-[52px] rounded-[var(--radius-md)] bg-[var(--color-bg-soft)] flex items-center justify-center mb-5 text-[var(--color-bg-blue)]">
+            <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <h3 class="text-[1.05rem] font-bold text-[var(--color-text)] mb-2.5">Built for Growth</h3>
+          <p class="text-[0.88rem] text-[var(--color-text-secondary)] leading-[1.7]">We don't build static brochures. Every system we create is designed to scale with your business — from your first website to a full digital growth engine driving leads across every channel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BY THE NUMBERS ========== -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center mb-[clamp(40px,5vw,64px)]">
+        <h2 class="mb-2">By the Numbers</h2>
+        <p class="text-[var(--color-text-secondary)] text-base">We let the results speak for themselves.</p>
+      </div>
+      <div class="grid grid-cols-4 gap-6 max-[768px]:grid-cols-2 max-[480px]:gap-4">
+        <div class="text-center p-[clamp(28px,4vw,48px)_20px] border border-[var(--color-rule)] rounded-[var(--radius-lg)] transition-all duration-[250ms] hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)]">
+          <span class="block font-[var(--font-display)] text-[clamp(2.2rem,4vw,3.2rem)] font-extrabold text-[var(--color-bg-blue)] tracking-tight leading-none mb-2">100+</span>
+          <span class="block text-[0.82rem] font-semibold text-[var(--color-text-secondary)] uppercase tracking-[0.06em]">Businesses Served</span>
+        </div>
+        <div class="text-center p-[clamp(28px,4vw,48px)_20px] border border-[var(--color-rule)] rounded-[var(--radius-lg)] transition-all duration-[250ms] hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)]">
+          <span class="block font-[var(--font-display)] text-[clamp(2.2rem,4vw,3.2rem)] font-extrabold text-[var(--color-bg-blue)] tracking-tight leading-none mb-2">25+</span>
+          <span class="block text-[0.82rem] font-semibold text-[var(--color-text-secondary)] uppercase tracking-[0.06em]">Industries</span>
+        </div>
+        <div class="text-center p-[clamp(28px,4vw,48px)_20px] border border-[var(--color-rule)] rounded-[var(--radius-lg)] transition-all duration-[250ms] hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)]">
+          <span class="block font-[var(--font-display)] text-[clamp(2.2rem,4vw,3.2rem)] font-extrabold text-[var(--color-bg-blue)] tracking-tight leading-none mb-2">3x</span>
+          <span class="block text-[0.82rem] font-semibold text-[var(--color-text-secondary)] uppercase tracking-[0.06em]">Avg. Lead Increase</span>
+        </div>
+        <div class="text-center p-[clamp(28px,4vw,48px)_20px] border border-[var(--color-rule)] rounded-[var(--radius-lg)] transition-all duration-[250ms] hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)]">
+          <span class="block font-[var(--font-display)] text-[clamp(2.2rem,4vw,3.2rem)] font-extrabold text-[var(--color-bg-blue)] tracking-tight leading-none mb-2">5.0</span>
+          <span class="block text-[0.82rem] font-semibold text-[var(--color-text-secondary)] uppercase tracking-[0.06em]">Google Rating</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA BANNER ========== -->
+  <section class="section--blue section--textured py-[clamp(60px,8vw,100px)] text-center">
+    <div class="container">
+      <div class="max-w-[640px] mx-auto">
+        <h2 class="text-white mb-4">Ready to Build Your Growth Engine?</h2>
+        <p class="text-white/80 text-[clamp(1rem,1.5vw,1.1rem)] leading-[1.7] mb-8">Schedule a free strategy session and get a custom growth plan built around your business, your market, and your goals.</p>
+        <a href="/contact" class="btn bg-white text-[var(--color-bg-blue)] border-white text-[0.95rem] py-4 px-9 hover:bg-transparent hover:text-white hover:border-white">Get Your Free Growth Plan</a>
+      </div>
+    </div>
+  </section>
+
+</BlogLayout>

@@ -1,0 +1,8 @@
+/* Legacy CSS custom properties.
+   Scoped <style> blocks in homepage/contact/blog pages reference these variables.
+   This file is imported separately from global.css so Tailwind doesn't strip it. */
+:root {
+  --section-gap: clamp(80px, 10vw, 140px);
+  --container-pad: clamp(20px, 5vw, 48px);
+  --grid-gap: clamp(24px, 3vw, 48px);
+}

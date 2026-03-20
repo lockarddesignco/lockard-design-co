@@ -1,0 +1,121 @@
+---
+import BlogLayout from '../layouts/BlogLayout.astro';
+import ComingSoon from '../components/ComingSoon.astro';
+
+export function getStaticPaths() {
+  const pages = [
+    // Sitemap
+    { slug: 'sitemap', title: 'Sitemap' },
+
+    // Web Design
+    { slug: 'web-design', title: 'Web Design Services' },
+    { slug: 'web-design/custom-website-design', title: 'Custom Website Design' },
+    { slug: 'web-design/website-redesign', title: 'Website Redesign Services' },
+    { slug: 'web-design/ecommerce-website-design', title: 'Ecommerce Website Design' },
+    { slug: 'web-design/b2b-website-design', title: 'B2B Website Design' },
+    { slug: 'web-design/landing-page-design', title: 'Landing Page Design' },
+    { slug: 'web-design/website-maintenance', title: 'Website Maintenance Services' },
+    { slug: 'web-design/wordpress-development', title: 'WordPress Development' },
+    { slug: 'web-design/headless-commerce', title: 'Headless Commerce Development' },
+
+    // SEO
+    { slug: 'seo', title: 'SEO Services' },
+    { slug: 'seo/local-seo', title: 'Local SEO Services' },
+    { slug: 'seo/national-seo', title: 'National SEO Services' },
+    { slug: 'seo/ecommerce-seo', title: 'Ecommerce SEO Services' },
+    { slug: 'seo/technical-seo', title: 'Technical SEO Services' },
+    { slug: 'seo/content-marketing', title: 'Content Marketing Services' },
+    { slug: 'seo/link-building', title: 'Link Building Services' },
+    { slug: 'seo/seo-audits', title: 'SEO Audit Services' },
+    { slug: 'seo/voice-search-optimization', title: 'Voice Search Optimization' },
+
+    // Digital Marketing
+    { slug: 'digital-marketing', title: 'Digital Marketing Services' },
+    { slug: 'digital-marketing/ppc-management', title: 'PPC Management Services' },
+    { slug: 'digital-marketing/social-media-advertising', title: 'Social Media Advertising' },
+    { slug: 'digital-marketing/email-marketing', title: 'Email Marketing Services' },
+    { slug: 'digital-marketing/conversion-rate-optimization', title: 'Conversion Rate Optimization' },
+    { slug: 'digital-marketing/programmatic-advertising', title: 'Programmatic Advertising' },
+    { slug: 'digital-marketing/geofencing-advertising', title: 'Geofencing Advertising' },
+
+    // Industries
+    { slug: 'industries', title: 'Industries We Serve' },
+    { slug: 'industries/legal', title: 'Legal & Law Firms' },
+    { slug: 'industries/healthcare', title: 'Healthcare' },
+    { slug: 'industries/home-services', title: 'Home Services' },
+    { slug: 'industries/saas', title: 'SaaS' },
+    { slug: 'industries/b2b-tech', title: 'B2B Technology' },
+    { slug: 'industries/financial-services', title: 'Financial Services' },
+    { slug: 'industries/real-estate', title: 'Real Estate' },
+    { slug: 'industries/construction', title: 'Construction & Contractors' },
+    { slug: 'industries/manufacturing', title: 'Manufacturing & Industrial' },
+    { slug: 'industries/ecommerce', title: 'Ecommerce & Retail' },
+    { slug: 'industries/restaurants', title: 'Restaurants & Food Service' },
+    { slug: 'industries/hospitality', title: 'Hospitality' },
+    { slug: 'industries/automotive', title: 'Automotive' },
+    { slug: 'industries/education', title: 'Education & E-Learning' },
+    { slug: 'industries/non-profit', title: 'Non-Profit & Charity' },
+    { slug: 'industries/professional-services', title: 'Professional Services' },
+    { slug: 'industries/travel', title: 'Travel & Tourism' },
+    { slug: 'industries/startups', title: 'Startups' },
+    { slug: 'industries/enterprise', title: 'Enterprise' },
+    { slug: 'industries/franchise', title: 'Franchise Businesses' },
+    { slug: 'industries/cannabis', title: 'Cannabis & CBD' },
+    { slug: 'industries/fitness', title: 'Fitness & Gyms' },
+    { slug: 'industries/beauty', title: 'Beauty & Salons' },
+    { slug: 'industries/logistics', title: 'Logistics & Transportation' },
+    { slug: 'industries/government-contractors', title: 'Government Contractors' },
+
+    // Tools
+    { slug: 'tools/seo-roi-calculator', title: 'SEO ROI Calculator' },
+    { slug: 'tools/on-page-seo-checklist', title: 'On-Page SEO Checklist' },
+    { slug: 'tools/free-seo-audit', title: 'Free Website SEO Audit' },
+    { slug: 'tools/keyword-density-checker', title: 'Keyword Density Checker' },
+    { slug: 'tools/schema-markup-generator', title: 'Schema Markup Generator' },
+    { slug: 'tools/local-seo-checklist', title: 'Local SEO Checklist' },
+    { slug: 'tools/gbp-audit', title: 'Google Business Profile Audit' },
+    { slug: 'tools/website-cost-calculator', title: 'Website Cost Calculator' },
+    { slug: 'tools/ppc-budget-calculator', title: 'PPC Budget Calculator' },
+    { slug: 'tools/readability-checker', title: 'Readability Score Checker' },
+    { slug: 'tools/headline-analyzer', title: 'Headline Analyzer' },
+    { slug: 'tools/serp-preview-tool', title: 'SERP Preview Tool' },
+    { slug: 'tools/robots-txt-generator', title: 'Robots.txt Generator' },
+    { slug: 'tools/hreflang-tag-generator', title: 'Hreflang Tag Generator' },
+    { slug: 'tools/marketing-plan-template', title: 'Marketing Plan Template' },
+
+    // Case Studies
+    { slug: 'case-studies', title: 'Case Studies' },
+    { slug: 'case-studies/b2b-saas-traffic-increase', title: 'B2B SaaS: 350% Organic Traffic Increase' },
+    { slug: 'case-studies/ecommerce-revenue-growth', title: 'Ecommerce: $1.2M Revenue Growth' },
+    { slug: 'case-studies/law-firm-local-search', title: 'Law Firm: Dominating Local Search' },
+    { slug: 'case-studies/healthcare-patient-bookings', title: 'Healthcare: 200% Increase in Patient Bookings' },
+    { slug: 'case-studies/hvac-lead-growth', title: 'Home Services: 5X Lead Growth for HVAC Co.' },
+    { slug: 'case-studies/startup-traffic-growth', title: 'Startup: From Zero to 100k Monthly Visitors' },
+    { slug: 'case-studies/national-brand-ranking', title: 'National Brand: Outranking Fortune 500 Competitors' },
+    { slug: 'case-studies/franchise-seo-strategy', title: 'Franchise: SEO Strategy for 100+ Locations' },
+    { slug: 'case-studies/website-redesign-conversion-rate', title: 'Website Redesign: Doubled Conversion Rate' },
+    { slug: 'case-studies/manufacturing-b2b-leads', title: 'Manufacturing: 400% Increase in B2B Leads' },
+    { slug: 'case-studies/real-estate-seo', title: 'Real Estate: SEO for High-Value Properties' },
+    { slug: 'case-studies/restaurant-online-ordering', title: 'Restaurant: Online Ordering System Success' },
+    { slug: 'case-studies/non-profit-donations', title: 'Non-Profit: Record-Breaking Donation Campaign' },
+    { slug: 'case-studies/link-building-dr-increase', title: 'Link Building: From DR 20 to DR 70' },
+    { slug: 'case-studies/technical-seo-cwv', title: 'Technical SEO: Core Web Vitals Recovery' },
+    { slug: 'case-studies/financial-services-leads', title: 'Financial Services: 3X More Qualified Leads' },
+    { slug: 'case-studies/automotive-dealership-seo', title: 'Automotive: Driving Dealership Foot Traffic' },
+    { slug: 'case-studies/hospitality-direct-bookings', title: 'Hospitality: 60% Increase in Direct Bookings' },
+    { slug: 'case-studies/b2b-tech-content-strategy', title: 'B2B Tech: Content Strategy Fuels Growth' },
+    { slug: 'case-studies/local-seo-maps-ranking', title: 'Local SEO: #1 on Google Maps for 50 Keywords' },
+  ];
+
+  return pages.map(({ slug, title }) => ({
+    params: { slug },
+    props: { title },
+  }));
+}
+
+const { title } = Astro.props;
+---
+
+<BlogLayout title={`${title} — Lockard Design Co.`}>
+  <ComingSoon title={title} />
+</BlogLayout>
