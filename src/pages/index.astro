@@ -2181,7 +2181,7 @@ import Footer from '../components/Footer.astro';
   }
 
   .growth__card--featured .growth__step {
-    color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.5);
   }
 
   .growth__card--featured:hover {
@@ -2751,13 +2751,22 @@ import Footer from '../components/Footer.astro';
 
   @media (max-width: 600px) {
     .map-card {
-      position: relative;
-      top: 0;
+      position: absolute;
+      top: auto;
+      bottom: 0;
       left: 0;
+      right: 0;
       width: 100%;
       border-radius: 0;
       border-left: 0;
       border-right: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.4);
+      padding: 24px 20px;
+    }
+
+    .map-section iframe {
+      height: 550px;
     }
   }
 
