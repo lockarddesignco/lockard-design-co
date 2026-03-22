@@ -815,7 +815,7 @@ import Footer from '../components/Footer.astro';
     </svg>
   </button>
   <audio id="bgMusic" loop preload="none">
-    <source src="/audio/focus-loop-in-motion.mp3" type="audio/mpeg" />
+    <source src="/audio/lockard-design-co-makes-the-best-websites.mp3" type="audio/mpeg" />
   </audio>
 
   <!-- ========== FLOATING CTA + SIDEBAR ========== -->
@@ -866,7 +866,7 @@ import Footer from '../components/Footer.astro';
         </div>
         <div class="sidebar__field">
           <label for="sb-website">Current Website (if any)</label>
-          <input type="url" id="sb-website" name="website" placeholder="https://yoursite.com" />
+          <input type="text" id="sb-website" name="website" placeholder="yoursite.com" pattern="[a-zA-Z0-9][-a-zA-Z0-9]*\.[a-zA-Z]{2,}.*" title="Enter a website like yoursite.com" />
         </div>
         <fieldset class="sidebar__checkboxes">
           <legend>Help My Business <span class="sidebar__required">*</span></legend>

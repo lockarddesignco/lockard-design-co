@@ -79,7 +79,7 @@ import BlogLayout from '../layouts/BlogLayout.astro';
             </div>
             <div class="cf__field">
               <label for="c-website">Current Website (if any)</label>
-              <input type="url" id="c-website" name="website" placeholder="https://yoursite.com" />
+              <input type="text" id="c-website" name="website" placeholder="yoursite.com" pattern="[a-zA-Z0-9][-a-zA-Z0-9]*\.[a-zA-Z]{2,}.*" title="Enter a website like yoursite.com" />
             </div>
 
             <fieldset class="cf__checkboxes">
