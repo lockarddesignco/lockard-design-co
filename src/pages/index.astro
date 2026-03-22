@@ -78,6 +78,7 @@ import Footer from '../components/Footer.astro';
 
   <!-- ========== PROBLEM ========== -->
   <section class="problem" id="problem">
+    <canvas class="problem__stars" aria-hidden="true"></canvas>
     <div class="problem__lamp-glow"></div>
     <img src="/images/crescent-moon.png" alt="" class="problem__lamp" loading="eager" />
     <div class="container">
@@ -919,9 +920,10 @@ import Footer from '../components/Footer.astro';
     height: 100%;
     object-fit: cover;
     object-position: right center;
-    opacity: 0.15;
     filter: saturate(0.3);
     transform: scaleX(-1);
+    mask-image: linear-gradient(to left, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.08) 35%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.7) 80%, rgba(0,0,0,0.9) 100%);
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.08) 35%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.7) 80%, rgba(0,0,0,0.9) 100%);
   }
 
 
@@ -1238,6 +1240,13 @@ import Footer from '../components/Footer.astro';
     overflow: hidden;
     z-index: 2;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 50% 100%, 0 calc(100% - 50px));
+  }
+
+  .problem__stars {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
   }
 
   .problem__lamp-glow {
@@ -3472,6 +3481,49 @@ import Footer from '../components/Footer.astro';
 
 
 </style>
+
+<script>
+  // Stars canvas for problem section
+  (() => {
+    const canvas = document.querySelector('.problem__stars');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const section = canvas.closest('.problem');
+
+    function resize() {
+      canvas.width = section.offsetWidth;
+      canvas.height = section.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    const stars = [];
+    const COUNT = 80;
+
+    for (let i = 0; i < COUNT; i++) {
+      stars.push({
+        x: Math.random(),
+        y: Math.random(),
+        r: Math.random() * 1.5 + 0.5,
+        phase: Math.random() * Math.PI * 2,
+        speed: Math.random() * 0.008 + 0.003,
+      });
+    }
+
+    function draw(t) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (const s of stars) {
+        const opacity = 0.3 + 0.7 * ((Math.sin(t * s.speed + s.phase) + 1) / 2);
+        ctx.beginPath();
+        ctx.arc(s.x * canvas.width, s.y * canvas.height, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+        ctx.fill();
+      }
+      requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);
+  })();
+</script>
 
 <script>
 
