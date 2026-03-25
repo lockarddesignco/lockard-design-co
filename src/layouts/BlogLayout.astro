@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FloatingCTA from '../components/FloatingCTA.astro';
+import MapSection from '../components/MapSection.astro';
 
 interface Props {
   title: string;
@@ -14,6 +15,8 @@ const {
   description = 'Insights, strategies, and guides for service businesses looking to grow. From the team at Lockard Design Co.',
   hideFloatingCTA = false,
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -22,6 +25,8 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,8 +42,15 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content="https://lockarddesignco.com/images/og-default.jpg" />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Lockard Design Co." />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://lockarddesignco.com/images/og-default.jpg" />
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -59,8 +71,11 @@ const {
 
     {!hideFloatingCTA && <FloatingCTA />}
 
+    <MapSection />
     <Footer />
 
+    <!-- Full-page noise texture overlay -->
+    <div class="fixed inset-0 pointer-events-none z-[9999] opacity-35 mix-blend-overlay bg-[url('/images/noise.png')] bg-repeat [background-size:200px_200px]"></div>
   </body>
 </html>
 

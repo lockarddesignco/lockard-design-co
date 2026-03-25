@@ -4,69 +4,53 @@ const services = [
     icon: 'desktop',
     name: 'Custom Website Design',
     description: 'We build professional, high-converting websites that work as your #1 salesperson, 24/7.',
-    link: '/contact',
+    link: '/web-design/',
     cta: 'See Our Work',
   },
   {
     icon: 'search',
-    name: 'Get Found on Google',
+    name: 'Search Engine Optimization',
     description: 'Climb the search rankings and own your local market with our proven SEO strategies.',
-    link: '/contact',
+    link: '/seo/',
     cta: 'Rank Higher',
   },
   {
-    icon: 'chart',
-    name: 'Predictable Lead Flow',
-    description: 'Turn on the faucet for qualified leads with precision-targeted digital advertising campaigns.',
-    link: '/contact',
-    cta: 'Get More Leads',
+    icon: 'map',
+    name: 'Local SEO & Google Maps',
+    description: 'Dominate the map pack and become the first call when customers search in your area.',
+    link: '/seo/local-seo/',
+    cta: 'Get Found Locally',
   },
   {
-    icon: 'sparkle',
-    name: 'Professional Brand Identity',
-    description: 'We craft a memorable brand that makes you the obvious and only choice for your ideal clients.',
-    link: '/contact',
-    cta: 'Build Your Brand',
+    icon: 'refresh',
+    name: 'Website Redesign',
+    description: 'Transform your outdated website into a modern, lead-generating machine.',
+    link: '/web-design/website-redesign/',
+    cta: 'Modernize Your Site',
   },
   {
     icon: 'shield',
     name: 'Website Care & Support',
     description: 'Your website is a valuable asset — we keep it secure, updated, and running at peak performance.',
-    link: '/contact',
+    link: '/website-management/',
     cta: 'Protect Your Site',
   },
   {
-    icon: 'automation',
-    name: 'Business Process Automation',
-    description: 'Stop wasting time on repetitive tasks and let us build systems that run your business for you.',
-    link: '/contact',
-    cta: 'Save Time',
-  },
-  {
-    icon: 'ai',
-    name: 'AI-Powered Operations',
-    description: 'Gain an unfair advantage by integrating intelligent AI systems into your daily workflow.',
-    link: '/contact',
-    cta: 'Work Smarter',
-  },
-  {
-    icon: 'outreach',
-    name: 'B2B Outreach Systems',
-    description: 'We build and manage direct outreach campaigns to land high-value B2B clients.',
-    link: '/contact',
-    cta: 'Land Bigger Clients',
+    icon: 'audit',
+    name: 'SEO Audits',
+    description: 'Get a complete analysis of your site\'s SEO health and a clear roadmap to improve.',
+    link: '/seo/seo-audits/',
+    cta: 'Audit Your Site',
   },
 ];
 
 const icons: Record<string, string> = {
   desktop: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`,
   search: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>`,
-  chart: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>`,
-  sparkle: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8z"/></svg>`,
+  map: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
+  refresh: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>`,
   shield: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>`,
-  automation: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>`,
-  ai: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="15" x2="23" y2="15"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="15" x2="4" y2="15"/></svg>`,
-  outreach: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>`,
+  audit: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
 };
 ---
 
@@ -84,7 +68,7 @@ const icons: Record<string, string> = {
       <h2 class="text-white mb-4">Every Tool You Need to Win</h2>
       <p class="subheadline mx-auto text-white/50">A complete toolkit to build your foundation, fill your pipeline, and automate your growth.</p>
     </div>
-    <div class="grid grid-cols-4 gap-[clamp(16px,2vw,24px)] max-[1024px]:grid-cols-2 max-[600px]:grid-cols-1">
+    <div class="grid grid-cols-3 gap-[clamp(16px,2vw,24px)] max-[900px]:grid-cols-2 max-[600px]:grid-cols-1">
       {services.map((service) => (
         <a href={service.link} class="group bg-white/[0.04] border border-white/[0.08] rounded-[var(--radius-lg)] p-[clamp(24px,2.5vw,32px)] flex flex-col no-underline transition-all duration-300 hover:bg-white/[0.08] hover:border-[rgba(24,119,242,0.3)] hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(24,119,242,0.1)]">
           <div class="w-12 h-12 flex items-center justify-center rounded-[var(--radius-sm)] bg-[rgba(24,119,242,0.1)] text-[var(--color-blue)] mb-5">

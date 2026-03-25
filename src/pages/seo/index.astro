@@ -1,0 +1,1399 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+
+const title = 'SEO Services for Local Businesses | Lockard Design Co.';
+const description = 'Stop losing customers to competitors who show up first. Our proven SEO strategies help local service businesses dominate search rankings and generate qualified leads on autopilot.';
+
+const faqData = [
+  {
+    group: 'Investment & Value',
+    items: [
+      {
+        q: 'How much does SEO cost for a local business?',
+        a: 'Our SEO services range from $2,500 to $10,000 per month depending on your market\'s competitiveness, number of service areas, current site health, and the scope of content and link building needed. Most local service businesses fall in the $2,500\u2013$5,000 range. We provide a custom quote after analyzing your specific situation during a free SEO audit.'
+      },
+      {
+        q: 'How long does SEO take to work?',
+        a: 'Most clients begin seeing measurable improvements in rankings and traffic within 3 to 6 months. SEO is a compounding investment \u2014 the results get stronger over time as your site builds authority. We set clear monthly milestones so you always know what progress looks like, and we provide transparent reporting every month.'
+      },
+      {
+        q: 'I\'ve been burned by an SEO agency before. How are you different?',
+        a: 'We hear this constantly. Most agencies lock you into long contracts, send confusing reports full of vanity metrics, and rotate you through junior account managers. At Lockard Design Co., you get a dedicated senior strategist who knows your business inside and out, monthly video reviews of your results, and full access to our team through Basecamp. You\'ll always know exactly what we did, what changed, and what\'s next.'
+      },
+    ]
+  },
+  {
+    group: 'Process & Results',
+    items: [
+      {
+        q: 'Do I need SEO if I already get referrals?',
+        a: 'Referrals are great, but they\'re unpredictable. What happens when a slow month hits? SEO builds a second pipeline of qualified leads that runs 24/7 \u2014 people actively searching for exactly what you do, ready to hire. The best businesses combine a strong referral network with a dominant search presence. That\'s how you go from surviving to scaling.'
+      },
+      {
+        q: 'What\'s included in your monthly SEO service?',
+        a: 'Every month includes: a full technical audit and ongoing optimization, keyword research and content strategy, on-page SEO for your service and location pages, Google Business Profile optimization and management, local citation building and link acquisition, a recorded monthly video review of your results, and a quarterly deep-dive video breakdown of your overall trajectory. You also get full access to our team through Basecamp where you can track progress and communicate directly. No fluff, no filler.'
+      },
+      {
+        q: 'Can I see what you\'re doing each month?',
+        a: 'Absolutely. Every month you get a recorded video review walking through your results, what we did, and what\'s coming next. Every quarter, we do a deeper video breakdown of your overall SEO trajectory. On top of that, you get full access to our team through Basecamp \u2014 our project management platform \u2014 where you can see tasks in progress, ask questions, and communicate directly with the people doing the work. No black box.'
+      },
+      {
+        q: 'Do you guarantee first page rankings?',
+        a: 'No \u2014 and any agency that does is lying. Google\'s algorithm considers hundreds of factors, and no one can guarantee a specific ranking. What we can guarantee is a proven process, transparent reporting, and a track record of getting results. If an agency promises you #1 rankings, that\'s a red flag, not a selling point.'
+      },
+      {
+        q: 'What if I already have a website? Do I need a new one for SEO?',
+        a: 'Not necessarily. If your current site is well-built and loads fast, we can optimize what you have. During our free audit, we\'ll assess your site\'s technical health, content quality, and conversion potential. If it needs work, we\'ll tell you exactly what and why \u2014 but we\'ll never recommend a rebuild unless it\'s genuinely the best path to results.'
+      },
+    ]
+  }
+];
+
+const industries = [
+  { name: 'Roofing', slug: 'roofing-seo' },
+  { name: 'HVAC', slug: 'hvac-seo' },
+  { name: 'Plumbing', slug: 'plumber-seo' },
+  { name: 'Electrical', slug: 'electrician-seo' },
+  { name: 'Contractors', slug: 'contractor-seo' },
+  { name: 'Construction', slug: 'construction-seo' },
+  { name: 'Landscaping', slug: 'landscaping-seo' },
+  { name: 'Pest Control', slug: 'pest-control-seo' },
+  { name: 'Remodeling', slug: 'remodeling-seo' },
+  { name: 'Painting', slug: 'painting-company-seo' },
+  { name: 'Moving Companies', slug: 'moving-company-seo' },
+  { name: 'Auto Repair', slug: 'auto-repair-seo' },
+  { name: 'Garage Doors', slug: 'garage-door-seo' },
+  { name: 'Cleaning', slug: 'cleaning-company-seo' },
+  { name: 'Tree Service', slug: 'tree-service-seo' },
+  { name: 'Home Builders', slug: 'home-builder-seo' },
+  { name: 'Carpet Cleaning', slug: 'carpet-cleaning-seo' },
+  { name: 'Solar', slug: 'solar-seo' },
+  { name: 'Locksmith', slug: 'locksmith-seo' },
+  { name: 'Restoration', slug: 'restoration-seo' },
+  { name: 'Chiropractor', slug: 'chiropractor-seo' },
+  { name: 'Junk Removal', slug: 'junk-removal-seo' },
+  { name: 'Dental', slug: 'dental-seo' },
+  { name: 'Law Firms', slug: 'law-firm-seo' },
+];
+
+const services = [
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
+    name: 'Local SEO',
+    description: 'Dominate the map pack and local search results in your service area.',
+    link: '/seo/local-seo/',
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
+    name: 'Technical SEO',
+    description: 'A fast, healthy site that Google loves to crawl and rank.',
+    link: '/seo/technical-seo/',
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`,
+    name: 'Content Strategy',
+    description: 'The pages and articles that attract your ideal customers from search.',
+    link: '/seo/content-strategy/',
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>`,
+    name: 'Link Building',
+    description: 'The authority signals that push you past your competition to page one.',
+    link: '/seo/link-building/',
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>`,
+    name: 'SEO Audits',
+    description: 'Know exactly where you stand and where the biggest opportunities are.',
+    link: '/seo/seo-audits/',
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><circle cx="12" cy="10" r="3"/></svg>`,
+    name: 'Google Business Profile',
+    description: 'Own the map pack in your service area with an optimized GBP.',
+    link: '/seo/google-business-profile/',
+  },
+];
+
+const processSteps = [
+  { num: '01', title: 'Audit', desc: 'We analyze your site, your competitors, and your market to find every opportunity and weakness.' },
+  { num: '02', title: 'Strategy', desc: 'We build a custom SEO roadmap based on what will move the needle fastest for your specific business.' },
+  { num: '03', title: 'Optimize', desc: 'We fix technical issues, optimize your pages, and build the content your customers are searching for.' },
+  { num: '04', title: 'Build Authority', desc: 'We earn the backlinks and citations that tell Google you\'re the real authority in your market.' },
+  { num: '05', title: 'Report & Refine', desc: 'You get clear monthly reports showing exactly what we did and what happened. We adjust and improve every month.' },
+];
+---
+
+<BlogLayout title={title} description={description}>
+
+  <!-- ========== BREADCRUMB ========== -->
+  <nav class="bg-[#0a0a14] pt-36 pb-0" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="flex items-center gap-2 text-sm text-white/40">
+        <li><a href="/" class="hover:text-white/70 transition-colors">Home</a></li>
+        <li><span class="mx-1">/</span></li>
+        <li class="text-white/70">SEO Services</li>
+      </ol>
+    </div>
+  </nav>
+
+
+  <!-- ========== HERO ========== -->
+  <section class="bg-[#0a0a14] pt-12 pb-[var(--spacing-section)] relative overflow-hidden" id="hero">
+    <!-- Hero background image -->
+    <div class="absolute inset-0 -top-4">
+      <img src="/images/seo-hero.jpg" alt="" class="w-full h-full object-cover object-center" loading="eager" />
+      <div class="absolute inset-0 bg-gradient-to-r from-[#0a0a14] via-[#0a0a14]/80 to-[#0a0a14]/20"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a14] via-transparent to-[#0a0a14]"></div>
+    </div>
+    <!-- Radial glow -->
+    <div class="absolute w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,rgba(24,119,242,0.06)_0%,transparent_70%)] -top-[200px] -right-[200px] pointer-events-none"></div>
+    <div class="container relative z-[1]">
+      <div class="max-w-[750px]">
+        <div class="inline-flex items-center gap-2 bg-[rgba(24,119,242,0.15)] text-[var(--color-blue)] border border-[rgba(24,119,242,0.25)] rounded-full px-4 py-1.5 text-[0.78rem] font-semibold mb-6">
+          <span class="w-2 h-2 rounded-full bg-[var(--color-blue)]"></span>
+          SEO Services
+        </div>
+        <h1 class="text-white mb-6" style="font-size:clamp(2.25rem, 5vw, 3.75rem);">Stop Losing Customers to Competitors Who Show Up First.</h1>
+        <p class="text-white/60 text-[clamp(1.05rem,1.4vw,1.25rem)] leading-[1.7] max-w-[55ch] mb-4">
+          Right now, someone in your market is searching for exactly what you do. If they find your competitor first, that's money you'll never see. We build SEO strategies that put your business at the top of Google and keep it there.
+        </p>
+        <p class="text-[var(--color-blue)] text-sm font-medium mb-8">97% of consumers search online before choosing a local service provider.</p>
+        <div class="flex flex-wrap gap-4 mb-10">
+          <button class="btn btn--lg seo-cta-open">Get Your Free SEO Audit</button>
+          <a href="#process" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.2);color:#fff;">See How We Do It</a>
+        </div>
+        <div class="flex flex-wrap gap-6 max-[600px]:gap-4">
+          <div class="flex items-center gap-2 text-white/50 text-sm">
+            <div class="flex gap-0.5">
+              <svg viewBox="0 0 24 24" fill="#F5A623" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="#F5A623" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="#F5A623" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="#F5A623" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="#F5A623" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span>5.0 on Google</span>
+          </div>
+          <div class="text-white/50 text-sm"><strong class="text-white font-semibold">100's</strong> Businesses Served</div>
+          <div class="text-white/50 text-sm"><strong class="text-white font-semibold">25+</strong> Industries</div>
+        </div>
+        <p class="text-white/30 text-xs mt-4">Free. No obligation. Takes 15 minutes.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== PROBLEM ========== -->
+  <section class="seo-problem relative overflow-hidden pt-0" id="problem">
+    <canvas class="seo-stars absolute inset-0 z-[1] pointer-events-none" aria-hidden="true"></canvas>
+    <div class="seo-lamp-glow"></div>
+    <img src="/images/crescent-moon.png" alt="" class="seo-lamp" loading="lazy" />
+    <div class="container relative z-[4]">
+      <div class="h-px bg-white/[0.06] mb-[clamp(40px,5vw,64px)]"></div>
+      <div class="text-center mb-[clamp(40px,5vw,64px)]">
+        <div class="inline-flex items-center gap-2 bg-[rgba(24,119,242,0.15)] text-[var(--color-blue)] border border-[rgba(24,119,242,0.25)] rounded-full px-4 py-1.5 text-[0.78rem] font-semibold mb-4">
+          <span class="w-2 h-2 rounded-full bg-[var(--color-blue)]"></span>
+          The Problem
+        </div>
+        <h2 class="text-white">Sound Familiar?</h2>
+      </div>
+      <div class="grid grid-cols-3 gap-[clamp(16px,2vw,24px)] max-[900px]:grid-cols-1">
+        <div class="bg-white/[0.04] border border-white/[0.08] rounded-[var(--radius-lg)] p-[clamp(24px,2.5vw,32px)] transition-all duration-300 hover:bg-white/[0.07] hover:border-white/[0.15] hover:-translate-y-1">
+          <div class="flex items-center justify-between mb-5">
+            <span class="text-[var(--color-blue)] text-sm font-bold opacity-50">01</span>
+            <div class="w-10 h-10 flex items-center justify-center rounded-[var(--radius-sm)] bg-[rgba(24,119,242,0.1)] text-[var(--color-blue)]">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+          </div>
+          <h3 class="text-white text-[clamp(1rem,1.3vw,1.15rem)] font-semibold mb-2">Your Competitors Are Outranking You.</h3>
+          <p class="text-white/50 text-[0.88rem] leading-[1.65]">You search your own service and your competitors show up first. Every day, customers who should be calling you are calling them instead.</p>
+        </div>
+        <div class="bg-white/[0.04] border border-white/[0.08] rounded-[var(--radius-lg)] p-[clamp(24px,2.5vw,32px)] transition-all duration-300 hover:bg-white/[0.07] hover:border-white/[0.15] hover:-translate-y-1">
+          <div class="flex items-center justify-between mb-5">
+            <span class="text-[var(--color-blue)] text-sm font-bold opacity-50">02</span>
+            <div class="w-10 h-10 flex items-center justify-center rounded-[var(--radius-sm)] bg-[rgba(24,119,242,0.1)] text-[var(--color-blue)]">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+          </div>
+          <h3 class="text-white text-[clamp(1rem,1.3vw,1.15rem)] font-semibold mb-2">You've Been Burned Before.</h3>
+          <p class="text-white/50 text-[0.88rem] leading-[1.65]">You paid an agency thousands of dollars, got confusing reports full of jargon, and never saw real results. Now you're skeptical that SEO even works.</p>
+        </div>
+        <div class="bg-white/[0.04] border border-white/[0.08] rounded-[var(--radius-lg)] p-[clamp(24px,2.5vw,32px)] transition-all duration-300 hover:bg-white/[0.07] hover:border-white/[0.15] hover:-translate-y-1">
+          <div class="flex items-center justify-between mb-5">
+            <span class="text-[var(--color-blue)] text-sm font-bold opacity-50">03</span>
+            <div class="w-10 h-10 flex items-center justify-center rounded-[var(--radius-sm)] bg-[rgba(24,119,242,0.1)] text-[var(--color-blue)]">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </div>
+          </div>
+          <h3 class="text-white text-[clamp(1rem,1.3vw,1.15rem)] font-semibold mb-2">You're Stuck on Referrals Alone.</h3>
+          <p class="text-white/50 text-[0.88rem] leading-[1.65]">Business is good when referrals come in, but it's feast or famine. You have no predictable pipeline and no way to control your growth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== SOLUTION ========== -->
+  <section class="section--blue section--textured" id="solution">
+    <div class="container text-center">
+      <div class="max-w-[700px] mx-auto">
+        <h2 class="mb-6">SEO That Actually Puts Your Phone to Work.</h2>
+        <p class="mx-auto mb-8" style="text-align:center;max-width:55ch;">
+          We don't do confusing reports or vanity metrics. We build a search presence that makes your business the first call when someone in your market needs what you do. More visibility. More calls. More revenue. Every month.
+        </p>
+        <a href="/contact" class="btn btn--white">Let's Talk About Your SEO</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== SERVICE PILLARS ========== -->
+  <section id="services">
+    <div class="container">
+      <div class="text-center mb-[clamp(40px,5vw,64px)]">
+        <div class="inline-flex items-center gap-2 bg-[rgba(24,119,242,0.15)] text-[var(--color-blue)] border border-[rgba(24,119,242,0.25)] rounded-full px-4 py-1.5 text-[0.78rem] font-semibold mb-4">
+          <span class="w-2 h-2 rounded-full bg-[var(--color-blue)]"></span>
+          What's Included
+        </div>
+        <h2 class="mb-4">A Complete SEO System.<br/>Not Just Keywords.</h2>
+        <p class="subheadline mx-auto">Every piece of the puzzle, handled. From technical foundations to content that converts.</p>
+      </div>
+      <div class="grid grid-cols-3 gap-[clamp(16px,2vw,24px)] max-[900px]:grid-cols-2 max-[600px]:grid-cols-1">
+        {services.map((svc) => (
+          <a href={svc.link} class="group card flex flex-col no-underline transition-all duration-300 hover:border-[rgba(24,119,242,0.3)]">
+            <div class="w-12 h-12 flex items-center justify-center rounded-[var(--radius-sm)] bg-[var(--color-blue-faded)] text-[var(--color-blue)] mb-5">
+              <Fragment set:html={svc.icon} />
+            </div>
+            <h3 class="text-[clamp(1rem,1.3vw,1.15rem)] font-semibold mb-2">{svc.name}</h3>
+            <p class="text-[0.88rem] leading-[1.65] text-[var(--color-text-secondary)] flex-1 mb-4">{svc.description}</p>
+            <span class="inline-flex items-center gap-1.5 text-[0.85rem] font-semibold text-[var(--color-blue)] transition-[gap] duration-200 group-hover:gap-2.5">
+              Learn More
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== PROCESS ========== -->
+  <section class="section--soft" id="process">
+    <div class="container">
+      <div class="seo-process__layout">
+        <div class="seo-process__left">
+          <div class="inline-flex items-center gap-2 bg-[rgba(24,119,242,0.15)] text-[var(--color-blue)] border border-[rgba(24,119,242,0.25)] rounded-full px-4 py-1.5 text-[0.78rem] font-semibold mb-4">
+            <span class="w-2 h-2 rounded-full bg-[var(--color-blue)]"></span>
+            Our Process
+          </div>
+          <h2 class="mb-4">How We Get<br/>You Ranking.</h2>
+          <p class="subheadline mb-8">A proven, repeatable system that turns search visibility into qualified leads for your business.</p>
+          <button class="btn seo-cta-open">Get Started With a Free Audit</button>
+        </div>
+        <div class="seo-process__right">
+          {processSteps.map((step, i) => (
+            <div class="seo-process__step">
+              <div class="seo-process__marker">
+                <span class="seo-process__number">{step.num}</span>
+                {i < processSteps.length - 1 && <div class="seo-process__line"></div>}
+              </div>
+              <div class="seo-process__content">
+                <h3 class="text-[clamp(1.05rem,1.4vw,1.25rem)] font-semibold mb-2">{step.title}</h3>
+                <p class="text-[var(--color-text-secondary)] text-[0.92rem] leading-[1.65]">{step.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== RESULTS ========== -->
+  <section class="seo-results relative overflow-hidden" id="results">
+    <div class="absolute w-[900px] h-[900px] rounded-full bg-[radial-gradient(circle,rgba(24,119,242,0.05)_0%,transparent_70%)] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+    <div class="container relative z-[1]">
+      <!-- Header -->
+      <div class="text-center mb-[clamp(48px,6vw,72px)]">
+        <div class="inline-flex items-center gap-2 bg-[rgba(24,119,242,0.15)] text-[var(--color-blue)] border border-[rgba(24,119,242,0.25)] rounded-full px-4 py-1.5 text-[0.78rem] font-semibold mb-4">
+          <span class="w-2 h-2 rounded-full bg-[var(--color-blue)]"></span>
+          Proven Results
+        </div>
+        <h2 class="text-white mb-4">What Working With Us Actually Looks Like.</h2>
+      </div>
+
+      <!-- What You Actually Get -->
+      <div class="grid grid-cols-3 gap-[clamp(16px,2vw,24px)] mb-[clamp(48px,6vw,72px)] max-[600px]:grid-cols-1">
+        <div class="bg-white/[0.04] border border-white/[0.08] rounded-[var(--radius-lg)] p-[clamp(24px,2.5vw,32px)] transition-all duration-300 hover:bg-white/[0.07] hover:border-white/[0.15]">
+          <div class="w-10 h-10 flex items-center justify-center rounded-[var(--radius-sm)] bg-[rgba(24,119,242,0.1)] text-[var(--color-blue)] mb-4">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+          </div>
+          <h3 class="text-white text-[clamp(1rem,1.3vw,1.15rem)] font-semibold mb-2">Monthly Video Reviews</h3>
+          <p class="text-white/50 text-[0.85rem] leading-[1.65]">Every month you get a recorded video walkthrough of your results, what we did, and what's next. Plus quarterly deep-dives into your overall trajectory.</p>
+        </div>
+        <div class="bg-white/[0.04] border border-white/[0.08] rounded-[var(--radius-lg)] p-[clamp(24px,2.5vw,32px)] transition-all duration-300 hover:bg-white/[0.07] hover:border-white/[0.15]">
+          <div class="w-10 h-10 flex items-center justify-center rounded-[var(--radius-sm)] bg-[rgba(24,119,242,0.1)] text-[var(--color-blue)] mb-4">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="text-white text-[clamp(1rem,1.3vw,1.15rem)] font-semibold mb-2">Full Team Access via Basecamp</h3>
+          <p class="text-white/50 text-[0.85rem] leading-[1.65]">You get your own project space in Basecamp where you can see tasks in progress, ask questions, and talk directly to the people doing the work. No ticket system.</p>
+        </div>
+        <div class="bg-white/[0.04] border border-white/[0.08] rounded-[var(--radius-lg)] p-[clamp(24px,2.5vw,32px)] transition-all duration-300 hover:bg-white/[0.07] hover:border-white/[0.15]">
+          <div class="w-10 h-10 flex items-center justify-center rounded-[var(--radius-sm)] bg-[rgba(24,119,242,0.1)] text-[var(--color-blue)] mb-4">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h3 class="text-white text-[clamp(1rem,1.3vw,1.15rem)] font-semibold mb-2">A Dedicated Strategist Who Knows Your Business</h3>
+          <p class="text-white/50 text-[0.85rem] leading-[1.65]">You get a senior strategist who learns your market, your competitors, and your goals inside and out. Not a rotating door of account reps reading from a script.</p>
+        </div>
+      </div>
+
+      <!-- Testimonials -->
+      <div class="grid grid-cols-2 gap-[clamp(20px,2.5vw,32px)] max-[600px]:grid-cols-1">
+        <div class="seo-testimonial">
+          <div class="seo-testimonial__quote">
+            <svg class="seo-testimonial__mark" width="32" height="32" viewBox="0 0 24 24" fill="rgba(24,119,242,0.3)"><path d="M11 7.5V15a5.5 5.5 0 01-5.5 5.5h-.5v-2h.5A3.5 3.5 0 009 15v-.5H4V7.5h7zm11 0V15a5.5 5.5 0 01-5.5 5.5H16v-2h.5a3.5 3.5 0 003.5-3.5v-.5h-5V7.5h7z"/></svg>
+            <p class="text-white/80 text-[clamp(0.95rem,1.2vw,1.1rem)] leading-[1.75] mb-6">Anybody looking for a website or Local SEO should take a look at Lockard Design Co. Will was very easy to work with and clearly knows what he's doing. Highly recommend.</p>
+          </div>
+          <div class="flex items-center gap-3 mt-auto">
+            <div class="w-10 h-10 rounded-full bg-[var(--color-blue)] flex items-center justify-center text-white font-bold text-sm">RB</div>
+            <div>
+              <p class="text-white font-semibold text-sm">Richard Burner</p>
+              <div class="flex gap-0.5 mt-0.5">
+                <svg viewBox="0 0 24 24" fill="#F5A623" width="12" height="12"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="#F5A623" width="12" height="12"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="#F5A623" width="12" height="12"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="#F5A623" width="12" height="12"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="#F5A623" width="12" height="12"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="seo-testimonial">
+          <div class="seo-testimonial__quote">
+            <svg class="seo-testimonial__mark" width="32" height="32" viewBox="0 0 24 24" fill="rgba(24,119,242,0.3)"><path d="M11 7.5V15a5.5 5.5 0 01-5.5 5.5h-.5v-2h.5A3.5 3.5 0 009 15v-.5H4V7.5h7zm11 0V15a5.5 5.5 0 01-5.5 5.5H16v-2h.5a3.5 3.5 0 003.5-3.5v-.5h-5V7.5h7z"/></svg>
+            <p class="text-white/80 text-[clamp(0.95rem,1.2vw,1.1rem)] leading-[1.75] mb-6">Will and his team have been an incredible contributing factor in our growth over the past 18 months. Professional, responsive, and genuinely invested in our success.</p>
+          </div>
+          <div class="flex items-center gap-3 mt-auto">
+            <div class="w-10 h-10 rounded-full bg-[var(--color-blue)] flex items-center justify-center text-white font-bold text-sm">JB</div>
+            <div>
+              <p class="text-white font-semibold text-sm">Jared Brown</p>
+              <div class="flex gap-0.5 mt-0.5">
+                <svg viewBox="0 0 24 24" fill="#F5A623" width="12" height="12"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="#F5A623" width="12" height="12"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="#F5A623" width="12" height="12"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="#F5A623" width="12" height="12"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="#F5A623" width="12" height="12"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== PRICING ========== -->
+  <section class="section--blue section--textured relative" id="pricing">
+    <div class="container relative z-[1]">
+      <div class="seo-pricing__layout">
+        <div class="seo-pricing__left">
+          <div class="inline-flex items-center gap-2 bg-white/[0.12] text-white border border-white/[0.2] rounded-full px-4 py-1.5 text-[0.78rem] font-semibold mb-4">
+            <span class="w-2 h-2 rounded-full bg-white"></span>
+            Pricing
+          </div>
+          <h2 class="mb-4">Transparent Pricing.<br/>No Surprises.</h2>
+          <p class="text-white/70 text-[clamp(1.05rem,1.4vw,1.25rem)] leading-[1.7] max-w-[45ch] mb-6">We believe you should know what you're investing before the first call. No hidden fees, no bait-and-switch.</p>
+          <div class="mb-8">
+            <span class="text-white text-[clamp(2.75rem,5vw,4rem)] font-extrabold leading-none">$2,500</span>
+            <span class="text-white/50 text-lg mx-1">&ndash;</span>
+            <span class="text-white text-[clamp(2.75rem,5vw,4rem)] font-extrabold leading-none">$10K</span>
+            <span class="text-white/50 text-base ml-1">/mo</span>
+          </div>
+          <button class="btn btn--white seo-cta-open">Get a Custom Quote</button>
+          <p class="text-white/30 text-xs mt-3">6-month minimum. SEO compounds over time.</p>
+        </div>
+        <div class="seo-pricing__right">
+          <div class="bg-white/[0.08] border border-white/[0.12] rounded-[var(--radius-lg)] p-[clamp(28px,3vw,40px)]">
+            <p class="text-white/50 text-xs font-semibold uppercase tracking-wider mb-5">What's Included Every Month</p>
+            <div class="flex flex-col gap-4">
+              <div class="flex items-start gap-3">
+                <svg class="flex-shrink-0 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#27AE60" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <div>
+                  <p class="text-white text-[0.9rem] font-medium">Full Technical SEO Audit</p>
+                  <p class="text-white/40 text-[0.8rem]">Site health, speed, crawlability, Core Web Vitals</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="flex-shrink-0 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#27AE60" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <div>
+                  <p class="text-white text-[0.9rem] font-medium">Keyword Research & Strategy</p>
+                  <p class="text-white/40 text-[0.8rem]">Target the searches your customers actually make</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="flex-shrink-0 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#27AE60" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <div>
+                  <p class="text-white text-[0.9rem] font-medium">On-Page Optimization</p>
+                  <p class="text-white/40 text-[0.8rem]">Titles, meta, headers, internal linking, content</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="flex-shrink-0 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#27AE60" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <div>
+                  <p class="text-white text-[0.9rem] font-medium">Content Creation & Publishing</p>
+                  <p class="text-white/40 text-[0.8rem]">Blog posts, service pages, location pages</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="flex-shrink-0 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#27AE60" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <div>
+                  <p class="text-white text-[0.9rem] font-medium">Link Building & Citations</p>
+                  <p class="text-white/40 text-[0.8rem]">Authority signals that move the needle</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="flex-shrink-0 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#27AE60" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <div>
+                  <p class="text-white text-[0.9rem] font-medium">GBP Optimization & Management</p>
+                  <p class="text-white/40 text-[0.8rem]">Own the map pack in your service area</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="flex-shrink-0 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#27AE60" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <div>
+                  <p class="text-white text-[0.9rem] font-medium">Monthly Video Reviews & Basecamp Access</p>
+                  <p class="text-white/40 text-[0.8rem]">Recorded walkthroughs + direct team access</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== COMPARISON ========== -->
+  <section class="section--soft" id="comparison" style="padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(24px,3vw,40px);">
+    <div class="container">
+      <div class="text-center mb-[clamp(40px,5vw,64px)]">
+        <h2 class="mb-4">Not All SEO Is Created Equal.</h2>
+        <p class="subheadline mx-auto">See how a dedicated SEO partner stacks up against going it alone or hiring a generic agency.</p>
+      </div>
+      <div class="seo-compare max-w-[900px] mx-auto">
+        <div class="seo-compare__header">
+          <div class="seo-compare__label"></div>
+          <div class="seo-compare__col">DIY</div>
+          <div class="seo-compare__col">Generic Agency</div>
+          <div class="seo-compare__col seo-compare__col--highlight">Lockard Design Co.</div>
+        </div>
+        <div class="seo-compare__row">
+          <div class="seo-compare__label">Strategy</div>
+          <div class="seo-compare__col"><span class="seo-compare__icon seo-compare__icon--bad"></span>Guesswork</div>
+          <div class="seo-compare__col"><span class="seo-compare__icon seo-compare__icon--mid"></span>One-size-fits-all</div>
+          <div class="seo-compare__col seo-compare__col--highlight"><span class="seo-compare__icon seo-compare__icon--good"></span>Custom to your market</div>
+        </div>
+        <div class="seo-compare__row">
+          <div class="seo-compare__label">Reporting</div>
+          <div class="seo-compare__col"><span class="seo-compare__icon seo-compare__icon--bad"></span>Google Analytics confusion</div>
+          <div class="seo-compare__col"><span class="seo-compare__icon seo-compare__icon--mid"></span>Vanity metrics</div>
+          <div class="seo-compare__col seo-compare__col--highlight"><span class="seo-compare__icon seo-compare__icon--good"></span>Monthly video reviews + Basecamp access</div>
+        </div>
+        <div class="seo-compare__row">
+          <div class="seo-compare__label">Communication</div>
+          <div class="seo-compare__col"><span class="seo-compare__icon seo-compare__icon--bad"></span>You're on your own</div>
+          <div class="seo-compare__col"><span class="seo-compare__icon seo-compare__icon--mid"></span>Junior account manager</div>
+          <div class="seo-compare__col seo-compare__col--highlight"><span class="seo-compare__icon seo-compare__icon--good"></span>Dedicated senior strategist</div>
+        </div>
+        <div class="seo-compare__row">
+          <div class="seo-compare__label">Timeline</div>
+          <div class="seo-compare__col"><span class="seo-compare__icon seo-compare__icon--bad"></span>Months of trial & error</div>
+          <div class="seo-compare__col"><span class="seo-compare__icon seo-compare__icon--mid"></span>6-12 months, maybe</div>
+          <div class="seo-compare__col seo-compare__col--highlight"><span class="seo-compare__icon seo-compare__icon--good"></span>Clear milestones from month one</div>
+        </div>
+        <div class="seo-compare__row">
+          <div class="seo-compare__label">Commitment</div>
+          <div class="seo-compare__col"><span class="seo-compare__icon seo-compare__icon--bad"></span>Your time (a lot of it)</div>
+          <div class="seo-compare__col"><span class="seo-compare__icon seo-compare__icon--mid"></span>12-month lock-in</div>
+          <div class="seo-compare__col seo-compare__col--highlight"><span class="seo-compare__icon seo-compare__icon--good"></span>6-month minimum</div>
+        </div>
+        <div class="seo-compare__row">
+          <div class="seo-compare__label">Focus</div>
+          <div class="seo-compare__col"><span class="seo-compare__icon seo-compare__icon--bad"></span>Whatever you read online</div>
+          <div class="seo-compare__col"><span class="seo-compare__icon seo-compare__icon--mid"></span>Traffic volume</div>
+          <div class="seo-compare__col seo-compare__col--highlight"><span class="seo-compare__icon seo-compare__icon--good"></span>Leads that actually call you</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== INDUSTRIES ========== -->
+  <section class="industries section--textured" id="industries">
+    <div class="container">
+      <div class="industries__layout">
+        <div class="industries__left">
+          <h2>Built for Businesses<br/>That Build Things.</h2>
+          <p class="industries__sub">We specialize in SEO for contractors, home service companies, and local service businesses.</p>
+          <div class="industries__count">
+            <span class="industries__number">25+</span>
+            <span class="industries__label">Industries Served</span>
+          </div>
+        </div>
+        <div class="industries__right">
+          <div class="industries__tags">
+            {industries.map((ind) => (
+              <a href={`/seo/${ind.slug}/`} class="industries__tag" style="cursor:pointer;text-decoration:none;">
+                {ind.name}
+              </a>
+            ))}
+          </div>
+          <div class="industries__cta">
+            <p>Don't see your industry?</p>
+            <a href="/contact">Let's talk.</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== FAQ ========== -->
+  <section class="section--soft" id="faq">
+    <div class="container">
+      <div class="faq__layout">
+        <div class="faq__left">
+          <h2>Frequently Asked<br>Questions</h2>
+          <p class="subheadline">Everything you need to know about our SEO services.</p>
+          <button class="btn seo-cta-open">Still Have Questions? Let's Talk</button>
+          <div class="faq__authority">
+            <div class="faq__authority-item">
+              <span class="faq__authority-num">5.0</span>
+              <span class="faq__authority-label">Google Rating</span>
+            </div>
+            <div class="faq__authority-item">
+              <span class="faq__authority-num">100's</span>
+              <span class="faq__authority-label">Businesses Served</span>
+            </div>
+            <div class="faq__authority-item">
+              <span class="faq__authority-num">25+</span>
+              <span class="faq__authority-label">Industries</span>
+            </div>
+            <div class="faq__authority-item">
+              <span class="faq__authority-num">6mo</span>
+              <span class="faq__authority-label">Avg. Time to Results</span>
+            </div>
+          </div>
+        </div>
+        <div class="faq__right">
+          {faqData.map((group) => (
+            <div class="faq__group">
+              <h3 class="faq__group-title">{group.group}</h3>
+              {group.items.map((item) => (
+                <details class="faq__item">
+                  <summary class="faq__question">{item.q}</summary>
+                  <div class="faq__answer"><p>{item.a}</p></div>
+                </details>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== FINAL CTA ========== -->
+  <section class="section--blue section--textured" id="contact">
+    <div class="container text-center">
+      <h2 class="mb-4">Your Competitors Are Ranking Right Now.<br/>Let's Change That.</h2>
+      <p class="mx-auto mb-8" style="text-align:center;max-width:55ch;">
+        Get a free SEO audit and see exactly where your business stands &mdash; and what it would take to start showing up first.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4 mb-4">
+        <button class="btn btn--white seo-cta-open">Get Your Free SEO Audit</button>
+        <a href="https://wa.me/18567702456" class="inline-flex items-center gap-1.5 text-white font-semibold no-underline hover:opacity-80 transition-opacity" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.019-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Us
+        </a>
+      </div>
+      <p class="text-white/40 text-xs">Free. No obligation. Takes 15 minutes.</p>
+    </div>
+  </section>
+
+
+  <!-- ========== SCHEMA MARKUP ========== -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "SEO Services for Local Businesses",
+    "description": description,
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "Lockard Design Co.",
+      "url": "https://lockarddesignco.com",
+      "telephone": "+18567702456",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Turnersville",
+        "addressRegion": "NJ",
+        "addressCountry": "US"
+      }
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "United States"
+    },
+    "serviceType": "Search Engine Optimization"
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqData.flatMap(group => group.items.map(item => ({
+      "@type": "Question",
+      "name": item.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.a
+      }
+    })))
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lockarddesignco.com/" },
+      { "@type": "ListItem", "position": 2, "name": "SEO Services", "item": "https://lockarddesignco.com/seo/" }
+    ]
+  })} />
+
+</BlogLayout>
+
+
+<style>
+  /* ========== PROBLEM SECTION ========== */
+  .seo-problem {
+    background: #0a0a14;
+    color: #fff;
+    padding-bottom: calc(var(--spacing-section) + 50px);
+    margin-bottom: -50px;
+    position: relative;
+    z-index: 2;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 50% 100%, 0 calc(100% - 50px));
+  }
+
+  /* ========== STARS & MOON ========== */
+  .seo-lamp-glow {
+    position: absolute;
+    top: -40px;
+    right: -20px;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245, 190, 70, 0.4) 0%, rgba(245, 190, 70, 0.15) 35%, rgba(245, 190, 70, 0.05) 55%, transparent 70%);
+    pointer-events: none;
+    z-index: 2;
+    animation: seo-lamp-pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes seo-lamp-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+
+  .seo-lamp {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    width: clamp(150px, 15vw, 228px);
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  @media (max-width: 900px) {
+    .seo-lamp {
+      width: clamp(80px, 12vw, 120px);
+      top: 5px;
+      right: 5px;
+      opacity: 0.6;
+    }
+    .seo-lamp-glow {
+      width: 200px;
+      height: 200px;
+      top: -30px;
+      right: -30px;
+    }
+  }
+
+  /* ========== PROCESS LAYOUT ========== */
+  .seo-process__layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: start;
+  }
+
+  .seo-process__left {
+    position: sticky;
+    top: clamp(100px, 12vw, 140px);
+  }
+
+  .seo-process__step {
+    display: flex;
+    gap: clamp(16px, 2vw, 24px);
+  }
+
+  .seo-process__step + .seo-process__step {
+    margin-top: clamp(24px, 3vw, 32px);
+  }
+
+  .seo-process__marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .seo-process__number {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(24, 119, 242, 0.1);
+    color: var(--color-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    border: 1px solid rgba(24, 119, 242, 0.2);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                background 0.5s ease,
+                color 0.5s ease,
+                border-color 0.5s ease,
+                box-shadow 0.5s ease;
+  }
+
+  .seo-process__step.is-active .seo-process__number {
+    transform: scale(1.25);
+    background: var(--color-blue);
+    color: #fff;
+    border-color: var(--color-blue);
+    box-shadow: 0 0 20px rgba(24, 119, 242, 0.4), 0 0 50px rgba(24, 119, 242, 0.12);
+  }
+
+  .seo-process__content h3,
+  .seo-process__content p {
+    transition: color 0.5s ease, opacity 0.5s ease;
+  }
+
+  .seo-process__step.is-active .seo-process__content h3 {
+    color: var(--color-blue);
+  }
+
+  .seo-process__line {
+    width: 2px;
+    flex: 1;
+    background: linear-gradient(180deg, rgba(24, 119, 242, 0.3), rgba(24, 119, 242, 0.05));
+    margin-block: 8px;
+    min-height: 32px;
+  }
+
+  /* ========== SCROLL ANIMATIONS ========== */
+  .seo-fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .seo-fade-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ========== COMPARISON TABLE ========== */
+  .seo-compare__header,
+  .seo-compare__row {
+    display: grid;
+    grid-template-columns: 140px 1fr 1fr 1fr;
+    gap: 1px;
+  }
+
+  .seo-compare__header {
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 2px;
+  }
+
+  .seo-compare__header .seo-compare__col {
+    background: var(--color-bg);
+    padding: 12px 16px;
+    text-align: left;
+    color: var(--color-text-secondary);
+  }
+
+  .seo-compare__header .seo-compare__col--highlight {
+    background: var(--color-blue);
+    color: #fff;
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  }
+
+  .seo-compare__row {
+    border-bottom: 1px solid var(--color-rule-light);
+  }
+
+  .seo-compare__row:last-child {
+    border-bottom: none;
+  }
+
+  .seo-compare__label {
+    padding: 14px 16px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+  }
+
+  .seo-compare__col {
+    padding: 14px 16px;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .seo-compare__col--highlight {
+    background: rgba(24, 119, 242, 0.04);
+    color: var(--color-text);
+    font-weight: 500;
+  }
+
+  .seo-compare__row:last-child .seo-compare__col--highlight {
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  }
+
+  /* ========== RESULTS SECTION (with chevron) ========== */
+  .seo-results {
+    background: #0a0a14;
+    color: #fff;
+    padding-bottom: calc(var(--spacing-section) + 50px);
+    margin-bottom: -50px;
+    position: relative;
+    z-index: 2;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 50% 100%, 0 calc(100% - 50px));
+  }
+
+  /* ========== RESULTS — STATS & TESTIMONIALS ========== */
+  .seo-stat-card {
+    background: white/[0.03];
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .seo-stat-card:first-child {
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+  }
+
+  .seo-stat-card:last-child {
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  }
+
+  @media (max-width: 600px) {
+    .seo-stat-card:first-child { border-radius: var(--radius-lg) 0 0 0; }
+    .seo-stat-card:nth-child(2) { border-radius: 0 var(--radius-lg) 0 0; }
+    .seo-stat-card:nth-child(3) { border-radius: 0 0 0 var(--radius-lg); }
+    .seo-stat-card:last-child { border-radius: 0 0 var(--radius-lg) 0; }
+  }
+
+  .seo-testimonial {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    padding: clamp(28px, 3vw, 40px);
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s ease, background 0.3s ease;
+  }
+
+  .seo-testimonial:hover {
+    border-color: rgba(24, 119, 242, 0.25);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .seo-testimonial__mark {
+    margin-bottom: 12px;
+    opacity: 0.6;
+  }
+
+  /* ========== PRICING ========== */
+  .seo-pricing__layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: start;
+  }
+
+  @media (max-width: 900px) {
+    .seo-pricing__layout {
+      grid-template-columns: 1fr;
+      gap: clamp(32px, 4vw, 48px);
+    }
+
+    .seo-pricing__left {
+      text-align: center;
+    }
+  }
+
+  /* ========== COMPARISON ICONS ========== */
+  .seo-compare__icon {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin-right: 6px;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .seo-compare__icon--bad {
+    background: rgba(231, 76, 60, 0.15);
+    border: 1.5px solid rgba(231, 76, 60, 0.4);
+  }
+
+  .seo-compare__icon--mid {
+    background: rgba(243, 156, 18, 0.15);
+    border: 1.5px solid rgba(243, 156, 18, 0.4);
+  }
+
+  .seo-compare__icon--good {
+    background: rgba(39, 174, 96, 0.15);
+    border: 1.5px solid rgba(39, 174, 96, 0.6);
+  }
+
+  .seo-compare__icon--good::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #27AE60;
+    transform: translate(-50%, -50%);
+  }
+
+  /* ========== INDUSTRIES (matching homepage) ========== */
+  .industries {
+    padding-top: var(--spacing-section);
+    padding-bottom: calc(var(--spacing-section) + 50px);
+    margin-bottom: -50px;
+    background: #0a0a14;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 50% 100%, 0 calc(100% - 50px));
+  }
+
+  .industries__layout {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: clamp(48px, 6vw, 100px);
+    align-items: center;
+  }
+
+  .industries h2 {
+    color: #fff;
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    margin-bottom: 16px;
+  }
+
+  .industries__sub {
+    color: rgba(255, 255, 255, 0.45);
+    font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+    line-height: 1.7;
+    margin-bottom: 32px;
+    max-width: 40ch;
+  }
+
+  .industries__count {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .industries__number {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--color-blue), #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .industries__label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .industries__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .industries__tag {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.25s ease;
+  }
+
+  .industries__tag:hover {
+    background: rgba(24, 119, 242, 0.12);
+    border-color: rgba(24, 119, 242, 0.3);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(24, 119, 242, 0.15);
+  }
+
+  .industries__cta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .industries__cta p {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.35);
+    margin: 0;
+  }
+
+  .industries__cta a {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-blue);
+    text-decoration: none;
+  }
+
+  .industries__cta a:hover {
+    color: #60a5fa;
+  }
+
+  @media (max-width: 768px) {
+    .industries__layout {
+      grid-template-columns: 1fr;
+    }
+
+    .industries__left {
+      text-align: center;
+    }
+
+    .industries__sub {
+      margin-inline: auto;
+    }
+
+    .industries__count {
+      justify-content: center;
+    }
+
+    .industries__tags {
+      justify-content: center;
+    }
+  }
+
+  /* ========== FAQ — reuse homepage patterns ========== */
+  .faq__layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: start;
+  }
+
+  .faq__left {
+    position: sticky;
+    top: clamp(100px, 12vw, 140px);
+  }
+
+  .faq__left h2 {
+    margin-bottom: 16px;
+  }
+
+  .faq__left .subheadline {
+    margin-bottom: clamp(24px, 3vw, 32px);
+  }
+
+  .faq__authority {
+    margin-top: clamp(40px, 5vw, 56px);
+    padding-top: clamp(32px, 4vw, 40px);
+    border-top: 1px solid var(--color-rule);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(20px, 2.5vw, 28px);
+  }
+
+  .faq__authority-num {
+    display: block;
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.2;
+  }
+
+  .faq__authority-label {
+    font-size: 0.78rem;
+    color: var(--color-text-secondary);
+  }
+
+  .faq__group + .faq__group {
+    margin-top: clamp(32px, 4vw, 40px);
+  }
+
+  .faq__group-title {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-secondary);
+    margin-bottom: 16px;
+  }
+
+  .faq__item {
+    border-bottom: 1px solid var(--color-rule);
+  }
+
+  .faq__question {
+    padding: 18px 0;
+    font-weight: 600;
+    font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .faq__question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq__question::after {
+    content: '+';
+    font-size: 1.25rem;
+    color: var(--color-blue);
+    font-weight: 400;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  details[open] .faq__question::after {
+    content: '\2212';
+  }
+
+  .faq__answer {
+    padding-bottom: 18px;
+  }
+
+  .faq__answer p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 900px) {
+    .seo-process__layout {
+      grid-template-columns: 1fr;
+    }
+
+    .seo-process__left {
+      position: static;
+      text-align: center;
+    }
+
+    .seo-process__left .subheadline {
+      margin-inline: auto;
+    }
+
+    .seo-industries__layout {
+      grid-template-columns: 1fr;
+    }
+
+    .seo-industries__left {
+      text-align: center;
+    }
+
+    .seo-industries__right {
+      justify-content: center;
+    }
+
+    .seo-industries__right .flex-wrap {
+      justify-content: center;
+    }
+
+    .faq__layout {
+      grid-template-columns: 1fr;
+    }
+
+    .faq__left {
+      position: static;
+      text-align: center;
+    }
+
+    .faq__left .subheadline {
+      margin-inline: auto;
+    }
+
+    .seo-compare__header,
+    .seo-compare__row {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .seo-compare__header {
+      display: none;
+    }
+
+    .seo-compare__row {
+      background: var(--color-bg);
+      border: 1px solid var(--color-rule);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+
+    .seo-compare__label {
+      padding: 0 0 8px 0;
+      font-size: 0.9rem;
+    }
+
+    .seo-compare__col {
+      padding: 6px 0;
+      text-align: left;
+      justify-content: flex-start;
+    }
+
+    .seo-compare__col::before {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      margin-right: 8px;
+    }
+
+    .seo-compare__row .seo-compare__col:nth-child(2)::before { content: 'DIY: '; }
+    .seo-compare__row .seo-compare__col:nth-child(3)::before { content: 'Agency: '; }
+    .seo-compare__row .seo-compare__col:nth-child(4)::before { content: 'LDCo: '; }
+
+    .seo-compare__col--highlight {
+      background: rgba(24, 119, 242, 0.08);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      margin-top: 4px;
+    }
+  }
+</style>
+
+
+<script>
+  // Stars canvas animation
+  (() => {
+    const canvas = document.querySelector('.seo-stars') as HTMLCanvasElement;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    const section = canvas.closest('section');
+    if (!section) return;
+
+    function resize() {
+      canvas.width = section!.offsetWidth;
+      canvas.height = section!.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    const stars: { x: number; y: number; r: number; phase: number; speed: number }[] = [];
+    for (let i = 0; i < 80; i++) {
+      stars.push({
+        x: Math.random(),
+        y: Math.random(),
+        r: Math.random() * 1.5 + 0.5,
+        phase: Math.random() * Math.PI * 2,
+        speed: Math.random() * 0.008 + 0.003,
+      });
+    }
+
+    function draw(t: number) {
+      ctx!.clearRect(0, 0, canvas.width, canvas.height);
+      for (const s of stars) {
+        const opacity = 0.3 + 0.7 * ((Math.sin(t * s.speed + s.phase) + 1) / 2);
+        ctx!.beginPath();
+        ctx!.arc(s.x * canvas.width, s.y * canvas.height, s.r, 0, Math.PI * 2);
+        ctx!.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+        ctx!.fill();
+      }
+      requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);
+  })();
+</script>
+
+<script>
+  // CTA buttons trigger FloatingCTA sidebar
+  document.querySelectorAll('.seo-cta-open').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const floatBtn = document.querySelector('.floating-cta__btn') as HTMLButtonElement;
+      if (floatBtn) floatBtn.click();
+    });
+  });
+
+  // Scroll-triggered fade-in animations
+  const fadeObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+  );
+
+  document.querySelectorAll('section > .container, section > .max-w-\\[700px\\]').forEach(el => {
+    el.classList.add('seo-fade-up');
+    fadeObserver.observe(el);
+  });
+
+  // Process steps — light up as you scroll (like homepage plan section)
+  const stepObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-active');
+        } else {
+          entry.target.classList.remove('is-active');
+        }
+      });
+    },
+    { threshold: 0.5, rootMargin: '0px 0px -35% 0px' }
+  );
+
+  document.querySelectorAll('.seo-process__step').forEach(step => {
+    stepObserver.observe(step);
+  });
+</script>

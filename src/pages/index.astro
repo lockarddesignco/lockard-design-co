@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import MapSection from '../components/MapSection.astro';
 ---
 
 <Layout title="Lockard Design Co. — Websites & Growth Systems for Service Businesses">
@@ -332,57 +333,45 @@ import Footer from '../components/Footer.astro';
         <p class="subheadline mx-auto">A complete toolkit to build your foundation, fill your pipeline, and automate your growth.</p>
       </div>
       <div class="svcs__cards">
-        <a href="/contact" class="svcs__card">
+        <a href="/web-design/" class="svcs__card">
           <div class="svcs__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
           <h3>Custom Website Design</h3>
           <p>We build professional, high-converting websites that work as your #1 salesperson, 24/7.</p>
           <span class="svcs__link">See Our Work <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </a>
-        <a href="/contact" class="svcs__card">
+        <a href="/seo/" class="svcs__card">
           <div class="svcs__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
-          <h3>Get Found on Google</h3>
+          <h3>Search Engine Optimization</h3>
           <p>Climb the search rankings and own your local market with our proven SEO strategies.</p>
           <span class="svcs__link">Rank Higher <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </a>
-        <a href="/contact" class="svcs__card">
-          <div class="svcs__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
-          <h3>Predictable Lead Flow</h3>
-          <p>Turn on the faucet for qualified leads with precision-targeted digital advertising campaigns.</p>
-          <span class="svcs__link">Get More Leads <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        <a href="/seo/local-seo/" class="svcs__card">
+          <div class="svcs__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <h3>Local SEO & Google Maps</h3>
+          <p>Dominate the map pack and become the first call when customers search in your area.</p>
+          <span class="svcs__link">Get Found Locally <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </a>
-        <a href="/contact" class="svcs__card">
-          <div class="svcs__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8z"/></svg></div>
-          <h3>Professional Brand Identity</h3>
-          <p>We craft a memorable brand that makes you the obvious and only choice for your ideal clients.</p>
-          <span class="svcs__link">Build Your Brand <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        <a href="/web-design/website-redesign/" class="svcs__card">
+          <div class="svcs__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></div>
+          <h3>Website Redesign</h3>
+          <p>Transform your outdated website into a modern, lead-generating machine.</p>
+          <span class="svcs__link">Modernize Your Site <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </a>
-        <a href="/contact" class="svcs__card">
+        <a href="/website-management/" class="svcs__card">
           <div class="svcs__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
           <h3>Website Care & Support</h3>
           <p>Your website is a valuable asset — we keep it secure, updated, and running at peak performance.</p>
           <span class="svcs__link">Protect Your Site <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </a>
-        <a href="/contact" class="svcs__card">
-          <div class="svcs__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></div>
-          <h3>Business Process Automation</h3>
-          <p>Stop wasting time on repetitive tasks and let us build systems that run your business for you.</p>
-          <span class="svcs__link">Save Time <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-        </a>
-        <a href="/contact" class="svcs__card">
-          <div class="svcs__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="15" x2="23" y2="15"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="15" x2="4" y2="15"/></svg></div>
-          <h3>AI-Powered Operations</h3>
-          <p>Gain an unfair advantage by integrating intelligent AI systems into your daily workflow.</p>
-          <span class="svcs__link">Work Smarter <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-        </a>
-        <a href="/contact" class="svcs__card">
-          <div class="svcs__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          <h3>B2B Outreach Systems</h3>
-          <p>We build and manage direct outreach campaigns to land high-value B2B clients.</p>
-          <span class="svcs__link">Land Bigger Clients <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        <a href="/seo/seo-audits/" class="svcs__card">
+          <div class="svcs__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+          <h3>SEO Audits</h3>
+          <p>Get a complete analysis of your site's SEO health and a clear roadmap to improve.</p>
+          <span class="svcs__link">Audit Your Site <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </a>
       </div>
       <div class="svcs__ctas text-center">
-        <a href="/contact" class="btn btn--outline btn--lg">Explore All Services</a>
+        <a href="/seo/" class="btn btn--outline btn--lg">Explore All Services</a>
         <a href="#contact" class="btn btn--lg">Get Your Growth Plan</a>
       </div>
     </div>
@@ -752,53 +741,7 @@ import Footer from '../components/Footer.astro';
 
 
   <!-- ========== MAP ========== -->
-  <div class="map-section">
-    <div class="map-card">
-      <div class="map-card__logo">
-        <img src="/images/logo.svg" alt="" width="36" height="36" />
-        <span class="map-card__name">
-          <strong>LOCKARD</strong>
-          <span>DESIGN CO.</span>
-        </span>
-      </div>
-      <div class="map-card__info">
-        <div class="map-card__row">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Turnersville, NJ
-        </div>
-        <div class="map-card__row">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          (856) 770-2456
-        </div>
-        <div class="map-card__row">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          Growing businesses Coast to Coast
-        </div>
-      </div>
-      <a href="https://maps.app.goo.gl/7iepW7fBYRLb76Wf9" target="_blank" rel="noopener noreferrer" class="map-card__btn">
-        Get Directions
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-      </a>
-      <div class="map-card__stars">
-        <svg viewBox="0 0 24 24" fill="#F5A623" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        <svg viewBox="0 0 24 24" fill="#F5A623" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        <svg viewBox="0 0 24 24" fill="#F5A623" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        <svg viewBox="0 0 24 24" fill="#F5A623" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        <svg viewBox="0 0 24 24" fill="#F5A623" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        <span>5.0 on Google</span>
-      </div>
-    </div>
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d98000.0!2d-75.05073892402105!3d39.76668637155151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6d3c33f0ad269%3A0x65cd09a7ce31a611!2sLockard%20Design%20Co.!5e0!3m2!1sen!2sus!4v1773728359109!5m2!1sen!2sus"
-      width="100%"
-      height="450"
-      style="border:0; display:block;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      title="Lockard Design Co. — Turnersville, NJ"
-    ></iframe>
-  </div>
+  <MapSection />
 
   <Footer />
 
@@ -2336,7 +2279,7 @@ import Footer from '../components/Footer.astro';
 
   .svcs__cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: clamp(16px, 2vw, 24px);
   }
 
@@ -2453,6 +2396,8 @@ import Footer from '../components/Footer.astro';
     color: var(--color-text-secondary);
     font-size: clamp(1rem, 1.2vw, 1.1rem);
     line-height: 1.6;
+    max-width: 55ch;
+    margin-inline: auto;
   }
 
   .testimonials__cta {
