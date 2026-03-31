@@ -1,0 +1,162 @@
+<!-- ========== SOUND TOGGLE ========== -->
+<button class="sound-toggle" id="soundToggle" aria-label="Toggle background music">
+  <svg class="sound-toggle__icon sound-toggle__icon--off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+    <line x1="23" y1="9" x2="17" y2="15"/>
+    <line x1="17" y1="9" x2="23" y2="15"/>
+  </svg>
+  <svg class="sound-toggle__icon sound-toggle__icon--on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+    <path d="M19.07 4.93a10 10 0 010 14.14"/>
+    <path d="M15.54 8.46a5 5 0 010 7.07"/>
+  </svg>
+</button>
+<audio id="bgMusic" loop preload="none">
+  <source src="/audio/lockard-design-co-makes-the-best-websites.mp3" type="audio/mpeg" />
+</audio>
+
+<style>
+  .sound-toggle {
+    position: fixed;
+    bottom: 28px;
+    left: 28px;
+    z-index: 900;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .sound-toggle:hover {
+    transform: translateY(-1px);
+    border-color: rgba(24, 119, 242, 0.3);
+    color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .sound-toggle.is-playing {
+    background: var(--color-blue);
+    border-color: var(--color-blue);
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(24, 119, 242, 0.35);
+  }
+
+  .sound-toggle.is-playing:hover {
+    background: var(--color-bg-blue-dark);
+    border-color: var(--color-bg-blue-dark);
+    box-shadow: 0 6px 28px rgba(24, 119, 242, 0.45);
+  }
+
+  .sound-toggle__icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .sound-toggle__icon--on {
+    display: none;
+  }
+
+  .sound-toggle.is-playing .sound-toggle__icon--off {
+    display: none;
+  }
+
+  .sound-toggle.is-playing .sound-toggle__icon--on {
+    display: block;
+  }
+
+  /* Light background variant */
+  .sound-toggle--on-light {
+    border-color: rgba(0, 0, 0, 0.12);
+    background: rgba(255, 255, 255, 0.8);
+    color: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .sound-toggle--on-light:hover {
+    border-color: rgba(24, 119, 242, 0.3);
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .sound-toggle--on-light.is-playing {
+    background: var(--color-blue);
+    border-color: var(--color-blue);
+    color: #fff;
+  }
+
+  @media (max-width: 480px) {
+    .sound-toggle {
+      width: 42px;
+      height: 42px;
+      bottom: 28px;
+      left: 16px;
+    }
+    .sound-toggle__icon {
+      width: 18px;
+      height: 18px;
+    }
+  }
+</style>
+
+<script>
+  (() => {
+    const btn = document.getElementById('soundToggle') as HTMLButtonElement;
+    const audio = document.getElementById('bgMusic') as HTMLAudioElement;
+    if (!btn || !audio) return;
+
+    audio.volume = 0.3;
+
+    btn.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        btn.classList.add('is-playing');
+      } else {
+        audio.pause();
+        btn.classList.remove('is-playing');
+      }
+    });
+
+    // Detect background behind button and swap to light/dark style
+    const lightSelectors = '.guide, .growth, .blog-preview, .testimonials, .faq, .section--soft, .cs-problem, .cs-services, .cs-quote, .cs-closing, .csi-grid-section';
+
+    function checkBackground() {
+      const rect = btn.getBoundingClientRect();
+      const midX = rect.left + rect.width / 2;
+      const midY = rect.top + rect.height / 2;
+
+      btn.style.pointerEvents = 'none';
+      btn.style.visibility = 'hidden';
+      const el = document.elementFromPoint(midX, midY);
+      btn.style.visibility = '';
+      btn.style.pointerEvents = '';
+
+      if (el) {
+        const onLight = !!el.closest(lightSelectors);
+        btn.classList.toggle('sound-toggle--on-light', onLight);
+      }
+    }
+
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(() => {
+          checkBackground();
+          ticking = false;
+        });
+      }
+    }, { passive: true });
+
+    checkBackground();
+  })();
+</script>

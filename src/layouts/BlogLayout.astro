@@ -4,6 +4,7 @@ import Footer from '../components/Footer.astro';
 import FloatingCTA from '../components/FloatingCTA.astro';
 import MapSection from '../components/MapSection.astro';
 import BoltCursor from '../components/BoltCursor.astro';
+import SoundToggle from '../components/SoundToggle.astro';
 
 interface Props {
   title: string;
@@ -74,6 +75,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
     <MapSection />
     <Footer />
+    <SoundToggle />
     <BoltCursor />
 
     <!-- Full-page noise texture overlay -->

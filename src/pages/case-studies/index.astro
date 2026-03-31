@@ -19,48 +19,67 @@ const studies = (await getCollection('case-studies'))
         <span class="csi-hero__dot"></span>
         Proof Over Promises
       </div>
-      <h1 class="csi-hero__title">Case Studies</h1>
+      <h1 class="csi-hero__title">Our Work Speaks for Itself.</h1>
       <p class="csi-hero__sub">
-        Real results from real clients. No fluff, no vanity metrics — just what we built, why we built it, and what happened next.
+        Every project below is a real business we partnered with — from strategy to launch to measurable results. You'll see the site we built, the rankings we earned, and the numbers that followed. This is what happens when the build quality is the strategy.
       </p>
     </div>
   </section>
 
-  <!-- ========== CASE STUDY GRID ========== -->
-  <section class="csi-grid-section">
-    <div class="container">
-      <div class="csi-grid">
-        {studies.map((study) => (
-          <a href={`/case-studies/${study.id}/`} class="csi-card">
-            <div class="csi-card__top">
-              <span class="csi-card__industry">{study.data.industry}</span>
-              <span class="csi-card__timeline">{study.data.timeline}</span>
+  <!-- ========== SHOWCASE ========== -->
+  {studies.map((study, i) => (
+    <section class={`csi-showcase ${i % 2 === 0 ? '' : 'csi-showcase--alt'}`}>
+      <div class="container">
+        <a href={`/case-studies/${study.id}/`} class="csi-showcase__layout">
+          <div class="csi-showcase__visual">
+            {study.data.siteScreenshot ? (
+              <div class="csi-showcase__browser">
+                <div class="csi-showcase__browser-bar">
+                  <span class="csi-showcase__dot" style="background:#ff5f56"></span>
+                  <span class="csi-showcase__dot" style="background:#ffbd2e"></span>
+                  <span class="csi-showcase__dot" style="background:#27c93f"></span>
+                </div>
+                <img src={study.data.siteScreenshot} alt={study.data.siteScreenshotAlt || ''} width="1440" height="900" loading="lazy" />
+              </div>
+            ) : (
+              <div class="csi-showcase__placeholder">
+                <span>Coming Soon</span>
+              </div>
+            )}
+          </div>
+          <div class="csi-showcase__content">
+            <div class="csi-showcase__meta-row">
+              <span class="csi-showcase__industry">{study.data.industry}</span>
+              <span class="csi-showcase__divider"></span>
+              <span class="csi-showcase__location">{study.data.location}</span>
             </div>
-            <h2 class="csi-card__title">{study.data.title}</h2>
-            <p class="csi-card__desc">{study.data.description}</p>
-            <div class="csi-card__stats">
-              {study.data.stats.slice(0, 3).map((stat) => (
-                <div class="csi-card__stat">
-                  <span class="csi-card__stat-value">{stat.value}</span>
-                  <span class="csi-card__stat-label">{stat.label}</span>
+            <h2 class="csi-showcase__title">{study.data.client}</h2>
+            <p class="csi-showcase__desc">{study.data.description}</p>
+            <div class="csi-showcase__stats">
+              {study.data.stats.map((stat) => (
+                <div class="csi-showcase__stat">
+                  <span class="csi-showcase__stat-value">{stat.value}</span>
+                  <span class="csi-showcase__stat-label">{stat.label}</span>
                 </div>
               ))}
             </div>
-            <span class="csi-card__link">
-              Read Case Study
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <span class="csi-showcase__cta">
+              View Full Case Study
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </span>
-          </a>
-        ))}
+          </div>
+        </a>
       </div>
+    </section>
+  ))}
 
-      {studies.length === 0 && (
-        <div class="csi-empty">
-          <p>Case studies are on the way. Check back soon.</p>
-        </div>
-      )}
-    </div>
-  </section>
+  {studies.length === 0 && (
+    <section class="csi-empty-section">
+      <div class="container">
+        <p class="csi-empty">Case studies are on the way. Check back soon.</p>
+      </div>
+    </section>
+  )}
 
   <!-- ========== CTA ========== -->
   <section class="cta-final section--blue" id="contact">
@@ -78,7 +97,9 @@ const studies = (await getCollection('case-studies'))
 </BlogLayout>
 
 <style>
-  /* ── Hero ── */
+  /* ══════════════════════════════
+     HERO
+     ══════════════════════════════ */
   .csi-hero {
     background: #0a0a14;
     padding-top: clamp(260px, 28vh, 320px);
@@ -101,142 +122,234 @@ const studies = (await getCollection('case-studies'))
     margin-bottom: clamp(20px, 3vw, 32px);
   }
   .csi-hero__dot {
-    width: 6px;
-    height: 6px;
+    width: 6px; height: 6px;
     background: var(--color-blue);
     border-radius: 50%;
     animation: csi-pulse 2s ease-in-out infinite;
   }
-  @keyframes csi-pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
+  @keyframes csi-pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
   .csi-hero__title {
     color: #fff;
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
     margin-bottom: clamp(16px, 2vw, 24px);
   }
   .csi-hero__sub {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.55);
     font-size: clamp(1rem, 1.3vw, 1.15rem);
     max-width: 540px;
     margin-inline: auto;
     line-height: 1.7;
   }
 
-  /* ── Grid ── */
-  .csi-grid-section {
-    padding-block: clamp(60px, 8vw, 120px);
+  /* ══════════════════════════════
+     SHOWCASE — full-width alternating sections
+     ══════════════════════════════ */
+  .csi-showcase {
+    padding-block: clamp(80px, 10vw, 140px);
+    background: #0a0a14;
+    border-top: 1px solid rgba(255,255,255,0.04);
   }
-  .csi-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr));
-    gap: clamp(24px, 3vw, 32px);
+  .csi-showcase--alt {
+    background: var(--color-bg);
+    border-top: 1px solid var(--color-rule);
   }
 
-  /* ── Card ── */
-  .csi-card {
-    display: flex;
-    flex-direction: column;
-    padding: clamp(28px, 3vw, 40px);
-    background: var(--color-bg);
-    border: 1px solid var(--color-rule);
-    border-radius: var(--radius-md);
+  .csi-showcase__layout {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: clamp(40px, 5vw, 80px);
+    align-items: center;
     text-decoration: none;
     color: inherit;
-    transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
   }
-  .csi-card:hover {
-    box-shadow: 0 8px 32px rgba(24, 119, 242, 0.08);
-    transform: translateY(-2px);
-    border-color: var(--color-blue);
+  .csi-showcase--alt .csi-showcase__layout {
+    direction: rtl;
   }
-  .csi-card__top {
+  .csi-showcase--alt .csi-showcase__layout > * {
+    direction: ltr;
+  }
+
+  /* Browser mockup */
+  .csi-showcase__visual {
+    position: relative;
+  }
+  .csi-showcase__browser {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .csi-showcase__layout:hover .csi-showcase__browser {
+    transform: translateY(-6px);
+    box-shadow: 0 28px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(24,119,242,0.15);
+  }
+  .csi-showcase--alt .csi-showcase__browser {
+    border-color: var(--color-rule);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+  }
+  .csi-showcase--alt .csi-showcase__layout:hover .csi-showcase__browser {
+    box-shadow: 0 28px 80px rgba(0,0,0,0.15), 0 0 0 1px rgba(24,119,242,0.15);
+  }
+  .csi-showcase__browser-bar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    margin-bottom: clamp(16px, 2vw, 20px);
+    gap: 6px;
+    padding: 10px 14px;
+    background: #1a1a2e;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
   }
-  .csi-card__industry {
-    font-size: 0.75rem;
+  .csi-showcase--alt .csi-showcase__browser-bar {
+    background: #f0f0f4;
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .csi-showcase__dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+  }
+  .csi-showcase__browser img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .csi-showcase__placeholder {
+    aspect-ratio: 16/10;
+    background: rgba(255,255,255,0.03);
+    border: 1px dashed rgba(255,255,255,0.1);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.2);
+    font-size: 0.9rem;
     font-weight: 600;
+  }
+
+  /* Content */
+  .csi-showcase__meta-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: clamp(12px, 1.5vw, 16px);
+  }
+  .csi-showcase__industry {
+    font-size: 0.72rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: var(--color-blue);
   }
-  .csi-card__timeline {
-    font-size: 0.75rem;
+  .csi-showcase__divider {
+    width: 3px; height: 3px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+  }
+  .csi-showcase--alt .csi-showcase__divider {
+    background: var(--color-text-secondary);
+  }
+  .csi-showcase__location {
+    font-size: 0.72rem;
     font-weight: 500;
+    color: rgba(255,255,255,0.4);
+  }
+  .csi-showcase--alt .csi-showcase__location {
     color: var(--color-text-secondary);
-    padding: 3px 10px;
-    background: var(--color-bg-soft);
-    border-radius: var(--radius-full);
   }
-  .csi-card__title {
-    font-size: clamp(1.15rem, 1.6vw, 1.35rem);
-    font-weight: 700;
-    line-height: 1.3;
-    color: var(--color-text);
-    margin-bottom: 12px;
-  }
-  .csi-card__desc {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: var(--color-text-secondary);
-    margin-bottom: clamp(20px, 2.5vw, 28px);
-    flex: 1;
-  }
-  .csi-card__stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    padding-top: clamp(16px, 2vw, 20px);
-    border-top: 1px solid var(--color-rule);
-    margin-bottom: clamp(16px, 2vw, 24px);
-  }
-  .csi-card__stat {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    gap: 2px;
-  }
-  .csi-card__stat-value {
-    font-size: clamp(1.25rem, 2vw, 1.5rem);
+  .csi-showcase__title {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
     font-weight: 800;
+    color: #fff;
+    margin-bottom: clamp(12px, 1.5vw, 16px);
+    line-height: 1.15;
+  }
+  .csi-showcase--alt .csi-showcase__title {
     color: var(--color-text);
-    letter-spacing: -0.02em;
   }
-  .csi-card__stat-label {
-    font-size: 0.65rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+  .csi-showcase__desc {
+    font-size: clamp(0.92rem, 1.1vw, 1rem);
+    line-height: 1.7;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: clamp(24px, 3vw, 36px);
+    max-width: none;
+  }
+  .csi-showcase--alt .csi-showcase__desc {
     color: var(--color-text-secondary);
-  }
-  .csi-card__link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--color-blue);
-    transition: gap 0.2s ease;
-  }
-  .csi-card:hover .csi-card__link {
-    gap: 10px;
   }
 
+  /* Stats row */
+  .csi-showcase__stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: clamp(24px, 3vw, 36px);
+  }
+  .csi-showcase__stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .csi-showcase__stat-value {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  .csi-showcase--alt .csi-showcase__stat-value {
+    color: var(--color-text);
+  }
+  .csi-showcase__stat-label {
+    font-size: 0.62rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255,255,255,0.35);
+  }
+  .csi-showcase--alt .csi-showcase__stat-label {
+    color: var(--color-text-secondary);
+  }
+
+  /* CTA link */
+  .csi-showcase__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-blue);
+    transition: gap 0.25s ease;
+  }
+  .csi-showcase__layout:hover .csi-showcase__cta {
+    gap: 14px;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .csi-showcase__layout {
+      grid-template-columns: 1fr;
+      gap: clamp(28px, 4vw, 40px);
+    }
+    .csi-showcase--alt .csi-showcase__layout {
+      direction: ltr;
+    }
+    .csi-showcase__stats {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+  }
+
+  .csi-empty-section {
+    padding-block: clamp(60px, 8vw, 120px);
+  }
   .csi-empty {
     text-align: center;
-    padding: 80px 0;
-  }
-  .csi-empty p {
     color: var(--color-text-secondary);
     margin-inline: auto;
   }
 
-  /* ── CTA ── */
+  /* ══════════════════════════════
+     CTA
+     ══════════════════════════════ */
   .cta-final {
     padding-block: clamp(80px, 10vw, 160px);
     position: relative;
@@ -254,16 +367,9 @@ const studies = (await getCollection('case-studies'))
     opacity: 0.35;
     mix-blend-mode: overlay;
   }
-  .cta-final > * {
-    position: relative;
-    z-index: 1;
-  }
-  .cta-final h2 {
-    margin-bottom: clamp(12px, 2vw, 24px);
-  }
-  .cta-final p {
-    max-width: 50ch;
-  }
+  .cta-final > * { position: relative; z-index: 1; }
+  .cta-final h2 { margin-bottom: clamp(12px, 2vw, 24px); }
+  .cta-final p { max-width: 50ch; }
   .cta-final__actions {
     display: flex;
     gap: 12px;
