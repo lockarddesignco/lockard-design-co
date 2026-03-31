@@ -102,6 +102,60 @@ const industries = defineCollection({
   }),
 });
 
+/* ─── Case Studies ─── */
+const caseStudies = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/case-studies' }),
+  schema: z.object({
+    title: z.string(),
+    titleTag: z.string(),
+    description: z.string(),
+    client: z.string(),
+    industry: z.string(),
+    location: z.string(),
+    services: z.array(z.string()),
+    timeline: z.string(),
+    heroStat: z.string(),
+    heroStatLabel: z.string(),
+    featuredImage: z.string().optional(),
+    featuredImageAlt: z.string().optional(),
+    stats: z.array(z.object({
+      value: z.string(),
+      label: z.string(),
+    })),
+    clientLogo: z.string().optional(),
+    clientLogoAlt: z.string().optional(),
+    siteScreenshot: z.string().optional(),
+    siteScreenshotAlt: z.string().optional(),
+    siteScreenshots: z.array(z.object({
+      src: z.string(),
+      alt: z.string(),
+      label: z.string(),
+    })).optional(),
+    quotable: z.string().optional(),
+    publishDate: z.date(),
+    draft: z.boolean().default(false),
+    clientSummary: z.string().optional(),
+    problemItems: z.array(z.string()).optional(),
+    architecture: z.array(z.object({
+      count: z.string(),
+      label: z.string(),
+      detail: z.string(),
+    })).optional(),
+    strategyPoints: z.array(z.object({
+      title: z.string(),
+      desc: z.string(),
+    })).optional(),
+    rankings: z.array(z.object({
+      keyword: z.string(),
+      position: z.string(),
+      url: z.string(),
+      note: z.string().optional(),
+    })).optional(),
+    closingTitle: z.string().optional(),
+    closingBody: z.string().optional(),
+  }),
+});
+
 /* ─── Locations ─── */
 const locations = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/locations' }),
@@ -125,4 +179,5 @@ export const collections = {
   services,
   industries,
   locations,
+  'case-studies': caseStudies,
 };

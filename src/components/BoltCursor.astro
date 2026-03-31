@@ -1,0 +1,127 @@
+<script>
+  (() => {
+    const isMobile = window.matchMedia('(pointer: coarse)').matches;
+    if (isMobile) return;
+
+    const BOLT_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`;
+
+    const bolt = document.createElement('div');
+    bolt.innerHTML = BOLT_SVG;
+    bolt.style.cssText = `
+      position: fixed;
+      pointer-events: none;
+      z-index: 99999;
+      width: 28px;
+      height: 28px;
+      color: #1877F2;
+      filter: drop-shadow(0 0 6px rgba(24, 119, 242, 0.4));
+      transform: translate(-100px, -100px);
+      will-change: transform;
+      left: 0;
+      top: 0;
+    `;
+    document.body.appendChild(bolt);
+
+    // Hide default cursor
+    const style = document.createElement('style');
+    style.textContent = `*, *::before, *::after { cursor: none !important; }`;
+    document.head.appendChild(style);
+
+    let mouseX = -100, mouseY = -100;
+    let rotation = 0;
+
+    // === Flame particle system ===
+    const POOL_SIZE = 50;
+    const flamePool: HTMLDivElement[] = [];
+    const flames: {el: HTMLDivElement, x: number, y: number, vx: number, vy: number, life: number, maxLife: number, size: number, hue: number}[] = [];
+    let flamePoolIdx = 0;
+    let flameRunning = false;
+    let lastFlameSpawn = 0;
+    let inFlameZone = false;
+
+    for (let i = 0; i < POOL_SIZE; i++) {
+      const p = document.createElement('div');
+      p.style.cssText = 'position:fixed;left:0;top:0;pointer-events:none;z-index:99999;border-radius:50%;will-change:transform,opacity;opacity:0;';
+      document.body.appendChild(p);
+      flamePool.push(p);
+    }
+
+    function spawnFlame(x: number, y: number) {
+      const el = flamePool[flamePoolIdx % POOL_SIZE];
+      flamePoolIdx++;
+      const angle = Math.random() * Math.PI * 2;
+      const speed = 0.5 + Math.random() * 2;
+      const size = 3 + Math.random() * 6;
+      const maxLife = 20 + Math.random() * 25;
+      const hue = Math.random() < 0.6 ? 200 + Math.random() * 30 : 20 + Math.random() * 30;
+      el.style.width = size + 'px';
+      el.style.height = size + 'px';
+      el.style.opacity = '1';
+      flames.push({ el, x: x + (Math.random()-0.5)*10, y: y + (Math.random()-0.5)*10, vx: Math.cos(angle)*speed, vy: -Math.abs(Math.sin(angle)*speed) - 1.5, life: 0, maxLife, size, hue });
+    }
+
+    function tickFlames() {
+      for (let i = flames.length - 1; i >= 0; i--) {
+        const f = flames[i];
+        f.life++;
+        f.x += f.vx;
+        f.y += f.vy;
+        f.vy -= 0.03;
+        const t = f.life / f.maxLife;
+        const op = t < 0.2 ? t / 0.2 : 1 - (t - 0.2) / 0.8;
+        const sc = 1 - t * 0.5;
+        f.el.style.transform = `translate(${f.x}px,${f.y}px) scale(${sc})`;
+        f.el.style.opacity = String(Math.max(0, op * 0.8));
+        f.el.style.background = `radial-gradient(circle, hsla(${f.hue},100%,65%,0.9), hsla(${f.hue},100%,50%,0) 70%)`;
+        f.el.style.boxShadow = `0 0 ${f.size}px hsla(${f.hue},100%,60%,${op*0.5})`;
+        if (f.life >= f.maxLife) { f.el.style.opacity = '0'; flames.splice(i, 1); }
+      }
+      if (flames.length > 0 || inFlameZone) { requestAnimationFrame(tickFlames); } else { flameRunning = false; }
+    }
+
+    // === Mouse tracking ===
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      bolt.style.transition = 'none';
+      bolt.style.transform = `translate(${mouseX + 4}px, ${mouseY + 4}px) rotate(${rotation}deg)`;
+
+      const el = document.elementFromPoint(mouseX, mouseY);
+      if (el) {
+        // Flame zones: header + homepage-specific sections
+        inFlameZone = !!el.closest('.header, .plan, .industries, .problem');
+
+        if (inFlameZone) {
+          bolt.style.color = '#1877F2';
+          bolt.style.filter = 'drop-shadow(0 0 12px rgba(24,119,242,0.8)) drop-shadow(0 0 24px rgba(255,140,0,0.4))';
+          const now = performance.now();
+          if (now - lastFlameSpawn > 25) {
+            lastFlameSpawn = now;
+            for (let k = 0; k < 3; k++) spawnFlame(mouseX + 14, mouseY + 14);
+            if (!flameRunning) { flameRunning = true; requestAnimationFrame(tickFlames); }
+          }
+        } else {
+          // Color swap: black on blue/light sections, blue everywhere else
+          const isLight = el.closest('.section--blue, .section--textured:not(.industries), .footer__cta-banner');
+          if (isLight) {
+            bolt.style.color = '#000';
+            bolt.style.filter = 'drop-shadow(0 0 6px rgba(0, 0, 0, 0.3))';
+          } else {
+            bolt.style.color = '#1877F2';
+            bolt.style.filter = 'drop-shadow(0 0 6px rgba(24, 119, 242, 0.4))';
+          }
+        }
+      }
+    });
+
+    document.addEventListener('mouseleave', () => { bolt.style.opacity = '0'; });
+    document.addEventListener('mouseenter', () => { bolt.style.opacity = '1'; });
+
+    // Spin 360 on click
+    document.addEventListener('click', () => {
+      rotation += 360;
+      bolt.style.transition = 'transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
+      bolt.style.transform = `translate(${mouseX + 4}px, ${mouseY + 4}px) rotate(${rotation}deg)`;
+    });
+  })();
+</script>

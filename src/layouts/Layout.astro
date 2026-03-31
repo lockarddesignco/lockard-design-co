@@ -1,4 +1,6 @@
 ---
+import BoltCursor from '../components/BoltCursor.astro';
+
 interface Props {
   title: string;
   description?: string;
@@ -86,6 +88,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJBJSWB9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <slot />
+    <BoltCursor />
 
     <!-- Full-page noise texture overlay -->
     <div class="fixed inset-0 pointer-events-none z-[9999] opacity-35 mix-blend-overlay bg-[url('/images/noise.png')] bg-repeat [background-size:200px_200px]"></div>
